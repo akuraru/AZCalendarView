@@ -50,8 +50,6 @@
     CalendarViewHeaderView *_calendarHeaderView;
     CalendarViewFooterView *_calendarFooterView;
 
-    UIView *_shieldView;
-
     NSMutableArray *_gridViewsArray;                   //two-dimensional array
     NSMutableArray *_monthGridViewsArray;
     NSMutableDictionary *_recycledGridSetDic;

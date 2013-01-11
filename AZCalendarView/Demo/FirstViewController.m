@@ -23,7 +23,7 @@
     self.calendarView.delegate = self;
 }
 
-- (void)calendarViewDidSelectDay:(CalendarView *)calendarView calDay:(CalDay *)calDay {
+- (void)calendarView:(CalendarView *)calendarView didSelectDay:(CalDay *)calDay {
     NSLog(@"Selected Date = %@", calDay);
 }
 

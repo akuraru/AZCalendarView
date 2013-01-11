@@ -847,8 +847,8 @@
 }
 
 - (void)calendarViewHeaderViewDidSelection:(CalendarViewHeaderView *)calendarHeaderView {
-    if (_delegate && [_delegate respondsToSelector:@selector(calendarViewDidSelectDay:calDay:)]){
-        [_delegate calendarViewDidSelectDay:self calDay:self.selectedDay];
+    if (_delegate && [_delegate respondsToSelector:@selector(calendarView:didSelectDay:)]){
+        [_delegate calendarView:self didSelectDay:self.selectedDay];
     }
     [self hide];
 }
@@ -856,14 +856,14 @@
 - (void)calendarViewFooterViewDidSelectPeriod:(CalendarViewFooterView *)footerView
         periodType:(PeriodType)type {
     self.selectedPeriod = type;
-    if (_delegate && [_delegate respondsToSelector:@selector(calendarViewDidSelectPeriodType:periodType:)]){
-        [_delegate calendarViewDidSelectPeriodType:self periodType:type];
+    if (_delegate && [_delegate respondsToSelector:@selector(calendarView:didSelectPeriodType:)]){
+        [_delegate calendarView:self didSelectPeriodType:type];
     }
 }
 #pragma mark - CalendarGridViewDelegate
 - (void)calendarGridViewDidSelectGrid:(CalendarGridView *)gridView {
-    if (_delegate && [_delegate respondsToSelector:@selector(calendarViewDidSelectDay:calDay:)]){
-        [_delegate calendarViewDidSelectDay:self calDay:self.selectedDay];
+    if (_delegate && [_delegate respondsToSelector:@selector(calendarView:didSelectDay:)]){
+        [_delegate calendarView:self didSelectDay:self.selectedDay];
     }
 }
 
@@ -874,23 +874,17 @@
 }
 
 - (void)hide {
-    if (_shieldView != nil){
-        _shieldView.alpha = 0.0;
-    }
     self.alpha = 0.0;
 }
 
 - (void)show:(BOOL)animated {
-    [UIView animateWithDuration:0.4 animations:^{
+    [UIView animateWithDuration:0.3 animations:^{
         [self show];
     }];
 }
 
 - (void)show {
     self.alpha = 1.0;
-    if (_shieldView != nil){
-        _shieldView.alpha = 0.6;
-    }
 }
 
 - (void)showInView:(UIView *)view {

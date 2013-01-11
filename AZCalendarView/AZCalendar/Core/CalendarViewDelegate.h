@@ -13,6 +13,6 @@
 
 @protocol CalendarViewDelegate <NSObject>
 @optional
-- (void) calendarViewDidSelectDay:(CalendarView*)calendarView calDay:(CalDay*)calDay;
-- (void) calendarViewDidSelectPeriodType:(CalendarView*)calendarView periodType:(PeriodType)periodType;
+- (void)calendarView:(CalendarView *)calendarView didSelectDay:(CalDay*)calDay;
+- (void)calendarView:(CalendarView *)calendarView didSelectPeriodType:(PeriodType)periodType;
 @end
