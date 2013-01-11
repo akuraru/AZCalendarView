@@ -108,7 +108,7 @@
 
 - (void)initParameters {
     _firstLayout = YES;
-
+    _autoresizesCalendar = YES;
     _selectedPeriod = PeriodTypeAllDay;
     _previousSelectedIndex.row = NSNotFound;
     _previousSelectedIndex.column = NSNotFound;
@@ -489,9 +489,9 @@
     calDay = [_calMonth lastDay];
     if ([calDay getWeekDay] < NUMBER_OF_DAYS_IN_WEEK){
         NSUInteger days = NUMBER_OF_DAYS_IN_WEEK - [calDay getWeekDay];
-        CalMonth *previousMonth = [_calMonth nextMonth];
+        CalMonth *nextMonth = [_calMonth nextMonth];
         for (NSInteger day = 1 ;day <= days ;day++){
-            calDay = [previousMonth calDayAtDay:day];
+            calDay = [nextMonth calDayAtDay:day];
             column = [calDay getWeekDay] - 1;
             gridView = [self findDisableGridViewAtRow:row column:column calDay:calDay];
             if (gridView == nil){
@@ -508,7 +508,31 @@
             [self addGridViewAtRow:gridView row:row column:column];
         }
     }
-
+    // always five rows
+    if (row == 4){
+        row = 5;
+        CalMonth *nextMonth = [_calMonth nextMonth];
+        NSUInteger offsetLastRow = [[nextMonth firstDay] getWeekDay] - 1;
+        NSUInteger thisRowStartDay = NUMBER_OF_DAYS_IN_WEEK - offsetLastRow;
+        // Add last row
+        for (NSInteger day = 1 ;day <= NUMBER_OF_DAYS_IN_WEEK ;day++){
+            calDay = [nextMonth calDayAtDay:day + thisRowStartDay];
+            column = [calDay getWeekDay] - 1;
+            gridView = [self findDisableGridViewAtRow:row column:column calDay:calDay];
+            if (gridView == nil){
+                continue;
+            }
+            gridView.delegate = self;
+            gridView.calDay = calDay;
+            gridView.row = row;
+            gridView.column = column;
+            frame = [self getFrameForRow:row column:column];
+            gridView.frame = frame;
+            [gridView setNeedsLayout];
+            [self.gridScrollView addSubview:gridView];
+            [self addGridViewAtRow:gridView row:row column:column];
+        }
+    }
     // Call DataSource delegate
 
     [self gridViewDidLayout];
@@ -669,7 +693,6 @@
 }
 
 - (void)layoutSubviews {
-    [self calSize];
     if (_dataSource && _firstLayout){
         /*
          * layout Calendar Grid Cell
@@ -737,9 +760,16 @@
                 [_footerView removeFromSuperview];
             }
         }
+
+        // auto resize
+        if (self.autoresizesCalendar){
+            CGFloat heightForCalendarGrid = [self heightForCalendarGrid];
+            [self.gridScrollView setFrame:CGRectMake(self.gridScrollView.frame.origin.x, self.gridScrollView.frame.origin.y,
+                self.gridScrollView.frame.size.width, heightForCalendarGrid)];
+        }
+
         _firstLayout = NO;
     }
-    [self calSize];
     _calendarHeaderView.title = [self findMonthDescription];
 }
 
@@ -971,20 +1001,13 @@
     }
     self.gridScrollView.showsHorizontalScrollIndicator = horizontalIndicator;
     self.gridScrollView.showsVerticalScrollIndicator = verticalIndicator;
-    NSLog(@"scrollViewHeight = %f", scrollViewHeight);
-    [self.gridScrollView setFrame:CGRectMake(self.gridScrollView.frame.origin.x, self.gridScrollView.frame.origin.y,
-        self.gridScrollView.frame.size.width, scrollViewHeight)];
     return scrollViewHeight;
 }
 
 - (void)calSize {
     CGRect contentRect = CGRectZero;
     for (UIView *view in self.subviews){
-        NSLog(@"view.frame = %@", NSStringFromCGRect(view.frame));
         contentRect = CGRectUnion(contentRect, view.frame);
     }
-    NSLog(@"contentRect = %@", NSStringFromCGRect(contentRect));
-    [self heightForCalendarGrid];
-
 }
 @end

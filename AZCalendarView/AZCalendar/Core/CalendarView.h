@@ -103,6 +103,12 @@
  */
 @property(nonatomic) CGFloat swipeTimeInterval;
 
+/*
+    if CalendarView height(actually) < CalendarView.xib height,
+        CalendarView.xib height = CalendarView height(actually)
+ */
+@property(nonatomic, assign) BOOL autoresizesCalendar;
+
 - (void)nextMonth;
 
 - (void)previousMonth;
