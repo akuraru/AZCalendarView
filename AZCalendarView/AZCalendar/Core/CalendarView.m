@@ -6,7 +6,6 @@
 //  Copyright (c) 2012年 Sword.Zhou. All rights reserved.
 //
 
-#import <CoreGraphics/CoreGraphics.h>
 #import "CalendarView.h"
 #import "CalMonth.h"
 #import "ITTDebug.h"
@@ -505,14 +504,25 @@
         }
     }
     // always five rows
-    if (self.alwaysSameHeight && row == 4){
-        row = 5;
+    // TODO : more more smart code...
+    if (self.alwaysSameHeight && row < 5){
+        NSInteger currentLow = row + 1;
+        NSInteger needLoopCount = 5 - row;// 1,2...
         CalMonth *nextMonth = [_calMonth nextMonth];
-        NSUInteger offsetLastRow = [[nextMonth firstDay] getWeekDay] - 1;
-        NSUInteger thisRowStartDay = NUMBER_OF_DAYS_IN_WEEK - offsetLastRow;
+        NSInteger offsetLastRow = [[nextMonth firstDay] getWeekDay] - 1;
+        NSInteger thisRowStartDay = (offsetLastRow == 0) ? 0 : NUMBER_OF_DAYS_IN_WEEK - offsetLastRow;
         // Add last row
-        for (NSInteger day = 1 ;day <= NUMBER_OF_DAYS_IN_WEEK ;day++){
+        // add 7 , add 14
+        for (NSInteger day = 1 ;day <= (NUMBER_OF_DAYS_IN_WEEK * needLoopCount) ;day++){
+            NSInteger offsetDay = day - 1;
+            // avoid zero division
+            if (offsetDay == 0){
+                row = currentLow;
+            } else {
+                row = currentLow + (offsetDay / NUMBER_OF_DAYS_IN_WEEK);
+            }
             calDay = [nextMonth calDayAtDay:day + thisRowStartDay];
+
             column = [calDay getWeekDay] - 1;
             gridView = [self findDisableGridViewAtRow:row column:column calDay:calDay];
             if (gridView == nil){
