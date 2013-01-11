@@ -106,8 +106,16 @@
 /*
     if CalendarView height(actually) < CalendarView.xib height,
         CalendarView.xib height = CalendarView height(actually)
+
+    default : YES
  */
-@property(nonatomic, assign) BOOL autoresizesCalendar;
+@property(nonatomic, assign) BOOL autoresizesHeight;
+/*
+    if YES, Calendar Height is always same height.
+    if Calendar row is 4 , automatic adding 5th row
+    default : YES
+ */
+@property(nonatomic, assign) BOOL alwaysSameHeight;
 
 - (void)nextMonth;
 

@@ -108,7 +108,8 @@
 
 - (void)initParameters {
     _firstLayout = YES;
-    _autoresizesCalendar = YES;
+    _autoresizesHeight = YES;
+    _alwaysSameHeight = YES;
     _selectedPeriod = PeriodTypeAllDay;
     _previousSelectedIndex.row = NSNotFound;
     _previousSelectedIndex.column = NSNotFound;
@@ -509,7 +510,7 @@
         }
     }
     // always five rows
-    if (row == 4){
+    if (self.alwaysSameHeight && row == 4){
         row = 5;
         CalMonth *nextMonth = [_calMonth nextMonth];
         NSUInteger offsetLastRow = [[nextMonth firstDay] getWeekDay] - 1;
@@ -762,7 +763,7 @@
         }
 
         // auto resize
-        if (self.autoresizesCalendar){
+        if (self.autoresizesHeight){
             CGFloat heightForCalendarGrid = [self heightForCalendarGrid];
             [self.gridScrollView setFrame:CGRectMake(self.gridScrollView.frame.origin.x, self.gridScrollView.frame.origin.y,
                 self.gridScrollView.frame.size.width, heightForCalendarGrid)];
