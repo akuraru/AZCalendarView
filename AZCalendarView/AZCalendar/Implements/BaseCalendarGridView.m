@@ -19,72 +19,45 @@
 @synthesize gridButton;
 
 
-- (id)initWithFrame:(CGRect)frame {
-    self = [super initWithFrame:frame];
-    if (self){
-        // Initialization code
-    }
-    return self;
-}
-
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
-    // Drawing code
-}
-*/
-
 - (void)select {
-    self.selected = TRUE;
-    self.gridButton.selected = TRUE;
-    self.gridButton.userInteractionEnabled = FALSE;
+    self.selected = YES;
+    self.gridButton.selected = YES;
+    self.gridButton.userInteractionEnabled = NO;
 }
 
 - (void)deselect {
-    self.selected = FALSE;
-    self.gridButton.selected = FALSE;
-    self.gridButton.userInteractionEnabled = TRUE;
-}
-
-- (UIImageView *)imageViewForName:(NSString *)name {
-    if ([name isEqualToString:@"朝"]){
-        return self.morningImageView;
-    } else if ([name isEqualToString:@"昼"]){
-        return self.noonImageView;
-    } else if ([name isEqualToString:@"夜"]){
-        return self.nightImageView;
-    }
+    self.selected = NO;
+    self.gridButton.selected = NO;
+    self.gridButton.userInteractionEnabled = YES;
 }
 
 - (void)layoutSubviews {
-    NSString *title = [NSString stringWithFormat:@"%d", [_calDay getDay]];
-    // min / max 日付制限により選択できるかどうか
-    if (_selectedEnable){
+    NSString *buttonDayTitle = [NSString stringWithFormat:@"%d", [_calDay getDay]];
+    //  date min / max limit
+    if (_canSelect){
         self.gridButton.selected = self.selected;
+        // Today Cell
         if ([_calDay isToday]){
             [self.gridButton setBackgroundImage:[UIImage imageNamed:@"todaycell.png"] forState:UIControlStateNormal];
             [self.gridButton setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
-            // 太字にする
+            // bold
             self.gridButton.titleLabel.font = [UIFont boldSystemFontOfSize:[self.gridButton.titleLabel.font pointSize]];
         } else {
             [self.gridButton setBackgroundImage:[UIImage imageNamed:@"datecell.png"] forState:UIControlStateNormal];
-            [self.gridButton setTitleColor:
-                                 [UIColor colorWithRed:122 / 255.0 green:119 / 255.0 blue:122 / 255.0 alpha:1.0] forState:UIControlStateNormal];
+            [self.gridButton setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
             self.gridButton.titleLabel.font = [UIFont systemFontOfSize:[self.gridButton.titleLabel.font pointSize]];
         }
-
+        // cell is selected
         if (self.selected){
             [self.gridButton setBackgroundImage:[UIImage imageNamed:@"date_selected.png"] forState:UIControlStateSelected];
         }
     } else {
-        self.gridButton.selected = FALSE;
-        [self.gridButton setBackgroundImage:[UIImage imageNamed:@"todaycell.png"] forState:UIControlStateNormal];
+        self.gridButton.selected = NO;
+        [self.gridButton setBackgroundImage:[UIImage imageNamed:@"datecell.png"] forState:UIControlStateNormal];
         [self.gridButton setTitleColor:[UIColor colorWithRed:233 / 255.0 green:232 / 255.0 blue:231 / 255.0 alpha:1.0] forState:UIControlStateNormal];
         self.gridButton.titleLabel.font = [UIFont systemFontOfSize:[self.gridButton.titleLabel.font pointSize]];
     }
-    [self.gridButton setTitle:title forState:UIControlStateNormal];
+    [self.gridButton setTitle:buttonDayTitle forState:UIControlStateNormal];
 }
 
 - (void)setSelected:(BOOL)selected {

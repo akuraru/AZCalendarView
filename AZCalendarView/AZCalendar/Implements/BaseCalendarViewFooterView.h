@@ -8,8 +8,7 @@
 
 #import "CalendarViewFooterView.h"
 
-@interface BaseCalendarViewFooterView : CalendarViewFooterView
-{
+@interface BaseCalendarViewFooterView : CalendarViewFooterView {
 
 }
 @end

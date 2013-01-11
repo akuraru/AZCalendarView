@@ -34,7 +34,6 @@
 		17B5C66199C5C6F59C597CED /* AZCalendarBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B5C01CBA823761AD8616BC /* AZCalendarBaseView.m */; };
 		17B5C6C873B332790E96B47A /* CalMonth.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B5CE21168A5A6F94E54B83 /* CalMonth.m */; };
 		17B5C6F9DD0D1662FD19B7AC /* BaseCalendarDisableGridView.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B5C46E81D94558F805BA28 /* BaseCalendarDisableGridView.m */; };
-		17B5C709C1F2C7439FDDFE77 /* TrainCalendarDataSourceImp.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B5C6E3164D05ADF81A66B8 /* TrainCalendarDataSourceImp.m */; };
 		17B5C7755A27CE74CD1A3911 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 17B5C51AA926E4DF4089B7C3 /* Default-568h@2x.png */; };
 		17B5C77AC5487239E4E7DFDB /* BaseCalendarGridView.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B5CB1BD9F8817F145B7D8F /* BaseCalendarGridView.m */; };
 		17B5C7E89F3946C803A0DE43 /* CalendarViewFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B5C3A906DAB191110BFDF8 /* CalendarViewFooterView.m */; };
@@ -65,7 +64,6 @@
 /* Begin PBXFileReference section */
 		17B5C01CBA823761AD8616BC /* AZCalendarBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AZCalendarBaseView.m; sourceTree = "<group>"; };
 		17B5C090404A17F79284E3F0 /* DateUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateUtil.h; sourceTree = "<group>"; };
-		17B5C121AF1AF399B4F1609E /* TrainCalendarDataSourceImp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrainCalendarDataSourceImp.h; sourceTree = "<group>"; };
 		17B5C1298189836ED24EAE5D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		17B5C12F72888CEB0CEF1D3D /* icon_drugcheck_calendar_on@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_drugcheck_calendar_on@2x.png"; sourceTree = "<group>"; };
 		17B5C26512539C71CCBDA9EE /* datecell@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "datecell@2x.png"; sourceTree = "<group>"; };
@@ -101,7 +99,6 @@
 		17B5C68C8EFA6A8B84B4FEC7 /* BaseCalendarViewFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BaseCalendarViewFooterView.xib; sourceTree = "<group>"; };
 		17B5C69E8ECBC9EB8B0FF121 /* datecell-diable.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "datecell-diable.png"; sourceTree = "<group>"; };
 		17B5C6A6FC8D2D5B8CA2CE0A /* CalendarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarView.xib; sourceTree = "<group>"; };
-		17B5C6E3164D05ADF81A66B8 /* TrainCalendarDataSourceImp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrainCalendarDataSourceImp.m; sourceTree = "<group>"; };
 		17B5C6FC9D39604C589E32EA /* icon_drugcheck_calendar_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_drugcheck_calendar_on.png; sourceTree = "<group>"; };
 		17B5C722AEFB3A1291E22B83 /* CalMonth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalMonth.h; sourceTree = "<group>"; };
 		17B5C77C4E9200EAB7C9E820 /* AZCalendarView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AZCalendarView.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -223,7 +220,7 @@
 			isa = PBXGroup;
 			children = (
 				17B5C7012A522FD21E30BD94 /* Core */,
-				17B5CF51E772E38FB7938019 /* Imp */,
+				17B5CF51E772E38FB7938019 /* Implements */,
 				17B5C5928F647174E5614CF4 /* ITTDebug.h */,
 				17B5C0098D87CCFFD1CAD91D /* Models */,
 			);
@@ -274,7 +271,7 @@
 			path = AZCalendarView;
 			sourceTree = "<group>";
 		};
-		17B5CF51E772E38FB7938019 /* Imp */ = {
+		17B5CF51E772E38FB7938019 /* Implements */ = {
 			isa = PBXGroup;
 			children = (
 				17B5C44DB0089A161D62871C /* BaseCalendarDisableGridView.h */,
@@ -295,10 +292,8 @@
 				17B5C629E3111C5CA7B2E043 /* BaseDataSourceImp.h */,
 				17B5C63E87A4BA6A206D2AC6 /* BaseDataSourceImp.m */,
 				17B5C216159E170681C7D90B /* Resource */,
-				17B5C121AF1AF399B4F1609E /* TrainCalendarDataSourceImp.h */,
-				17B5C6E3164D05ADF81A66B8 /* TrainCalendarDataSourceImp.m */,
 			);
-			path = Imp;
+			path = Implements;
 			sourceTree = "<group>";
 		};
 		17B5CFA675B94351E8E41A04 /* Frameworks */ = {
@@ -425,7 +420,6 @@
 				17B5C105F123DC7CC9F7D65F /* BaseCalendarViewHeaderView.m in Sources */,
 				17B5C840823E8E335E949C8B /* BaseCalendarWeekHintView.m in Sources */,
 				17B5C8524A78386EA515349D /* BaseDataSourceImp.m in Sources */,
-				17B5C709C1F2C7439FDDFE77 /* TrainCalendarDataSourceImp.m in Sources */,
 				17B5C0A3390509E35F85E419 /* CalDay.m in Sources */,
 				17B5C6C873B332790E96B47A /* CalMonth.m in Sources */,
 				17B5CABCD32861B5F15CFC2E /* DateUtil.m in Sources */,

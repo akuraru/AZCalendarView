@@ -21,7 +21,7 @@ typedef enum
 
 typedef enum 
 {
-    WeekDayKnown = 0,
+    WeekDayUNKnown = 0,
     WeekDayMonday,
     WeekDayTuesday,
     WeekDayWednesday,

@@ -111,7 +111,7 @@
 - (CalDay *)calDayAtDay:(NSUInteger)day {
     NSInteger index = day - 1;
     NSAssert(!(index < 0 || index > 31), @"invalid day index %d", index);
-    return [daysOfMonth objectAtIndex:index];
+    return [daysOfMonth objectAtIndex:(NSUInteger) index];
 }
 
 - (CalDay *)firstDay {

@@ -12,9 +12,5 @@
 @property (weak, nonatomic) IBOutlet UIImageView *morningImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *noonImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *nightImageView;
-
 @property (weak, nonatomic) IBOutlet UIImageView *recordImageView;
-- (UIImageView *)imageViewForName:(NSString *)name;
-
-
 @end

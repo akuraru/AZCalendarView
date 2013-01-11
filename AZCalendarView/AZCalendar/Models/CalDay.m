@@ -114,7 +114,7 @@
 }
 
 - (WeekDay)getMeaningfulWeekDay {
-    WeekDay weekDay = WeekDayKnown;
+    WeekDay weekDay = WeekDayUNKnown;
     switch (day.weekDay) {
         case 1:
             weekDay = WeekDaySunday;

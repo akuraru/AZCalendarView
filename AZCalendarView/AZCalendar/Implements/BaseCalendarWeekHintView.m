@@ -12,21 +12,13 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // 押せないようにする
-    self.hintButton.userInteractionEnabled = NO;
-}
-
-- (id)initWithFrame:(CGRect)frame {
-    self = [super initWithFrame:frame];
-    if (self){
-        // Initialization code
-    }
-    return self;
+    // don't select
+    self.weekHintCellButton.userInteractionEnabled = NO;
 }
 
 - (void)layoutSubviews {
 
-    // フォント色
+    // Saturday is blue , Sunday is red Color
     UIColor *titleColor = nil;
     if (self.dayOfWeek == Sunday){
         titleColor = [UIColor colorWithRed:234 / 255.0 green:47 / 255.0 blue:61 / 255.0 alpha:1.0];
@@ -35,10 +27,8 @@
     } else {
         titleColor = [UIColor colorWithRed:122 / 255.0 green:119 / 255.0 blue:122 / 255.0 alpha:1.0];
     }
-    [self.hintButton setTitleColor:titleColor forState:UIControlStateNormal];
-    // ボタンラベル
-    [self.hintButton setTitle:self.title forState:UIControlStateNormal];
-    // 背景にセル画像を置く
-    [self.hintButton setBackgroundImage:[UIImage imageNamed:@"datecell.png"] forState:UIControlStateNormal];
+    [self.weekHintCellButton setTitleColor:titleColor forState:UIControlStateNormal];
+    [self.weekHintCellButton setTitle:self.title forState:UIControlStateNormal];
+    [self.weekHintCellButton setBackgroundImage:[UIImage imageNamed:@"datecell.png"] forState:UIControlStateNormal];
 }
 @end

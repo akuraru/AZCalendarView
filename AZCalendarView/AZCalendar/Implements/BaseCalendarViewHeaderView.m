@@ -45,9 +45,6 @@
 }
 
 - (void)setTitle:(NSString *)title {
-    if (_title){
-        _title = nil;
-    }
     _title = title;
     self.monthLabel.text = title;
 }

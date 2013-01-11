@@ -10,7 +10,6 @@
 @interface BaseCalendarWeekHintView : CalendarWeekHintView {
 }
 
-@property(weak, nonatomic) IBOutlet UIButton *hintButton;
-
+@property(weak, nonatomic) IBOutlet UIButton *weekHintCellButton;
 
 @end
