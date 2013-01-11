@@ -24,7 +24,7 @@
 }
 
 - (void)calendarViewDidSelectDay:(CalendarView *)calendarView calDay:(CalDay *)calDay {
-    NSLog(@"Selected Date = %@", calDay.date);
+    NSLog(@"Selected Date = %@", calDay);
 }
 
 - (void)didReceiveMemoryWarning {

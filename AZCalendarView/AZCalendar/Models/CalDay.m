@@ -8,34 +8,40 @@
 
 #import "CalDay.h"
 #import "DateUtil.h"
-#import "AZCalendarEnum.h"
 
 #define SECOND_OF_A_DAY 24*60*60
 
 @interface CalDay ()
 
-- (void)calculateDate;
+@property(nonatomic, strong, readwrite) NSDate *date;
+
+- (void)defineDayOfDate;
 @end
 
 @implementation CalDay
 
-@synthesize date;
 
-- (void)calculateDate {
-    unsigned unitFlags = NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit | NSWeekdayCalendarUnit;
-    NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
-    NSDateComponents *comps = [gregorian components:unitFlags fromDate:_date];
-    day.month = comps.month;
-    day.day = comps.day;
-    day.year = comps.year;
-    day.weekDay = comps.weekday;//[gregorian ordinalityOfUnit:NSWeekdayCalendarUnit inUnit:NSWeekCalendarUnit forDate:_date];
+- (void)setDate:(NSDate *)date {
+    _date = date;
+    // Calculate struct Day
+    [self defineDayOfDate];
 }
 
-- (id)initWithDate:(NSDate *)d {
+- (void)defineDayOfDate {
+    unsigned unitFlags = NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit | NSWeekdayCalendarUnit;
+    NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    NSAssert(self.date != nil, @"self.date is nil");
+    NSDateComponents *comps = [gregorian components:unitFlags fromDate:self.date];
+    day.month = (unsigned int) comps.month;
+    day.day = (unsigned int) comps.day;
+    day.year = (unsigned int) comps.year;
+    day.weekDay = (unsigned int) comps.weekday;
+}
+
+- (id)initWithDate:(NSDate *)date {
     self = [super init];
     if (self){
-        _date = d;
-        [self calculateDate];
+        self.date = date;
     }
     return self;
 }
@@ -50,18 +56,9 @@
         [comps setHour:0];
         [comps setMinute:0];
         [comps setSecond:0];
-        _date = [[[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar] dateFromComponents:comps];
-        [self calculateDate];
+        self.date = [[[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar] dateFromComponents:comps];
     }
     return self;
-}
-
-- (void)dealloc {
-    _date = nil;
-}
-
-- (NSDate *)date {
-    return _date;
 }
 
 - (NSUInteger)getYear {
@@ -105,75 +102,54 @@
 }
 
 - (CalDay *)nextDay {
-    NSDate *nextDayDate = [_date dateByAddingTimeInterval:SECOND_OF_A_DAY];
+    NSDate *nextDayDate = [self.date dateByAddingTimeInterval:SECOND_OF_A_DAY];
     CalDay *nextDay = [[CalDay alloc] initWithDate:nextDayDate];
     return nextDay;
 }
 
 - (CalDay *)previousDay {
-    NSDate *previousDayDate = [_date dateByAddingTimeInterval:-1 * SECOND_OF_A_DAY];
+    NSDate *previousDayDate = [self.date dateByAddingTimeInterval:-1 * SECOND_OF_A_DAY];
     CalDay *previousDay = [[CalDay alloc] initWithDate:previousDayDate];
     return previousDay;
 }
 
 - (WeekDay)getMeaningfulWeekDay {
-    WeekDay wd = WeekDayKnown;
+    WeekDay weekDay = WeekDayKnown;
     switch (day.weekDay) {
         case 1:
-            wd = WeekDaySunday;
-            break;
+            weekDay = WeekDaySunday;
+        break;
         case 2:
-            wd = WeekDayMonday;
-            break;
+            weekDay = WeekDayMonday;
+        break;
         case 3:
-            wd = WeekDayTuesday;
-            break;
+            weekDay = WeekDayTuesday;
+        break;
         case 4:
-            wd = WeekDayWednesday;
-            break;
+            weekDay = WeekDayWednesday;
+        break;
         case 5:
-            wd = WeekDayThursday;
-            break;
+            weekDay = WeekDayThursday;
+        break;
         case 6:
-            wd = WeekDayFriday;
-            break;
+            weekDay = WeekDayFriday;
+        break;
         case 7:
-            wd = WeekDaySaturday;
-            break;
+            weekDay = WeekDaySaturday;
+        break;
         default:
             break;
     }
-    return wd;
+    return weekDay;
 }
 
 - (NSString *)getWeekDayName {
-    NSString *name = @"KnownName";
-    switch (day.weekDay) {
-        case 1:
-            name = @"Sunday";
-            break;
-        case 2:
-            name = @"Monday";
-            break;
-        case 3:
-            name = @"Tuesday";
-            break;
-        case 4:
-            name = @"Wednesday";
-            break;
-        case 5:
-            name = @"Thurday";
-            break;
-        case 6:
-            name = @"Friday";
-            break;
-        case 7:
-            name = @"Saturday";
-            break;
-        default:
-            break;
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setLocale:[NSLocale currentLocale]];
+    if (day.weekDay == 0){
+        return @"UNKNOWN_WEEK_DAY_NAME";
     }
-    return name;
+    return [[dateFormatter weekdaySymbols] objectAtIndex:day.weekDay - 1];
 }
 
 - (NSString *)description {
@@ -187,12 +163,10 @@
 }
 
 - (BOOL)isEqualToDay:(CalDay *)calDay {
-    BOOL equal = FALSE;
-    if (calDay){
-        equal = ([calDay getYear] == day.year &&
-            [calDay getMonth] == day.month &&
-            [calDay getDay] == day.day);
-    }
+    NSAssert([calDay isKindOfClass:[CalDay class]], @"Arguments is not CalDay");
+    BOOL equal = ([calDay getYear] == day.year &&
+        [calDay getMonth] == day.month &&
+        [calDay getDay] == day.day);
     return equal;
 }
 @end

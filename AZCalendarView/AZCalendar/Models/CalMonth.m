@@ -21,7 +21,7 @@
 @implementation CalMonth
 
 - (void)calculateMonth {
-    mon.numberOfDays = [DateUtil numberOfDaysInMonth:[_today getMonth] year:[_today getYear]];
+    mon.numberOfDays = (unsigned int) [DateUtil numberOfDaysInMonth:[_today getMonth] year:[_today getYear]];
     mon.year = [_today getYear];
     mon.month = [_today getMonth];
     daysOfMonth = [[NSMutableArray alloc] init];
@@ -73,10 +73,10 @@
     return self;
 }
 
-- (id)initWithDate:(NSDate *)d {
+- (id)initWithDate:(NSDate *)date {
     self = [super init];
     if (self){
-        _today = [[CalDay alloc] initWithDate:d];
+        _today = [[CalDay alloc] initWithDate:date];
         [self calculateMonth];
     }
     return self;
