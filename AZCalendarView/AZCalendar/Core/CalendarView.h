@@ -68,7 +68,7 @@
  * default is FALSE
  */
 @property(nonatomic, assign) BOOL allowsMultipleSelection;
-@property(nonatomic, assign) BOOL appear;
+@property(nonatomic, assign, getter=isAppear) BOOL appear;
 /*
  * default date is current date
  */
@@ -98,6 +98,11 @@
     The Grid Size
  */
 @property(nonatomic, assign) CGSize gridSize;
+/*
+    Calendar Swipe timer Interval
+ */
+@property(nonatomic) CGFloat swipeTimeInterval;
+
 - (void)nextMonth;
 
 - (void)previousMonth;

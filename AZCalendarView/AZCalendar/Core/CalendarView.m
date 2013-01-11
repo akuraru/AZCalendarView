@@ -107,12 +107,11 @@
 @synthesize allowsMultipleSelection = _allowsMultipleSelection;
 
 - (void)initParameters {
-    _allowsMultipleSelection = NO;
     _firstLayout = YES;
+
     _selectedPeriod = PeriodTypeAllDay;
     _previousSelectedIndex.row = NSNotFound;
     _previousSelectedIndex.column = NSNotFound;
-
     _gridSize = CGSizeMake(45.71, 45.71);
     _date = [NSDate date];
     _selectedDay = [[CalDay alloc] initWithDate:_date];
@@ -121,10 +120,10 @@
     _monthGridViewsArray = [[NSMutableArray alloc] init];
     _recycledGridSetDic = [[NSMutableDictionary alloc] init];
 
-    NSUInteger n = 6;
-    _selectedIndicesMatrix = (bool **) malloc(sizeof(bool *) * n);
-    _focusMatrix = (bool **) malloc(sizeof(bool *) * n);
-    for (NSUInteger i = 0 ;i < n ;i++){
+    NSUInteger rowLength = 6;
+    _selectedIndicesMatrix = (bool **) malloc(sizeof(bool *) * rowLength);
+    _focusMatrix = (bool **) malloc(sizeof(bool *) * rowLength);
+    for (NSUInteger i = 0 ;i < rowLength ;i++){
         _selectedIndicesMatrix[i] = malloc(sizeof(bool) * NUMBER_OF_DAYS_IN_WEEK);
         memset(_selectedIndicesMatrix[i], NO, NUMBER_OF_DAYS_IN_WEEK);
 
@@ -132,7 +131,7 @@
         memset(_focusMatrix[i], NO, NUMBER_OF_DAYS_IN_WEEK);
 
     }
-    for (NSUInteger index = 0 ;index < n ;index++){
+    for (NSUInteger index = 0 ;index < rowLength ;index++){
         NSMutableArray *rows = [[NSMutableArray alloc] init];
         [_gridViewsArray addObject:rows];
     }
@@ -632,27 +631,25 @@
 //        animation.subtype = kCATransitionFromRight;
 //        [self.gridScrollView.layer addAnimation:animation forKey:@"PreviousMonth"];
 //    }
-    UIViewAnimationTransition options;
+    UIViewAnimationOptions options;
     if (next){
-        options = UIViewAnimationTransitionCurlUp;
-    }
-    else {
-        options = UIViewAnimationTransitionCurlDown;
+        options = UIViewAnimationOptionCurveEaseInOut;
+    } else {
+        options = UIViewAnimationOptionCurveEaseInOut;
     }
     _calendarHeaderView.nextMonthButton.userInteractionEnabled = NO;
     _calendarHeaderView.previousMonthButton.userInteractionEnabled = NO;
     CalMonth *month = nil;
     if (next){
         month = [_calMonth nextMonth];
-    }
-    else {
+    } else {
         month = [_calMonth previousMonth];
     }
 
-    _date = [month firstDay].date;
+    // update grid cells
     self.calMonth = month;
-    [UIView animateWithDuration:0.3 animations:^{
-        [UIView setAnimationTransition:options forView:self.gridScrollView cache:YES];
+    _date = [month firstDay].date;
+    [UIImageView transitionWithView:self.gridScrollView duration:0.3 options:options animations:^{
     } completion:^(BOOL finished) {
         if (finished){
             _calendarHeaderView.nextMonthButton.userInteractionEnabled = YES;
@@ -672,6 +669,7 @@
 }
 
 - (void)layoutSubviews {
+    [self calSize];
     if (_dataSource && _firstLayout){
         /*
          * layout Calendar Grid Cell
@@ -736,11 +734,12 @@
                 _calendarFooterView = calendarFooterView;
                 [self.footerView addSubview:_calendarFooterView];
             } else {
-                [_calendarFooterView removeFromSuperview];
+                [_footerView removeFromSuperview];
             }
         }
         _firstLayout = NO;
     }
+    [self calSize];
     _calendarHeaderView.title = [self findMonthDescription];
 }
 
@@ -756,22 +755,10 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    self.alpha = 0.0;
+    self.alpha = 0.0; // default is hidden Calendar
     self.multipleTouchEnabled = YES;
     self.gridScrollView.calendarDelegate = self;
     [self initParameters];
-//    /*
-//     * add left and right swipe gesture
-//     */
-//    UISwipeGestureRecognizer *leftSwipeGesture = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipe:)];
-//    leftSwipeGesture.direction = UISwipeGestureRecognizerDirectionLeft;
-//    [self addGestureRecognizer:leftSwipeGesture];
-//    [leftSwipeGesture release];
-//
-//    UISwipeGestureRecognizer *rightSwipeGesture = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipe:)];
-//    rightSwipeGesture.direction = UISwipeGestureRecognizerDirectionRight;
-//    [self addGestureRecognizer:rightSwipeGesture];
-//    [rightSwipeGesture release];
 }
 
 - (NSDate *)selectedDate {
@@ -874,27 +861,11 @@
 }
 
 - (void)showInView:(UIView *)view {
-    [self addShieldInView:view];
     if (![self isDescendantOfView:view]){
         [view addSubview:self];
     }
     [self show:YES];
 }
-
-- (void)addShieldInView:(UIView *)view {
-    if (!_shieldView){
-        _shieldView = [[UIView alloc] initWithFrame:view.bounds];
-        _shieldView.alpha = 0.0;
-        _shieldView.backgroundColor = [UIColor whiteColor];
-        [view addSubview:_shieldView];
-    } else if (![_shieldView isDescendantOfView:view]){
-        _shieldView.alpha = 0.0;
-        [_shieldView removeFromSuperview];
-        _shieldView.frame = view.bounds;
-        [view addSubview:_shieldView];
-    }
-}
-
 #pragma mark - CalendarScrollViewDelegate
 - (void)calendarScrollViewTouchesBegan:(CalendarScrollView *)calendarScrollView
         touches:(NSSet *)touches
@@ -964,7 +935,10 @@
         }
     }
     UITouch *endTouch = [touches anyObject];
-    if (endTouch.timestamp - _beginTimeInterval <= SWIPE_TIMER_INTERVAL){
+    if (self.swipeTimeInterval == 0){
+        self.swipeTimeInterval = SWIPE_TIMER_INTERVAL;
+    }
+    if (endTouch.timestamp - _beginTimeInterval <= self.swipeTimeInterval){
         CGPoint endPoint = [endTouch locationInView:calendarScrollView];
         if (fabs(endPoint.y - _beginPoint.y) < HORIZONTAL_SWIPE_HEIGHT_CONSTRAINT){
             if (fabs(endPoint.x - _beginPoint.x) > HORIZONTAL_SWIPE_WIDTH_CONSTRAINT){
@@ -978,5 +952,39 @@
             }
         }
     }
+}
+
+- (CGFloat)heightForCalendarGrid {
+    CGFloat scrollViewHeight = 0.0f;
+    BOOL horizontalIndicator = self.gridScrollView.showsHorizontalScrollIndicator;
+    self.gridScrollView.showsHorizontalScrollIndicator = NO;
+    BOOL verticalIndicator = self.gridScrollView.showsVerticalScrollIndicator;
+    self.gridScrollView.showsVerticalScrollIndicator = NO;
+    for (UIView *view in self.gridScrollView.subviews){
+        if (!view.hidden){
+            CGFloat y = view.frame.origin.y;
+            CGFloat h = view.frame.size.height;
+            if (y + h > scrollViewHeight){
+                scrollViewHeight = h + y;
+            }
+        }
+    }
+    self.gridScrollView.showsHorizontalScrollIndicator = horizontalIndicator;
+    self.gridScrollView.showsVerticalScrollIndicator = verticalIndicator;
+    NSLog(@"scrollViewHeight = %f", scrollViewHeight);
+    [self.gridScrollView setFrame:CGRectMake(self.gridScrollView.frame.origin.x, self.gridScrollView.frame.origin.y,
+        self.gridScrollView.frame.size.width, scrollViewHeight)];
+    return scrollViewHeight;
+}
+
+- (void)calSize {
+    CGRect contentRect = CGRectZero;
+    for (UIView *view in self.subviews){
+        NSLog(@"view.frame = %@", NSStringFromCGRect(view.frame));
+        contentRect = CGRectUnion(contentRect, view.frame);
+    }
+    NSLog(@"contentRect = %@", NSStringFromCGRect(contentRect));
+    [self heightForCalendarGrid];
+
 }
 @end
