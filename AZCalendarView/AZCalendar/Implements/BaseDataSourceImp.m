@@ -14,7 +14,7 @@
 #import "CalendarWeekHintView.h"
 #import "BaseCalendarWeekHintView.h"
 #import "CalendarView.h"
-#import "CalDay.h"
+#import "BaseCalendarViewFooterView.h"
 
 @implementation BaseDataSourceImp {
 }
@@ -38,6 +38,16 @@
 
 }
 
+#pragma mark - build UI
+- (CalendarViewHeaderView *)headerViewForCalendarView:(CalendarView *)calendarView {
+    return [BaseCalendarViewHeaderView viewFromNib];
+}
+
+// Sun,Mon,Tsu ...
+- (CalendarWeekHintView *)weekHintViewForCalendarView:(CalendarView *)calendarView {
+    return [BaseCalendarWeekHintView viewFromNib];
+}
+
 - (CalendarGridView *)calendarView:(CalendarView *)calendarView calendarGridViewForRow:(NSInteger)row
                       column:(NSInteger)column calDay:(CalDay *)calDay {
     static NSString *identifier = @"BaseCalendarGridView";
@@ -59,17 +69,16 @@
     return gridView;
 }
 
-- (CalendarViewHeaderView *)headerViewForCalendarView:(CalendarView *)calendarView {
-    return [BaseCalendarViewHeaderView viewFromNib];
-}
+/*
+- (NSArray *)weekTitlesForCalendarView:(CalendarView *)calendarView {
+    return nil;
 
-// Sun,Mon,Tsu ...
-- (CalendarWeekHintView *)weekHintViewForCalendarView:(CalendarView *)calendarView {
-    return [BaseCalendarWeekHintView viewFromNib];
 }
-//- (NSArray *)weekTitlesForCalendarView:(CalendarView *)calendarView {
-//    return [NSArray arrayWithObjects:@"日", @"月", @"火", @"水", @"木", @"金", @"土", nil];
+*/
+//- (CalendarViewFooterView *)footerViewForCalendarView:(CalendarView *)calendarView {
+//    return [BaseCalendarViewFooterView viewFromNib];
 //}
+
 
 - (NSString *)calendarView:(CalendarView *)calendarView titleForMonth:(CalMonth *)calMonth {
     NSString *title = [NSString stringWithFormat:@"%d/%d", [calMonth getYear], [calMonth getMonth]];

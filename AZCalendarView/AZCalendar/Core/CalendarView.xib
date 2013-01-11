@@ -55,6 +55,7 @@
 						<string key="NSFrame">{{0, 77}, {320, 215}}</string>
 						<reference key="NSSuperview" ref="954764873"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView" ref="113009777"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<object class="NSColor" key="IBUIBackgroundColor" id="121223297">
 							<int key="NSColorSpace">3</int>
@@ -75,8 +76,25 @@
 						<reference key="IBUIBackgroundColor" ref="121223297"/>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 					</object>
+					<object class="IBUIView" id="113009777">
+						<reference key="NSNextResponder" ref="954764873"/>
+						<int key="NSvFlags">292</int>
+						<string key="NSFrame">{{0, 290}, {320, 45}}</string>
+						<reference key="NSSuperview" ref="954764873"/>
+						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView"/>
+						<string key="NSReuseIdentifierKey">_NS:9</string>
+						<object class="NSColor" key="IBUIBackgroundColor">
+							<int key="NSColorSpace">3</int>
+							<bytes key="NSWhite">MQA</bytes>
+							<object class="NSColorSpace" key="NSCustomColorSpace">
+								<int key="NSID">2</int>
+							</object>
+						</object>
+						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+					</object>
 				</array>
-				<string key="NSFrameSize">{320, 292}</string>
+				<string key="NSFrameSize">{320, 335}</string>
 				<reference key="NSSuperview"/>
 				<reference key="NSWindow"/>
 				<reference key="NSNextKeyView" ref="1022665897"/>
@@ -111,6 +129,14 @@
 					</object>
 					<int key="connectionID">16</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">footerView</string>
+						<reference key="source" ref="954764873"/>
+						<reference key="destination" ref="113009777"/>
+					</object>
+					<int key="connectionID">20</int>
+				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<array key="orderedObjects">
@@ -138,12 +164,14 @@
 							<reference ref="622360680"/>
 							<reference ref="1022665897"/>
 							<reference ref="583779447"/>
+							<reference ref="113009777"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">4</int>
 						<reference key="object" ref="583779447"/>
+						<array class="NSMutableArray" key="children"/>
 						<reference key="parent" ref="954764873"/>
 					</object>
 					<object class="IBObjectRecord">
@@ -159,6 +187,12 @@
 						<reference key="parent" ref="954764873"/>
 						<string key="objectName">week hint view</string>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">19</int>
+						<reference key="object" ref="113009777"/>
+						<reference key="parent" ref="954764873"/>
+						<string key="objectName">footer view</string>
+					</object>
 				</array>
 			</object>
 			<dictionary class="NSMutableDictionary" key="flattenedProperties">
@@ -167,6 +201,7 @@
 				<string key="-2.CustomClassName">UIResponder</string>
 				<string key="-2.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="14.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<string key="19.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="2.CustomClassName">CalendarView</string>
 				<string key="2.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="4.CustomClassName">CalendarScrollView</string>
@@ -177,7 +212,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">18</int>
+			<int key="maxID">20</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
