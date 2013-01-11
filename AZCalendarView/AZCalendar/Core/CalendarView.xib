@@ -43,26 +43,10 @@
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="622360680"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
-						<object class="NSColor" key="IBUIBackgroundColor" id="267677195">
-							<int key="NSColorSpace">3</int>
-							<bytes key="NSWhite">MCAwAA</bytes>
-						</object>
-						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-					</object>
-					<object class="IBUIScrollView" id="583779447">
-						<reference key="NSNextResponder" ref="954764873"/>
-						<int key="NSvFlags">295</int>
-						<string key="NSFrame">{{0, 77}, {320, 215}}</string>
-						<reference key="NSSuperview" ref="954764873"/>
-						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="113009777"/>
-						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<object class="NSColor" key="IBUIBackgroundColor" id="121223297">
 							<int key="NSColorSpace">3</int>
 							<bytes key="NSWhite">MQA</bytes>
 						</object>
-						<bool key="IBUIClipsSubviews">YES</bool>
-						<bool key="IBUIMultipleTouchEnabled">YES</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 					</object>
 					<object class="IBUIView" id="622360680">
@@ -74,6 +58,19 @@
 						<reference key="NSNextKeyView" ref="583779447"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<reference key="IBUIBackgroundColor" ref="121223297"/>
+						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+					</object>
+					<object class="IBUIScrollView" id="583779447">
+						<reference key="NSNextResponder" ref="954764873"/>
+						<int key="NSvFlags">295</int>
+						<string key="NSFrame">{{0, 77}, {320, 215}}</string>
+						<reference key="NSSuperview" ref="954764873"/>
+						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView" ref="113009777"/>
+						<string key="NSReuseIdentifierKey">_NS:9</string>
+						<reference key="IBUIBackgroundColor" ref="121223297"/>
+						<bool key="IBUIClipsSubviews">YES</bool>
+						<bool key="IBUIMultipleTouchEnabled">YES</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 					</object>
 					<object class="IBUIView" id="113009777">
@@ -99,7 +96,10 @@
 				<reference key="NSWindow"/>
 				<reference key="NSNextKeyView" ref="1022665897"/>
 				<string key="NSReuseIdentifierKey">_NS:9</string>
-				<reference key="IBUIBackgroundColor" ref="267677195"/>
+				<object class="NSColor" key="IBUIBackgroundColor">
+					<int key="NSColorSpace">3</int>
+					<bytes key="NSWhite">MCAwAA</bytes>
+				</object>
 				<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 			</object>
 		</array>
@@ -173,6 +173,7 @@
 						<reference key="object" ref="583779447"/>
 						<array class="NSMutableArray" key="children"/>
 						<reference key="parent" ref="954764873"/>
+						<string key="objectName">calendar Scroll view</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">5</int>

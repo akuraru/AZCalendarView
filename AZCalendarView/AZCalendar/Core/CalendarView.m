@@ -6,6 +6,7 @@
 //  Copyright (c) 2012年 Sword.Zhou. All rights reserved.
 //
 
+#import <CoreGraphics/CoreGraphics.h>
 #import "CalendarView.h"
 #import "CalMonth.h"
 #import "ITTDebug.h"
@@ -121,10 +122,10 @@
     _monthGridViewsArray = [[NSMutableArray alloc] init];
     _recycledGridSetDic = [[NSMutableDictionary alloc] init];
 
-    NSUInteger rowLength = 6;
-    _selectedIndicesMatrix = (bool **) malloc(sizeof(bool *) * rowLength);
-    _focusMatrix = (bool **) malloc(sizeof(bool *) * rowLength);
-    for (NSUInteger i = 0 ;i < rowLength ;i++){
+    NSUInteger days = NUMBER_OF_DAYS_IN_WEEK - 1;
+    _selectedIndicesMatrix = (bool **) malloc(sizeof(bool *) * days);
+    _focusMatrix = (bool **) malloc(sizeof(bool *) * days);
+    for (NSUInteger i = 0 ;i < days ;i++){
         _selectedIndicesMatrix[i] = malloc(sizeof(bool) * NUMBER_OF_DAYS_IN_WEEK);
         memset(_selectedIndicesMatrix[i], NO, NUMBER_OF_DAYS_IN_WEEK);
 
@@ -132,7 +133,7 @@
         memset(_focusMatrix[i], NO, NUMBER_OF_DAYS_IN_WEEK);
 
     }
-    for (NSUInteger index = 0 ;index < rowLength ;index++){
+    for (NSUInteger index = 0 ;index < days ;index++){
         NSMutableArray *rows = [[NSMutableArray alloc] init];
         [_gridViewsArray addObject:rows];
     }
@@ -170,14 +171,14 @@
         _date = nil;
     }
     _date = date;
-    CalMonth *cm = [[CalMonth alloc] initWithDate:_date];
-    self.calMonth = cm;
+    CalMonth *calMonth = [[CalMonth alloc] initWithDate:_date];
+    self.calMonth = calMonth;
 }
 
 - (void)setSelectedDay:(CalDay *)selectedDay {
     _selectedDay = selectedDay;
-    // TODO: gridViewを渡せるなら渡す
     if (_selectedDay != nil){
+        // TODO: pass gridView?
         [self calendarGridViewDidSelectGrid:nil];
     }
 }
@@ -323,7 +324,7 @@
 }
 
 - (void)resetSelectedIndicesMatrix {
-    NSInteger n = 6;
+    NSInteger n = NUMBER_OF_DAYS_IN_WEEK - 1;
     for (NSInteger row = 0 ;row < n ;row++){
         memset(_selectedIndicesMatrix[row], NO, NUMBER_OF_DAYS_IN_WEEK);
         memset(_focusMatrix[row], NO, NUMBER_OF_DAYS_IN_WEEK);
@@ -331,7 +332,7 @@
 }
 
 - (void)resetFocusMatrix {
-    NSInteger n = 6;
+    NSInteger n = NUMBER_OF_DAYS_IN_WEEK - 1;
     for (NSInteger row = 0 ;row < n ;row++){
         memset(_focusMatrix[row], NO, NUMBER_OF_DAYS_IN_WEEK);
     }
@@ -709,7 +710,7 @@
                 [subview removeFromSuperview];
             }
         }
-        CGFloat totalWidth = self.gridScrollView.contentSize.width;
+        CGFloat totalWidth = self.bounds.size.width;
         CGFloat width = totalWidth / NUMBER_OF_DAYS_IN_WEEK;
         CGFloat marginX = 0;
         NSArray *titles = [self findWeekTitles];
@@ -760,7 +761,11 @@
                 _calendarFooterView = calendarFooterView;
                 [self.footerView addSubview:_calendarFooterView];
             } else {
-                [_footerView removeFromSuperview];
+                if ([_footerView isDescendantOfView:self]){
+                    self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y,
+                        self.frame.size.width, self.frame.size.height - _footerView.frame.size.height);
+                    [_footerView removeFromSuperview];
+                }
             }
         }
 
@@ -989,10 +994,10 @@
     self.gridScrollView.showsVerticalScrollIndicator = NO;
     for (UIView *view in self.gridScrollView.subviews){
         if (!view.hidden){
-            CGFloat y = view.frame.origin.y;
-            CGFloat h = view.frame.size.height;
-            if (y + h > scrollViewHeight){
-                scrollViewHeight = h + y;
+            CGFloat currentY = view.frame.origin.y;
+            CGFloat currentHeight = view.frame.size.height;
+            if (currentY + currentHeight > scrollViewHeight){
+                scrollViewHeight = currentHeight + currentY;
             }
         }
     }
@@ -1001,10 +1006,4 @@
     return scrollViewHeight;
 }
 
-- (void)calSize {
-    CGRect contentRect = CGRectZero;
-    for (UIView *view in self.subviews){
-        contentRect = CGRectUnion(contentRect, view.frame);
-    }
-}
 @end
