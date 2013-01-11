@@ -471,19 +471,13 @@
         [self.gridScrollView addSubview:gridView];
         [_monthGridViewsArray addObject:gridView];
         [self addGridViewAtRow:gridView row:row column:column];
-        if (CGRectGetMaxX(frame) > maxWidth){
-            maxWidth = CGRectGetMaxX(frame);
-        }
-        if (CGRectGetMaxY(frame) > maxHeight){
-            maxHeight = CGRectGetMaxY(frame);
-        }
+
     }
     if (!hasSelectedDay && [_monthGridViewsArray count] > 0){
         CalendarGridView *selectedGridView = [_monthGridViewsArray objectAtIndex:0];
         _selectedIndicesMatrix[selectedGridView.row][selectedGridView.column] = YES;
         selectedGridView.selected = YES;
     }
-    self.gridScrollView.contentSize = CGSizeMake(maxWidth, maxHeight + 5);
     /*
      * layout grid view after selected month on calendar view
      */
@@ -534,8 +528,16 @@
             [self addGridViewAtRow:gridView row:row column:column];
         }
     }
+    // get last row
+    CalendarGridView *lastGridView = [[_gridViewsArray lastObject] lastObject];
+    if (CGRectGetMaxX(lastGridView.frame) > maxWidth){
+        maxWidth = CGRectGetMaxX(lastGridView.frame);
+    }
+    if (CGRectGetMaxY(lastGridView.frame) > maxHeight){
+        maxHeight = CGRectGetMaxY(lastGridView.frame);
+    }
+    self.gridScrollView.contentSize = CGSizeMake(maxWidth, maxHeight);
     // Call DataSource delegate
-
     [self gridViewDidLayout];
 }
 
