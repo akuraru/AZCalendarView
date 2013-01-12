@@ -1,6 +1,6 @@
 //
 //  FirstViewController.h
-//  ZHJCalendar-sample
+//  AZCalendar-sample
 //
 //  Created by azu on 12/12/14.
 //  Copyright (c) 2012年 plusr. All rights reserved.

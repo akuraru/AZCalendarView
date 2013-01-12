@@ -92,6 +92,7 @@
 		17B5C59997E5193B2F293513 /* AZAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AZAppDelegate.h; sourceTree = "<group>"; };
 		17B5C5BD147241BE6A490359 /* CalendarViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarViewDelegate.h; sourceTree = "<group>"; };
 		17B5C6192D47CE5D1132BC5F /* AZCalendarBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AZCalendarBaseView.h; sourceTree = "<group>"; };
+		17B5C625773147F72E1BBAE1 /* readme.md */ = {isa = PBXFileReference; lastKnownFileType = file.md; path = readme.md; sourceTree = "<group>"; };
 		17B5C629E3111C5CA7B2E043 /* BaseDataSourceImp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseDataSourceImp.h; sourceTree = "<group>"; };
 		17B5C63E87A4BA6A206D2AC6 /* BaseDataSourceImp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseDataSourceImp.m; sourceTree = "<group>"; };
 		17B5C66134ED7A9AA806BF9A /* CalendarViewHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarViewHeaderView.h; sourceTree = "<group>"; };
@@ -255,6 +256,7 @@
 				17B5C2403AE4DE72CD3ADF19 /* Products */,
 				17B5CFA675B94351E8E41A04 /* Frameworks */,
 				17B5CA20047FE5A25A95B01C /* AZCalendarView */,
+				17B5C625773147F72E1BBAE1 /* readme.md */,
 			);
 			sourceTree = "<group>";
 		};

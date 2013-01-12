@@ -1,13 +1,13 @@
 //
 //  Enum.h
-//  ZHJCalendar
+//  AZCalendar
 //
 //  Created by huajian zhou on 12-4-13.
 //  Copyright (c) 2012年 Sword.Zhou. All rights reserved.
 //
 
-#ifndef ZHJCalendar_Enum_h
-#define ZHJCalendar_Enum_h
+#ifndef AZCalendar_Enum_h
+#define AZCalendar_Enum_h
 
 typedef enum 
 {
