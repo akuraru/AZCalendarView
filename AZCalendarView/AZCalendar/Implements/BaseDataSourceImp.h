@@ -9,7 +9,9 @@
 #import <Foundation/Foundation.h>
 #import "CalendarViewDataSource.h"
 
-
 @interface BaseDataSourceImp : NSObject <CalendarViewDataSource>
+
+- (void)updateGridView:(CalendarGridView *)gridView calendarGridViewForRow:(NSInteger)row column:(NSInteger)column
+        calDay:(CalDay *)calDay;
 
 @end

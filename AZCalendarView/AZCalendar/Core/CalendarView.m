@@ -86,6 +86,10 @@
 @property(strong, nonatomic, readwrite) CalDay *selectedDay;
 
 
+/*
+    All Calendar GridViews
+ */
+@property(nonatomic, strong, readwrite) NSArray *visibleGridViews;
 @end
 
 @implementation CalendarView
@@ -223,6 +227,12 @@
     return day;
 }
 
+- (CalDay *)calDayAtGridIndex:(GridIndex)gridIndex {
+    NSUInteger day = [self getMonthDayAtRow:(NSUInteger) gridIndex.row column:(NSUInteger) gridIndex.column];
+    CalDay *calDay = [_calMonth calDayAtDay:day];
+    return calDay;
+}
+
 - (BOOL)isValidGridViewIndex:(GridIndex)index {
     BOOL valid = YES;
     if (index.column < 0 ||
@@ -244,6 +254,30 @@
     index.row = row;
     index.column = column;
     return index;
+}
+
+- (GridIndex)gridIndexForGridView:(CalendarGridView *)gridView {
+    GridIndex index = {NSNotFound, NSNotFound};
+    for (NSInteger i = 0 ;i < [_gridViewsArray count] ;i++){
+        NSArray *rowGridViewsArray = [_gridViewsArray objectAtIndex:i];
+        NSUInteger indexOfGridView = [rowGridViewsArray indexOfObject:gridView];
+        if (indexOfGridView != NSNotFound){
+            index.row = i;
+            index.column = indexOfGridView;
+            return index;
+        }
+    }
+    return index;
+}
+
+- (NSArray *)visibleGridViews {
+    NSMutableArray *gridViewsArray = [NSMutableArray array];// one dimensional array
+    for (NSMutableArray *rowGridViewsArray in _gridViewsArray){
+        for (CalendarGridView *gridView in rowGridViewsArray){
+            [gridViewsArray addObject:gridView];
+        }
+    }
+    return gridViewsArray;
 }
 
 - (NSString *)findMonthDescription {

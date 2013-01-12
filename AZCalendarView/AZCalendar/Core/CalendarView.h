@@ -51,6 +51,7 @@
     CalendarViewFooterView *_calendarFooterView;
 
     NSMutableArray *_gridViewsArray;                   //two-dimensional array
+    // =>
     NSMutableArray *_monthGridViewsArray;
     NSMutableDictionary *_recycledGridSetDic;
 
@@ -115,6 +116,13 @@
  */
 @property(nonatomic, assign) BOOL alwaysSameHeight;
 
+/*
+    All Calendar GridViews
+    visibleGridViews is include BaseCalendarGridView and BaseCalendarDisableGridView
+ */
+@property(nonatomic, strong, readonly) NSArray *visibleGridViews;
+
+
 - (void)nextMonth;
 
 - (void)previousMonth;
@@ -128,8 +136,13 @@
 - (void)hide:(BOOL)animated;
 
 - (void)hide;
+
 // reload DataSource - call <CalendarViewDataSource> methods
 - (void)reloadData;
+
+- (CalDay *)calDayAtGridIndex:(GridIndex)gridIndex;
+
+- (GridIndex)gridIndexForGridView:(CalendarGridView *)gridView;
 
 - (CalendarGridView *)dequeueCalendarGridViewWithIdentifier:(NSString *)identifier;
 

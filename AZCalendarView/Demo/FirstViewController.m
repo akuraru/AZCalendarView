@@ -9,6 +9,10 @@
 #import "FirstViewController.h"
 #import "CalendarView.h"
 #import "AZCalendarBaseView.h"
+#import "AZCalendarEnum.h"
+#import "BaseCalendarGridView.h"
+#import "BaseCalendarDisableGridView.h"
+#import "BaseDataSourceImp.h"
 
 @interface FirstViewController ()
 
@@ -23,8 +27,24 @@
     self.calendarView.delegate = self;
 }
 
+
+
+// without reloadData
+- (void)updateCalendarView {
+    NSArray *visibleGridViews = [self.calendarView visibleGridViews];
+    for (CalendarGridView *gridView in visibleGridViews){
+        if ([gridView isKindOfClass:[BaseCalendarDisableGridView class]]){
+            continue;// disable cells is not update
+        }
+        GridIndex gridIndex = [self.calendarView gridIndexForGridView:gridView];
+        CalDay *calDay = [self.calendarView calDayAtGridIndex:gridIndex];
+        [self.calendarBaseView.dataSource updateGridView:gridView calendarGridViewForRow:gridIndex.row column:gridIndex.column calDay:calDay];
+    }
+}
+
 - (void)calendarView:(CalendarView *)calendarView didSelectDay:(CalDay *)calDay {
     NSLog(@"Selected Date = %@", calDay);
+    [self updateCalendarView];
 }
 
 - (void)didReceiveMemoryWarning {

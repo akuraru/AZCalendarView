@@ -9,18 +9,16 @@
 #ifndef AZCalendar_Enum_h
 #define AZCalendar_Enum_h
 
-typedef enum 
-{
+typedef enum {
     PeriodTypeKnown = 11,
     PeriodTypeAllDay,
     PeriodTypeMorning,
     PeriodTypeNoon,
     PeriodTypeAfternoon,
     PeriodTypeEvening
-}PeriodType;
+} PeriodType;
 
-typedef enum 
-{
+typedef enum {
     WeekDayUNKnown = 0,
     WeekDayMonday,
     WeekDayTuesday,
@@ -29,11 +27,10 @@ typedef enum
     WeekDayFriday,
     WeekDaySaturday,
     WeekDaySunday
-}WeekDay;
+} WeekDay;
 
-typedef struct 
-{
+typedef struct {
     NSInteger row;
     NSInteger column;
-}GridIndex;
+} GridIndex;
 #endif

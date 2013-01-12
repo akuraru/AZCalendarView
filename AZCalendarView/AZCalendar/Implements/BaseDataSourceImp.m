@@ -18,23 +18,19 @@
 @implementation BaseDataSourceImp {
 }
 
-
-#pragma mark - update cell
-- (void)updateVisibleCells {
-    // セルの表示更新
-}
-
-
-- (void)updateGridView:(CalendarGridView *)gridView calendarGridViewForRow:(NSInteger)row
-        column:(NSInteger)column calDay:(CalDay *)calDay {
-}
-
 #pragma mark - dataSource delegate
 - (void)gridViewWillLayout:(CalendarView *)calendarView month:(CalMonth *)calMonth {
 }
 
 - (void)gridViewDidLayout:(CalendarView *)calendarView month:(CalMonth *)calMonth {
 
+}
+#pragma mark - update cell
+- (void)updateGridView:(CalendarGridView *)gridView calendarGridViewForRow:(NSInteger)row
+        column:(NSInteger)column calDay:(CalDay *)calDay {
+
+    BaseCalendarGridView *baseGridView = (BaseCalendarGridView *) gridView;
+    baseGridView.recordImageView.hidden = !baseGridView.recordImageView.hidden;
 }
 
 #pragma mark - build UI
