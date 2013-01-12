@@ -35,7 +35,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     // 更新し直す
-    [self.calendarView updateCalendar];
+    [self.calendarView reloadData];
 }
 
 @end

@@ -128,8 +128,8 @@
 - (void)hide:(BOOL)animated;
 
 - (void)hide;
-
-- (void)updateCalendar;
+// reload DataSource - call <CalendarViewDataSource> methods
+- (void)reloadData;
 
 - (CalendarGridView *)dequeueCalendarGridViewWithIdentifier:(NSString *)identifier;
 

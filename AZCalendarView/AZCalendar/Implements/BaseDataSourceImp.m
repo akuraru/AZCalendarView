@@ -14,7 +14,6 @@
 #import "CalendarWeekHintView.h"
 #import "BaseCalendarWeekHintView.h"
 #import "CalendarView.h"
-#import "BaseCalendarViewFooterView.h"
 
 @implementation BaseDataSourceImp {
 }
@@ -26,7 +25,7 @@
 }
 
 
-- (void)updateGridView:(CalendarGridView *)calendarView calendarGridViewForRow:(NSInteger)row
+- (void)updateGridView:(CalendarGridView *)gridView calendarGridViewForRow:(NSInteger)row
         column:(NSInteger)column calDay:(CalDay *)calDay {
 }
 
@@ -71,14 +70,13 @@
 
 /*
 - (NSArray *)weekTitlesForCalendarView:(CalendarView *)calendarView {
-    return nil;
+    return @[@"1",@"2",@"3",@"4",@"5",@"6",@"7"];
+}
 
+- (CalendarViewFooterView *)footerViewForCalendarView:(CalendarView *)calendarView {
+    return [BaseCalendarViewFooterView viewFromNib];
 }
 */
-//- (CalendarViewFooterView *)footerViewForCalendarView:(CalendarView *)calendarView {
-//    return [BaseCalendarViewFooterView viewFromNib];
-//}
-
 
 - (NSString *)calendarView:(CalendarView *)calendarView titleForMonth:(CalMonth *)calMonth {
     NSString *title = [NSString stringWithFormat:@"%d/%d", [calMonth getYear], [calMonth getMonth]];

@@ -52,7 +52,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     // Update Calendar
-    [self.calendarView updateCalendar];
+    [self.calendarView reloadData];
 }
 
 @end

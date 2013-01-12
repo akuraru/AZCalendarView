@@ -153,13 +153,7 @@
 
 }
 
-- (void)updateCalendar {
-    _firstLayout = YES;
-    [self recycleAllGridViews];
-    [self setNeedsLayout];
-}
-
-- (void)updateCalendar:(BOOL)animated {
+- (void)reloadData {
     _firstLayout = YES;
     [self recycleAllGridViews];
     [self setNeedsLayout];
@@ -267,6 +261,7 @@
     NSArray *titles = nil;
     if (_dataSource && [_dataSource respondsToSelector:@selector(weekTitlesForCalendarView:)]){
         titles = [_dataSource weekTitlesForCalendarView:self];
+        NSAssert([titles count] == NUMBER_OF_DAYS_IN_WEEK, @"Count of WeekHintTitles is `NUMBER_OF_DAYS_IN_WEEK`");
     }
     if (!titles || ![titles count]){
         NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
