@@ -15,8 +15,9 @@
 @synthesize previousMonthButton;
 @synthesize nextMonthButton;
 
-+ (CalendarViewHeaderView*) viewFromNib
-{
-    return [[[NSBundle mainBundle] loadNibNamed:[[self class] description] owner:self options:nil] objectAtIndex:0];
++ (CalendarViewHeaderView *)viewFromNib {
+    Class selfClass = [self class];
+    return [[[NSBundle bundleForClass:selfClass] loadNibNamed:NSStringFromClass(selfClass) owner:self options:nil]
+                       objectAtIndex:0];
 }
 @end

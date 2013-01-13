@@ -13,12 +13,13 @@
 @synthesize selectedButton = _selectedButton;
 @synthesize delegate = _delegate;
 
-- (void) dealloc
-{
+- (void)dealloc {
     _delegate = nil;
 }
-+ (CalendarViewFooterView*) viewFromNib
-{
-    return [[[NSBundle mainBundle] loadNibNamed:[[self class] description] owner:self options:nil] objectAtIndex:0];
+
++ (CalendarViewFooterView *)viewFromNib {
+    Class selfClass = [self class];
+    return [[[NSBundle bundleForClass:selfClass] loadNibNamed:NSStringFromClass(selfClass) owner:self options:nil]
+                       objectAtIndex:0];
 }
 @end

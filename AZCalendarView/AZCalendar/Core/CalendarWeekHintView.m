@@ -15,7 +15,9 @@
 
 
 + (CalendarWeekHintView *)viewFromNib {
-    return [[[NSBundle mainBundle] loadNibNamed:[[self class] description] owner:self options:nil] objectAtIndex:0];
+    Class selfClass = [self class];
+    return [[[NSBundle bundleForClass:selfClass] loadNibNamed:NSStringFromClass(selfClass) owner:self options:nil]
+                       objectAtIndex:0];
 }
 
 + (CalendarWeekHintView *)viewFromNibWithIdentifier:(NSString *)identifier {

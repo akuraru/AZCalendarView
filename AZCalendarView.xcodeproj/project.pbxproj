@@ -15,6 +15,7 @@
 		17B5C105F123DC7CC9F7D65F /* BaseCalendarViewHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B5C98D0432C39FEC13BD30 /* BaseCalendarViewHeaderView.m */; };
 		17B5C11E7946F2EF70AA0F12 /* icon_drugcheck_calendar_on@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 17B5C12F72888CEB0CEF1D3D /* icon_drugcheck_calendar_on@2x.png */; };
 		17B5C16D5EFDE65F4E3235C2 /* datecell-diable.png in Resources */ = {isa = PBXBuildFile; fileRef = 17B5C69E8ECBC9EB8B0FF121 /* datecell-diable.png */; };
+		17B5C170EFE2F726B2AE921B /* CalendarBasedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B5CFAF3A82851D18062AB9 /* CalendarBasedView.m */; };
 		17B5C2831CDB7DB06499945F /* BaseCalendarGridView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17B5C2E7E71CAAC6BF4399C5 /* BaseCalendarGridView.xib */; };
 		17B5C29671ACEEF8DD14EB18 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17B5CA3FDA66408C11396135 /* CoreGraphics.framework */; };
 		17B5C2E31F4372B022472C46 /* icon_drugcheck_calendar_on.png in Resources */ = {isa = PBXBuildFile; fileRef = 17B5C6FC9D39604C589E32EA /* icon_drugcheck_calendar_on.png */; };
@@ -64,6 +65,7 @@
 /* Begin PBXFileReference section */
 		17B5C01CBA823761AD8616BC /* AZCalendarBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AZCalendarBaseView.m; sourceTree = "<group>"; };
 		17B5C090404A17F79284E3F0 /* DateUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateUtil.h; sourceTree = "<group>"; };
+		17B5C0BA6630D470AF61F580 /* CalendarBasedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarBasedView.h; sourceTree = "<group>"; };
 		17B5C1298189836ED24EAE5D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		17B5C12F72888CEB0CEF1D3D /* icon_drugcheck_calendar_on@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_drugcheck_calendar_on@2x.png"; sourceTree = "<group>"; };
 		17B5C26512539C71CCBDA9EE /* datecell@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "datecell@2x.png"; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 		17B5CF24DD353BAF17C4D56C /* todaycell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = todaycell.png; sourceTree = "<group>"; };
 		17B5CF6D7940B44518C2A3C7 /* BaseCalendarWeekHintView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BaseCalendarWeekHintView.xib; sourceTree = "<group>"; };
 		17B5CF8BD87AD6E3E16F78F1 /* AZCalendarView-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = "AZCalendarView-Info.plist"; sourceTree = "<group>"; };
+		17B5CFAF3A82851D18062AB9 /* CalendarBasedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarBasedView.m; sourceTree = "<group>"; };
 		17B5CFF318E3E2B7792FE9D7 /* BaseCalendarDisableGridView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BaseCalendarDisableGridView.xib; sourceTree = "<group>"; };
 		7399ED0B169FB44100C0DCF0 /* FirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
 		7399ED0C169FB44100C0DCF0 /* FirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
@@ -246,6 +249,8 @@
 				17B5C7B67E84AF7F5390CFE5 /* CalendarViewHeaderView.m */,
 				17B5CAA2996ABA88A6329E44 /* CalendarWeekHintView.h */,
 				17B5C7D39A27AFE80728645E /* CalendarWeekHintView.m */,
+				17B5CFAF3A82851D18062AB9 /* CalendarBasedView.m */,
+				17B5C0BA6630D470AF61F580 /* CalendarBasedView.h */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -428,6 +433,7 @@
 				7399ED0D169FB44100C0DCF0 /* FirstViewController.m in Sources */,
 				17B5C66199C5C6F59C597CED /* AZCalendarBaseView.m in Sources */,
 				17B5C457E7C57EEDA2658A74 /* SecondViewController.m in Sources */,
+				17B5C170EFE2F726B2AE921B /* CalendarBasedView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

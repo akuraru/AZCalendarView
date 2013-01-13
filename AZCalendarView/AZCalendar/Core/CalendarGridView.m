@@ -32,8 +32,8 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    _selected = FALSE;
-    _canSelect = TRUE;
+    _selected = NO;
+    _canSelect = YES;
 }
 
 - (void)select {
@@ -51,7 +51,9 @@
 }
 */
 + (CalendarGridView *)viewFromNib {
-    return [[[NSBundle mainBundle] loadNibNamed:[[self class] description] owner:self options:nil] objectAtIndex:0];
+    Class selfClass = [self class];
+    return [[[NSBundle bundleForClass:selfClass] loadNibNamed:NSStringFromClass(selfClass) owner:self options:nil]
+                       objectAtIndex:0];
 }
 
 + (CalendarGridView *)viewFromNibWithIdentifier:(NSString *)identifier {

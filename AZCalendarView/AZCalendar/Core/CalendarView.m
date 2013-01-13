@@ -24,8 +24,8 @@
 
 @property(strong, nonatomic) IBOutlet UIView *weekHintView;
 @property(strong, nonatomic) IBOutlet UIView *headerView;
-@property(strong, nonatomic) IBOutlet UIView *footerView;
 @property(strong, nonatomic) IBOutlet CalendarScrollView *gridScrollView;
+@property(strong, nonatomic) IBOutlet UIView *footerView;
 
 - (void)initParameters;
 
@@ -868,7 +868,9 @@
 }
 
 + (id)viewFromNib {
-    return [[[NSBundle mainBundle] loadNibNamed:@"CalendarView" owner:self options:nil] objectAtIndex:0];
+    Class selfClass = [self class];
+    return [[[NSBundle bundleForClass:selfClass] loadNibNamed:NSStringFromClass(selfClass) owner:self options:nil]
+                       objectAtIndex:0];
 }
 
 - (void)dealloc {

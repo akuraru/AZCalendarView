@@ -36,11 +36,11 @@
 
 - (CalendarWeekHintView *)weekHintViewForCalendarView:(CalendarView *)calendarView;
 
-// layout が 始まる前に呼び出される
+// call before layout gridView
 - (void)gridViewWillLayout:(CalendarView *)calendarView month:(CalMonth *)calMonth;
 /*
     この間で上記のCalendar部品のdelegateが呼ばれカレンダーが構築される
  */
-// layout が 終わった時に呼び出される
+//  call after layout gridView
 - (void)gridViewDidLayout:(CalendarView *)calendarView month:(CalMonth *)calMonth;
 @end
