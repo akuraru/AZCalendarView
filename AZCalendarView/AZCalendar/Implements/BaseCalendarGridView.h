@@ -9,8 +9,6 @@
 #import "CalendarGridView.h"
 
 @interface BaseCalendarGridView : CalendarGridView
-@property (weak, nonatomic) IBOutlet UIImageView *morningImageView;
-@property (weak, nonatomic) IBOutlet UIImageView *noonImageView;
-@property (weak, nonatomic) IBOutlet UIImageView *nightImageView;
-@property (weak, nonatomic) IBOutlet UIImageView *recordImageView;
+
+@property(weak, nonatomic) IBOutlet UIImageView *recordImageView;
 @end

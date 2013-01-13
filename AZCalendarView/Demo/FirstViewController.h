@@ -12,12 +12,12 @@
 #import "CalendarViewDelegate.h"
 
 @class CalendarView;
-@class AZCalendarBaseView;
+@class CalendarPlaceholderView;
 @class BaseCalendarView;
 @class BaseDataSourceImp;
 
 @interface FirstViewController : UIViewController <CalendarViewDelegate>
 
-@property(weak, nonatomic) IBOutlet AZCalendarBaseView *calendarBaseView;
+@property(weak, nonatomic) IBOutlet CalendarPlaceholderView *calendarBaseView;
 @property(nonatomic, strong) BaseCalendarView *calendarView;
 @end

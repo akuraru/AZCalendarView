@@ -6,6 +6,7 @@
 //  Copyright (c) 2012年 plusr. All rights reserved.
 //
 
+#import <CoreGraphics/CoreGraphics.h>
 #import "SecondViewController.h"
 #import "BaseDataSourceImp.h"
 #import "CalendarView.h"
@@ -47,8 +48,7 @@
     if (self.calendarView == nil){
         self.dataSource = [[BaseDataSourceImp alloc] init];
         self.calendarView = [BaseCalendarView viewFromNib];
-        self.calendarView.frame = CGRectMake(0, 0, 320, self.calendarView.frame.size.height);
-        self.calendarView.gridSize = CGSizeMake(45.5, 35);
+        self.calendarView.frame = CGRectMake(0, 0, self.view.bounds.size.width, self.calendarView.frame.size.height);
         self.calendarView.dataSource = self.dataSource;
         self.calendarView.delegate = self;
         [self.view addSubview:self.calendarView];

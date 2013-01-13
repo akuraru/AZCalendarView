@@ -35,9 +35,6 @@
     NSInteger randomRow = arc4random() % 5;
     NSInteger randomColumn = arc4random() % 7;
     baseGridView.recordImageView.hidden = (row != 0);
-    baseGridView.morningImageView.hidden = (row != 1);
-    baseGridView.noonImageView.hidden = (row != 2);
-    baseGridView.nightImageView.hidden = (row != 3);
 }
 
 #pragma mark - build UI
@@ -58,6 +55,7 @@
         gridView = [BaseCalendarGridView viewFromNibWithIdentifier:identifier];
     }
     [self updateGridView:gridView calendarGridViewForRow:row column:column calDay:calDay];
+
     return gridView;
 }
 

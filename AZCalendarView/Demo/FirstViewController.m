@@ -8,7 +8,7 @@
 
 #import "FirstViewController.h"
 #import "CalendarView.h"
-#import "AZCalendarBaseView.h"
+#import "CalendarPlaceholderView.h"
 #import "BaseCalendarDisableGridView.h"
 #import "BaseDataSourceImp.h"
 #import "BaseCalendarView.h"
@@ -27,6 +27,7 @@
     self.calendarView = self.calendarBaseView.calendarView;
     self.calendarView.dataSource = self.dataSource;
     self.calendarView.delegate = self;
+    [self.calendarView setNeedsLayout];
 }
 
 

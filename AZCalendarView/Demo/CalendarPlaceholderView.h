@@ -9,7 +9,7 @@
 @class BaseCalendarView;
 
 
-@interface AZCalendarBaseView : UIView <CalendarViewDelegate>
+@interface CalendarPlaceholderView : UIView <CalendarViewDelegate>
 
 @property(nonatomic, strong) BaseCalendarView *calendarView;
 @end

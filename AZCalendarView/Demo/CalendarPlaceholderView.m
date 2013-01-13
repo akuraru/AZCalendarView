@@ -3,13 +3,12 @@
 //
 
 
-#import "AZCalendarBaseView.h"
+#import "CalendarPlaceholderView.h"
 #import "CalendarView.h"
-#import "BaseDataSourceImp.h"
 #import "BaseCalendarView.h"
 
 
-@implementation AZCalendarBaseView {
+@implementation CalendarPlaceholderView {
 
 }
 
@@ -17,13 +16,11 @@
     [super awakeFromNib];
 
     self.calendarView = [BaseCalendarView viewFromNib];
-    self.calendarView.frame = CGRectMake(0, 0, 320, self.calendarView.frame.size.height);
+    self.calendarView.frame = CGRectMake(0, 0, self.bounds.size.width, self.calendarView.frame.size.height);
     self.calendarView.adjustsScrollViewToFitHeight = NO;// doesn't resize scrollVIew
     self.calendarView.alwaysSameHeight = NO;// doesn't resize scrollVIew
 
     [self.calendarView showInView:self];// or [self.view addSubView:self.calendarView];
-    NSLog(@"%s", sel_getName(_cmd));
-
 }
 
 

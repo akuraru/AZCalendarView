@@ -57,8 +57,7 @@
 }
 
 + (CalendarGridView *)viewFromNibWithIdentifier:(NSString *)identifier {
-    NSArray *array = [[NSBundle mainBundle] loadNibNamed:[[self class] description] owner:self options:nil];
-    CalendarGridView *gridView = [array objectAtIndex:0];
+    CalendarGridView *gridView = [self viewFromNib];
     gridView.identifier = identifier;
     return gridView;
 }

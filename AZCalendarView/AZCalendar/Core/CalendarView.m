@@ -593,7 +593,8 @@
 }
 
 - (CGRect)getFrameForRow:(NSUInteger)row column:(NSUInteger)column {
-    CGFloat x = MARGIN_LEFT + (column - 1) * PADDING_HORIZONTAL + column * self.gridSize.width;
+    int padding = column - 1;
+    CGFloat x = MARGIN_LEFT + padding * PADDING_HORIZONTAL + column * self.gridSize.width ;
     CGFloat y = MARGIN_TOP + (row - 1) * PADDING_VERTICAL + row * self.gridSize.height;
     CGRect frame = CGRectMake(x, y, self.gridSize.width, self.gridSize.height);
     return frame;
@@ -758,7 +759,7 @@
             CalendarWeekHintView *weekHintView = [self findWeekHintView];
             weekHintView.frame = CGRectMake(marginX, 0, width, CGRectGetHeight(self.weekHintView.bounds));
             [weekHintView setTitle:[titles objectAtIndex:i]];
-            enum ZHJ_DayOfWeek week = (enum ZHJ_DayOfWeek) i;
+            enum AZ_DayOfWeek week = (enum AZ_DayOfWeek) i;
             [weekHintView setDayOfWeek:week];// 0,1... == Sun,Mon,....
             [weekHintView setNeedsLayout];
             [self.weekHintView addSubview:weekHintView];

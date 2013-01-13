@@ -6,7 +6,7 @@
 #import <Foundation/Foundation.h>
 
 
-NS_ENUM(NSUInteger, ZHJ_DayOfWeek){
+NS_ENUM(NSUInteger, AZ_DayOfWeek){
     Sunday,
     Monday,
     Tuesday,
@@ -21,7 +21,7 @@ NS_ENUM(NSUInteger, ZHJ_DayOfWeek){
 
 @property(nonatomic, strong) NSString *identifier;
 @property(nonatomic, copy) NSString *title;
-@property(nonatomic) enum ZHJ_DayOfWeek dayOfWeek;
+@property(nonatomic) enum AZ_DayOfWeek dayOfWeek;
 
 
 + (CalendarWeekHintView *)viewFromNib;
