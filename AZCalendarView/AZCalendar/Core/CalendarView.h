@@ -81,7 +81,7 @@
  */
 @property(nonatomic, strong) NSDate *maximumDate;
 /*
- * The selected calyday on calendar view
+ * The selected calDay on calendar view
  */
 @property(strong, nonatomic, readonly) CalDay *selectedDay;
 /*
@@ -95,6 +95,7 @@
 @property(strong, nonatomic, readonly) NSArray *selectedDateArray;
 /*
     The Grid Size
+    Default(When doesn't assign): use BaseCalendarGridView.xib size
  */
 @property(nonatomic, assign) CGSize gridSize;
 /*
