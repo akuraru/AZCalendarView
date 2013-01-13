@@ -6,12 +6,10 @@
 #import <Foundation/Foundation.h>
 #import "CalendarViewDelegate.h"
 
-@class CalendarView;
-@class BaseDataSourceImp;
+@class BaseCalendarView;
 
 
 @interface AZCalendarBaseView : UIView <CalendarViewDelegate>
 
-@property(nonatomic, strong) CalendarView *calendarView;
-@property(nonatomic, strong) BaseDataSourceImp *dataSource;
+@property(nonatomic, strong) BaseCalendarView *calendarView;
 @end

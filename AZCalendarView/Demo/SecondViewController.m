@@ -10,6 +10,7 @@
 #import "BaseDataSourceImp.h"
 #import "CalendarView.h"
 #import "BaseCalendarDisableGridView.h"
+#import "BaseCalendarView.h"
 
 @interface SecondViewController ()
 
@@ -45,7 +46,7 @@
 - (void)loadCalendarView {
     if (self.calendarView == nil){
         self.dataSource = [[BaseDataSourceImp alloc] init];
-        self.calendarView = [CalendarView viewFromNib];
+        self.calendarView = [BaseCalendarView viewFromNib];
         self.calendarView.frame = CGRectMake(0, 0, 320, self.calendarView.frame.size.height);
         self.calendarView.gridSize = CGSizeMake(45.5, 35);
         self.calendarView.dataSource = self.dataSource;

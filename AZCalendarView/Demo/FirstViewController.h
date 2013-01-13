@@ -13,9 +13,11 @@
 
 @class CalendarView;
 @class AZCalendarBaseView;
+@class BaseCalendarView;
+@class BaseDataSourceImp;
 
 @interface FirstViewController : UIViewController <CalendarViewDelegate>
 
-@property (weak, nonatomic) IBOutlet AZCalendarBaseView *calendarBaseView;
-@property (nonatomic,strong)CalendarView *calendarView;
+@property(weak, nonatomic) IBOutlet AZCalendarBaseView *calendarBaseView;
+@property(nonatomic, strong) BaseCalendarView *calendarView;
 @end

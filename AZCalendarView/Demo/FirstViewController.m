@@ -11,17 +11,21 @@
 #import "AZCalendarBaseView.h"
 #import "BaseCalendarDisableGridView.h"
 #import "BaseDataSourceImp.h"
+#import "BaseCalendarView.h"
 
 @interface FirstViewController ()
 
+@property (nonatomic,strong)BaseDataSourceImp *dataSource;
 @end
 
 @implementation FirstViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    // setup dataSource
+    self.dataSource = [[BaseDataSourceImp alloc] init];
     self.calendarView = self.calendarBaseView.calendarView;
+    self.calendarView.dataSource = self.dataSource;
     self.calendarView.delegate = self;
 }
 
@@ -35,7 +39,7 @@
         }
         GridIndex gridIndex = [self.calendarView gridIndexForGridView:gridView];
         CalDay *calDay = [self.calendarView calDayAtGridIndex:gridIndex];
-        [self.calendarBaseView.dataSource updateGridView:gridView calendarGridViewForRow:gridIndex.row column:gridIndex.column calDay:calDay];
+        [self.dataSource updateGridView:gridView calendarGridViewForRow:gridIndex.row column:gridIndex.column calDay:calDay];
     }
 }
 

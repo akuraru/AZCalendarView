@@ -22,11 +22,6 @@
 
 @property(strong, nonatomic) CalMonth *calMonth;
 
-@property(strong, nonatomic) IBOutlet UIView *weekHintView;
-@property(strong, nonatomic) IBOutlet UIView *headerView;
-@property(strong, nonatomic) IBOutlet CalendarScrollView *gridScrollView;
-@property(strong, nonatomic) IBOutlet UIView *footerView;
-
 - (void)initParameters;
 
 - (void)layoutGridCells;
@@ -740,6 +735,7 @@
 }
 
 - (void)layoutSubviews {
+
     if (_dataSource && _firstLayout){
         /*
          * layout Calendar Grid Cell
@@ -935,6 +931,7 @@
 
 - (void)show {
     self.alpha = 1.0;
+    [self setNeedsLayout];
 }
 
 - (void)showInView:(UIView *)view {

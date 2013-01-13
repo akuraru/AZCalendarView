@@ -59,6 +59,12 @@
     id <CalendarViewDelegate> _delegate;
 }
 
+
+@property(strong, nonatomic) UIView *weekHintView;
+@property(strong, nonatomic) UIView *headerView;
+@property(strong, nonatomic) CalendarScrollView *gridScrollView;
+@property(strong, nonatomic) UIView *footerView;
+
 @property(nonatomic, strong) id <CalendarViewDataSource> dataSource;
 @property(nonatomic, strong) id <CalendarViewDelegate> delegate;
 
@@ -104,8 +110,8 @@
 @property(nonatomic) CGFloat swipeTimeInterval;
 
 /*
-    if CalendarView height(actually) < CalendarView.xib height,
-        CalendarView.xib height = CalendarView height(actually)
+    if CalendarView height(actually) < BaseCalendarView.xib height,
+        BaseCalendarView.xib height = CalendarView height(actually)
 
     default : YES
  */

@@ -8,10 +8,10 @@
 #import <UIKit/UIKit.h>
 #import "CalendarViewDelegate.h"
 
-@class CalendarView;
 @class BaseDataSourceImp;
+@class BaseCalendarView;
 
 @interface SecondViewController : UIViewController <CalendarViewDelegate>
 
-@property(nonatomic, strong) CalendarView *calendarView;
+@property(nonatomic, strong) BaseCalendarView *calendarView;
 @end
