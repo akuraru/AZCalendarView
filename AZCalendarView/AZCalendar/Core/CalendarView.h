@@ -108,7 +108,7 @@
 
     default : YES
  */
-@property(nonatomic, assign) BOOL autoresizesHeight;
+@property(nonatomic, assign) BOOL adjustsScrollViewToFitHeight;
 /*
     if YES, Calendar Height is always same height.
     if Calendar row is 4 , automatic adding 5th row

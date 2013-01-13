@@ -19,8 +19,10 @@
     self.dataSource = [[BaseDataSourceImp alloc] init];
     self.calendarView = [CalendarView viewFromNib];
     self.calendarView.frame = CGRectMake(0, 0, 320, self.calendarView.frame.size.height);
-    self.calendarView.gridSize = CGSizeMake(45.5, 35);
     self.calendarView.dataSource = self.dataSource;
+    self.calendarView.adjustsScrollViewToFitHeight = NO;// doesn't resize scrollVIew
+    self.calendarView.alwaysSameHeight = NO;// doesn't resize scrollVIew
+
     [self.calendarView showInView:self];// or [self.view addSubView:self.calendarView];
 }
 

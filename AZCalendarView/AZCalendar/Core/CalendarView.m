@@ -4,7 +4,6 @@
 //
 //  Created by huajian zhou on 12-4-12.
 //  Copyright (c) 2012年 Sword.Zhou. All rights reserved.
-//
 
 #import "CalendarView.h"
 #import "CalMonth.h"
@@ -112,12 +111,12 @@
 
 - (void)initParameters {
     _firstLayout = YES;
-    _autoresizesHeight = YES;
+    _adjustsScrollViewToFitHeight = YES;
     _alwaysSameHeight = YES;
     _selectedPeriod = PeriodTypeAllDay;
     _previousSelectedIndex.row = NSNotFound;
     _previousSelectedIndex.column = NSNotFound;
-    _gridSize = CGSizeMake(45.71, 45.71);
+    _gridSize = CGSizeZero;
     _date = [NSDate date];
     _selectedDay = [[CalDay alloc] initWithDate:_date];
     _calMonth = [[CalMonth alloc] initWithDate:_date];
@@ -244,12 +243,29 @@
     return valid;
 }
 
+- (CGSize)gridSize {
+    // CGSzize != CGSizeZero
+    if (_gridSize.width != 0 && _gridSize.height != 0){
+        return _gridSize;
+    }
+
+    // get from delegate's gridView xib
+    GridIndex indexZero;
+    indexZero.column = 1;
+    indexZero.row = 1;
+    CalendarGridView *gridView = [self findGridViewAtRow:indexZero.row column:indexZero.column calDay:[self calDayAtGridIndex:indexZero]];
+    if (gridView != nil){
+        _gridSize = gridView.frame.size;
+    }
+    return _gridSize;
+}
+
 - (GridIndex)getGridViewIndex:(CalendarScrollView *)calendarScrollView touches:(NSSet *)touches {
     UITouch *touch = [touches anyObject];
     CGPoint location = [touch locationInView:calendarScrollView];
     GridIndex index;
-    NSInteger row = (location.y - MARGIN_TOP + PADDING_VERTICAL) / (PADDING_VERTICAL + _gridSize.height);
-    NSInteger column = (location.x - MARGIN_LEFT + PADDING_HORIZONTAL) / (PADDING_HORIZONTAL + _gridSize.width);
+    NSInteger row = (location.y - MARGIN_TOP + PADDING_VERTICAL) / (PADDING_VERTICAL + self.gridSize.height);
+    NSInteger column = (location.x - MARGIN_LEFT + PADDING_HORIZONTAL) / (PADDING_HORIZONTAL + self.gridSize.width);
     ITTDINFO(@"row %d column %d", row, column);
     index.row = row;
     index.column = column;
@@ -582,9 +598,9 @@
 }
 
 - (CGRect)getFrameForRow:(NSUInteger)row column:(NSUInteger)column {
-    CGFloat x = MARGIN_LEFT + (column - 1) * PADDING_HORIZONTAL + column * _gridSize.width;
-    CGFloat y = MARGIN_TOP + (row - 1) * PADDING_VERTICAL + row * _gridSize.height;
-    CGRect frame = CGRectMake(x, y, _gridSize.width, _gridSize.height);
+    CGFloat x = MARGIN_LEFT + (column - 1) * PADDING_HORIZONTAL + column * self.gridSize.width;
+    CGFloat y = MARGIN_TOP + (row - 1) * PADDING_VERTICAL + row * self.gridSize.height;
+    CGRect frame = CGRectMake(x, y, self.gridSize.width, self.gridSize.height);
     return frame;
 }
 
@@ -686,18 +702,6 @@
 }
 
 - (void)animationChangeMonth:(BOOL)next {
-//    CATransition *animation = [CATransition animation];
-//    animation.type = kCATransitionPush;
-//    if (next)
-//    {
-//        animation.subtype = kCATransitionFromLeft;
-//        [self.gridScrollView.layer addAnimation:animation forKey:@"NextMonth"];
-//    }
-//    else
-//    {
-//        animation.subtype = kCATransitionFromRight;
-//        [self.gridScrollView.layer addAnimation:animation forKey:@"PreviousMonth"];
-//    }
     UIViewAnimationOptions options;
     if (next){
         options = UIViewAnimationOptionCurveEaseInOut;
@@ -809,10 +813,10 @@
         }
 
         // auto resize
-        if (self.autoresizesHeight){
-            CGFloat heightForCalendarGrid = [self heightForCalendarGrid];
+        if (self.adjustsScrollViewToFitHeight){
+            CGFloat heightForCalendarScrollView = [self heightForCalendarScrollView];
             [self.gridScrollView setFrame:CGRectMake(self.gridScrollView.frame.origin.x, self.gridScrollView.frame.origin.y,
-                self.gridScrollView.frame.size.width, heightForCalendarGrid)];
+                self.gridScrollView.frame.size.width, heightForCalendarScrollView)];
         }
 
         _firstLayout = NO;
@@ -1025,7 +1029,7 @@
     }
 }
 
-- (CGFloat)heightForCalendarGrid {
+- (CGFloat)heightForCalendarScrollView {
     CGFloat scrollViewHeight = 0.0f;
     BOOL horizontalIndicator = self.gridScrollView.showsHorizontalScrollIndicator;
     self.gridScrollView.showsHorizontalScrollIndicator = NO;

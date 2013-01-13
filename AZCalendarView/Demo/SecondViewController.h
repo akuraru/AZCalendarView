@@ -9,6 +9,7 @@
 #import "CalendarViewDelegate.h"
 
 @class CalendarView;
+@class BaseDataSourceImp;
 
 @interface SecondViewController : UIViewController <CalendarViewDelegate>
 

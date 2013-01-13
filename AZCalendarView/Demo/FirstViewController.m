@@ -9,8 +9,6 @@
 #import "FirstViewController.h"
 #import "CalendarView.h"
 #import "AZCalendarBaseView.h"
-#import "AZCalendarEnum.h"
-#import "BaseCalendarGridView.h"
 #import "BaseCalendarDisableGridView.h"
 #import "BaseDataSourceImp.h"
 
@@ -28,8 +26,7 @@
 }
 
 
-
-// without reloadData
+// without reloadData - update "only" GridView , faster than reloadData.
 - (void)updateCalendarView {
     NSArray *visibleGridViews = [self.calendarView visibleGridViews];
     for (CalendarGridView *gridView in visibleGridViews){
@@ -44,7 +41,6 @@
 
 - (void)calendarView:(CalendarView *)calendarView didSelectDay:(CalDay *)calDay {
     NSLog(@"Selected Date = %@", calDay);
-    [self updateCalendarView];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -54,8 +50,12 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    // 更新し直す
-    [self.calendarView reloadData];
+
+    [self updateCalendarView];// when Navigation back etc..
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
 }
 
 @end

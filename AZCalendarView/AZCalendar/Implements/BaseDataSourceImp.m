@@ -25,12 +25,19 @@
 - (void)gridViewDidLayout:(CalendarView *)calendarView month:(CalMonth *)calMonth {
 
 }
+
 #pragma mark - update cell
 - (void)updateGridView:(CalendarGridView *)gridView calendarGridViewForRow:(NSInteger)row
         column:(NSInteger)column calDay:(CalDay *)calDay {
 
     BaseCalendarGridView *baseGridView = (BaseCalendarGridView *) gridView;
-    baseGridView.recordImageView.hidden = !baseGridView.recordImageView.hidden;
+
+    NSInteger randomRow = arc4random() % 5;
+    NSInteger randomColumn = arc4random() % 7;
+    baseGridView.recordImageView.hidden = (row != 0);
+    baseGridView.morningImageView.hidden = (row != 1);
+    baseGridView.noonImageView.hidden = (row != 2);
+    baseGridView.nightImageView.hidden = (row != 3);
 }
 
 #pragma mark - build UI
