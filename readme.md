@@ -18,6 +18,8 @@ Calendar library has similar delegate methods to a `UITableView`
 
 * D&D AZCalendar to your project
 
+Directory
+
     ├── AZCalendar
     │   ├── Core
     │   ├── Implements
