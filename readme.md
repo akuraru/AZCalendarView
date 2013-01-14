@@ -3,7 +3,8 @@
 Calendar library has similar delegate methods to a `UITableView`
 
 
-![calendar](https://raw.github.com/azu/AZCalendarView/develop/images/Screenshot_Calendar.png)
+![calendar iPhone](https://raw.github.com/azu/AZCalendarView/develop/images/Screenshot_Calendar.png)
+![calendar iPad](https://raw.github.com/azu/AZCalendarView/develop/images/Screenshot_iPad.png)
 
 
 # Breakdown
@@ -13,6 +14,12 @@ Calendar library has similar delegate methods to a `UITableView`
 * allow `allowsMultipleSelection`
 * doesn't support landscape yet...
 
+
+
+## Support
+
+* ARC
+* iOS5.0 〜
 
 ## Installation
 

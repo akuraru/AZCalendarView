@@ -13,5 +13,4 @@
 @property(strong, nonatomic) IBOutlet UIView *weekHintView;
 @property(strong, nonatomic) IBOutlet AZCalendarScrollView *gridScrollView;
 @property(strong, nonatomic) IBOutlet UIView *footerView;
-
 @end
