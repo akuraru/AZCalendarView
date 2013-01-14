@@ -75,11 +75,10 @@
 					</object>
 					<object class="IBUIView" id="113009777">
 						<reference key="NSNextResponder" ref="954764873"/>
-						<int key="NSvFlags">292</int>
+						<int key="NSvFlags">295</int>
 						<string key="NSFrame">{{0, 290}, {320, 45}}</string>
 						<reference key="NSSuperview" ref="954764873"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<object class="NSColor" key="IBUIBackgroundColor">
 							<int key="NSColorSpace">3</int>
@@ -217,11 +216,27 @@
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
 				<object class="IBPartialClassDescription">
+					<string key="className">AZCalendarScrollView</string>
+					<string key="superclassName">UIScrollView</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/AZCalendarScrollView.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">AZCalendarView</string>
+					<string key="superclassName">UIView</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/AZCalendarView.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
 					<string key="className">BaseCalendarView</string>
-					<string key="superclassName">CalendarView</string>
+					<string key="superclassName">AZCalendarView</string>
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="footerView">UIView</string>
-						<string key="gridScrollView">CalendarScrollView</string>
+						<string key="gridScrollView">AZCalendarScrollView</string>
 						<string key="headerView">UIView</string>
 						<string key="weekHintView">UIView</string>
 					</dictionary>
@@ -232,7 +247,7 @@
 						</object>
 						<object class="IBToOneOutletInfo" key="gridScrollView">
 							<string key="name">gridScrollView</string>
-							<string key="candidateClassName">CalendarScrollView</string>
+							<string key="candidateClassName">AZCalendarScrollView</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="headerView">
 							<string key="name">headerView</string>
@@ -246,22 +261,6 @@
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
 						<string key="minorKey">./Classes/BaseCalendarView.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">CalendarScrollView</string>
-					<string key="superclassName">UIScrollView</string>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/CalendarScrollView.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">CalendarView</string>
-					<string key="superclassName">UIView</string>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/CalendarView.h</string>
 					</object>
 				</object>
 			</array>

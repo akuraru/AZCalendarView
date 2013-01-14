@@ -260,7 +260,10 @@
     CGPoint location = [touch locationInView:calendarScrollView];
     GridIndex index;
     NSInteger row = (location.y - MARGIN_TOP + PADDING_VERTICAL) / (PADDING_VERTICAL + self.gridSize.height);
-    NSInteger column = (location.x - MARGIN_LEFT + PADDING_HORIZONTAL) / (PADDING_HORIZONTAL + self.gridSize.width);
+    CGFloat totalWidth = self.bounds.size.width;
+    CGFloat width = totalWidth / NUMBER_OF_DAYS_IN_WEEK;
+//    CGFloat width = self.gridSize.width;
+    NSInteger column = (location.x - MARGIN_LEFT + PADDING_HORIZONTAL) / (PADDING_HORIZONTAL + width);
     ITTDINFO(@"row %d column %d", row, column);
     index.row = row;
     index.column = column;
@@ -594,8 +597,11 @@
 
 - (CGRect)getFrameForRow:(NSUInteger)row column:(NSUInteger)column {
     int padding = column - 1;
-    CGFloat x = MARGIN_LEFT + padding * PADDING_HORIZONTAL + column * self.gridSize.width ;
-    CGFloat y = MARGIN_TOP + (row - 1) * PADDING_VERTICAL + row * self.gridSize.height;
+    CGFloat totalWidth = self.gridScrollView.frame.size.width;
+    CGFloat width = totalWidth / NUMBER_OF_DAYS_IN_WEEK;
+    CGFloat x = width * column;
+    //  MARGIN_LEFT + padding * PADDING_HORIZONTAL + column * self.gridSize.width
+    CGFloat y = MARGIN_TOP + row * self.gridSize.height;
     CGRect frame = CGRectMake(x, y, self.gridSize.width, self.gridSize.height);
     return frame;
 }
@@ -653,8 +659,8 @@
 }
 
 - (AZCalendarGridView *)findGridViewAtRow:(NSUInteger)row
-                      column:(NSUInteger)column
-                      calDay:(AZCalDay *)calDay {
+                        column:(NSUInteger)column
+                        calDay:(AZCalDay *)calDay {
     AZCalendarGridView *gridView = nil;
     if (_dataSource && [_dataSource respondsToSelector:@selector(calendarView:calendarGridViewForRow:column:calDay:)]){
         gridView = [_dataSource calendarView:self calendarGridViewForRow:row column:column calDay:calDay];
@@ -663,8 +669,8 @@
 }
 
 - (AZCalendarGridView *)findDisableGridViewAtRow:(NSUInteger)row
-                      column:(NSUInteger)column
-                      calDay:(AZCalDay *)calDay {
+                        column:(NSUInteger)column
+                        calDay:(AZCalDay *)calDay {
     AZCalendarGridView *gridView = nil;
     if (_dataSource && [_dataSource respondsToSelector:@selector(calendarView:calendarDisableGridViewForRow:column:calDay:)]){
         gridView = [_dataSource calendarView:self calendarDisableGridViewForRow:row column:column calDay:calDay];
