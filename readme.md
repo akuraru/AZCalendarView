@@ -2,7 +2,7 @@
 
 Calendar library has similar delegate methods to a `UITableView` .
 
-![calendar](http://monosnap.com/image/AXX2qrYVUnYppCHxRshyehlre)
+![calendar](http://monosnap.com/image/AXX2qrYVUnYppCHxRshyehlre.png)
 
 # Breakdown
 
