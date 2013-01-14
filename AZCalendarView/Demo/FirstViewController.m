@@ -27,7 +27,7 @@
     self.calendarView = self.calendarBaseView.calendarView;
     self.calendarView.dataSource = self.dataSource;
     self.calendarView.delegate = self;
-    [self.calendarView setNeedsLayout];
+    [self.calendarView show];
 }
 
 

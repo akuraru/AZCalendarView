@@ -12,7 +12,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="QE1-YF-z4U" kind="relationship" relationship="rootViewController" id="U3i-NR-wPQ"/>
+                        <segue destination="QE1-YF-z4U" kind="relationship" relationship="rootViewController" id="ded-jX-WyZ"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="56r-Fa-3Gk" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -20,9 +20,24 @@
             <point key="canvasLocation" x="-619" y="-263"/>
         </scene>
         <!--Second View Controller-->
+        <scene sceneID="yzo-zE-35o">
+            <objects>
+                <viewController storyboardIdentifier="SecondViewController" id="p0J-kX-sVX" customClass="SecondViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="L3V-Yn-yrM">
+                        <rect key="frame" x="0.0" y="64" width="768" height="960"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Rie-4w-0Wj"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FX5-Lj-dXQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1693" y="-255"/>
+        </scene>
+        <!--First View Controller-->
         <scene sceneID="gep-Tc-REw">
             <objects>
-                <viewController storyboardIdentifier="SecondViewController" id="QE1-YF-z4U" customClass="SecondViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FirstViewController" id="QE1-YF-z4U" customClass="FirstViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ndr-4q-exH">
                         <rect key="frame" x="0.0" y="64" width="768" height="960"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -35,16 +50,31 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="siq-vh-iGG"/>
+                    <navigationItem key="navigationItem" id="siq-vh-iGG">
+                        <barButtonItem key="rightBarButtonItem" title="Page 2" id="WYo-z7-bNC">
+                            <connections>
+                                <segue destination="p0J-kX-sVX" kind="push" id="POu-mJ-UGs"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="calendarBaseView" destination="GBh-2X-OH8" id="uBz-ZE-Tll"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4xG-0t-U2h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="583" y="-263"/>
+            <point key="canvasLocation" x="539" y="-255"/>
         </scene>
     </scenes>
     <classes>
         <class className="CalendarPlaceholderView" superclassName="UIView">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CalendarPlaceholderView.h"/>
+        </class>
+        <class className="FirstViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FirstViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="calendarBaseView" candidateClass="CalendarPlaceholderView"/>
+            </relationships>
         </class>
         <class className="SecondViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SecondViewController.h"/>

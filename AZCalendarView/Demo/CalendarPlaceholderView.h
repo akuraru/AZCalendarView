@@ -12,4 +12,5 @@
 @interface CalendarPlaceholderView : UIView <AZCalendarViewDelegate>
 
 @property(nonatomic, strong) BaseCalendarView *calendarView;
+
 @end
