@@ -1,5 +1,5 @@
 //
-//  CalendarGridView.h
+//  AZCalendarGridView.h
 //  AZCalendar
 //
 //  Created by huajian zhou on 12-4-12.
@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CalDay.h"
+#import "AZCalDay.h"
 
 @protocol CalendarGridViewDelegate;
 
-@interface CalendarGridView : UIView {
+@interface AZCalendarGridView : UIView {
     BOOL _selected;
     BOOL _canSelect;
 
@@ -20,7 +20,7 @@
 
     NSString *_identifier;
 
-    CalDay *_calDay;
+    AZCalDay *_calDay;
 
     id <CalendarGridViewDelegate> __unsafe_unretained _delegate;
 }
@@ -34,20 +34,20 @@
 @property(nonatomic, assign) NSUInteger column;
 
 @property(nonatomic, strong) NSString *identifier;
-@property(nonatomic, strong) CalDay *calDay;
+@property(nonatomic, strong) AZCalDay *calDay;
 
 - (void)select;
 
 - (void)deselect;
 
-+ (CalendarGridView *)viewFromNib;
++ (AZCalendarGridView *)viewFromNib;
 
-+ (CalendarGridView *)viewFromNibWithIdentifier:(NSString *)identifier;
++ (AZCalendarGridView *)viewFromNibWithIdentifier:(NSString *)identifier;
 
 @end
 
 @protocol CalendarGridViewDelegate <NSObject>
 
 @optional
-- (void)calendarGridViewDidSelectGrid:(CalendarGridView *)gridView;
+- (void)calendarGridViewDidSelectGrid:(AZCalendarGridView *)gridView;
 @end

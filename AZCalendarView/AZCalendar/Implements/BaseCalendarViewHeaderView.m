@@ -49,7 +49,7 @@
     self.monthLabel.text = title;
 }
 
-+ (CalendarViewHeaderView *)viewFromNib {
++ (AZCalendarViewHeaderView *)viewFromNib {
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone){
         return [super viewFromNib];
     } else {

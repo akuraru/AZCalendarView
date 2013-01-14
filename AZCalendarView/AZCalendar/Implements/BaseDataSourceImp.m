@@ -10,25 +10,25 @@
 #import "BaseCalendarGridView.h"
 #import "BaseCalendarDisableGridView.h"
 #import "BaseCalendarViewHeaderView.h"
-#import "CalMonth.h"
-#import "CalendarWeekHintView.h"
+#import "AZCalMonth.h"
+#import "AZCalendarWeekHintView.h"
 #import "BaseCalendarWeekHintView.h"
-#import "CalendarView.h"
+#import "AZCalendarView.h"
 
 @implementation BaseDataSourceImp {
 }
 
 #pragma mark - dataSource delegate
-- (void)gridViewWillLayout:(CalendarView *)calendarView month:(CalMonth *)calMonth {
+- (void)gridViewWillLayout:(AZCalendarView *)calendarView month:(AZCalMonth *)calMonth {
 }
 
-- (void)gridViewDidLayout:(CalendarView *)calendarView month:(CalMonth *)calMonth {
+- (void)gridViewDidLayout:(AZCalendarView *)calendarView month:(AZCalMonth *)calMonth {
 
 }
 
 #pragma mark - update cell
-- (void)updateGridView:(CalendarGridView *)gridView calendarGridViewForRow:(NSInteger)row
-        column:(NSInteger)column calDay:(CalDay *)calDay {
+- (void)updateGridView:(AZCalendarGridView *)gridView calendarGridViewForRow:(NSInteger)row
+        column:(NSInteger)column calDay:(AZCalDay *)calDay {
 
     BaseCalendarGridView *baseGridView = (BaseCalendarGridView *) gridView;
 
@@ -38,19 +38,19 @@
 }
 
 #pragma mark - build UI
-- (CalendarViewHeaderView *)headerViewForCalendarView:(CalendarView *)calendarView {
+- (AZCalendarViewHeaderView *)headerViewForCalendarView:(AZCalendarView *)calendarView {
     return [BaseCalendarViewHeaderView viewFromNib];
 }
 
 // Sun,Mon,Tsu ...
-- (CalendarWeekHintView *)weekHintViewForCalendarView:(CalendarView *)calendarView {
+- (AZCalendarWeekHintView *)weekHintViewForCalendarView:(AZCalendarView *)calendarView {
     return [BaseCalendarWeekHintView viewFromNib];
 }
 
-- (CalendarGridView *)calendarView:(CalendarView *)calendarView calendarGridViewForRow:(NSInteger)row
-                      column:(NSInteger)column calDay:(CalDay *)calDay {
+- (AZCalendarGridView *)calendarView:(AZCalendarView *)calendarView calendarGridViewForRow:(NSInteger)row
+                      column:(NSInteger)column calDay:(AZCalDay *)calDay {
     static NSString *identifier = @"BaseCalendarGridView";
-    CalendarGridView *gridView = [calendarView dequeueCalendarGridViewWithIdentifier:identifier];
+    AZCalendarGridView *gridView = [calendarView dequeueCalendarGridViewWithIdentifier:identifier];
     if (!gridView){
         gridView = [BaseCalendarGridView viewFromNibWithIdentifier:identifier];
     }
@@ -59,10 +59,10 @@
     return gridView;
 }
 
-- (CalendarGridView *)calendarView:(CalendarView *)calendarView calendarDisableGridViewForRow:(NSInteger)row
-                      column:(NSInteger)column calDay:(CalDay *)calDay {
+- (AZCalendarGridView *)calendarView:(AZCalendarView *)calendarView calendarDisableGridViewForRow:(NSInteger)row
+                      column:(NSInteger)column calDay:(AZCalDay *)calDay {
     static NSString *identifier = @"BaseCalendarDisableGridView";
-    CalendarGridView *gridView = [calendarView dequeueCalendarGridViewWithIdentifier:identifier];
+    AZCalendarGridView *gridView = [calendarView dequeueCalendarGridViewWithIdentifier:identifier];
     if (!gridView){
         gridView = [BaseCalendarDisableGridView viewFromNibWithIdentifier:identifier];
     }
@@ -70,16 +70,16 @@
 }
 
 /*
-- (NSArray *)weekTitlesForCalendarView:(CalendarView *)calendarView {
+- (NSArray *)weekTitlesForCalendarView:(AZCalendarView *)calendarView {
     return @[@"1",@"2",@"3",@"4",@"5",@"6",@"7"];
 }
 
-- (CalendarViewFooterView *)footerViewForCalendarView:(CalendarView *)calendarView {
+- (AZCalendarViewFooterView *)footerViewForCalendarView:(AZCalendarView *)calendarView {
     return [BaseCalendarViewFooterView viewFromNib];
 }
 */
 
-- (NSString *)calendarView:(CalendarView *)calendarView titleForMonth:(CalMonth *)calMonth {
+- (NSString *)calendarView:(AZCalendarView *)calendarView titleForMonth:(AZCalMonth *)calMonth {
     NSString *title = [NSString stringWithFormat:@"%d/%d", [calMonth getYear], [calMonth getMonth]];
     return title;
 }

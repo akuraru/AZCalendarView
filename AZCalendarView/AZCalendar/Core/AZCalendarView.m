@@ -1,14 +1,14 @@
 //
-//  CalendarView.m
+//  AZCalendarView.m
 //  AZCalendar
 //
 //  Created by huajian zhou on 12-4-12.
 //  Copyright (c) 2012年 Sword.Zhou. All rights reserved.
 
-#import "CalendarView.h"
-#import "CalMonth.h"
+#import "AZCalendarView.h"
+#import "AZCalMonth.h"
 #import "ITTDebug.h"
-#import "CalendarWeekHintView.h"
+#import "AZCalendarWeekHintView.h"
 
 #define MARGIN_LEFT                              0
 #define MARGIN_TOP                               0
@@ -18,9 +18,9 @@
 #define HORIZONTAL_SWIPE_WIDTH_CONSTRAINT        90
 #define SWIPE_TIMER_INTERVAL                      0.4
 
-@interface CalendarView ()
+@interface AZCalendarView ()
 
-@property(strong, nonatomic) CalMonth *calMonth;
+@property(strong, nonatomic) AZCalMonth *calMonth;
 
 - (void)initParameters;
 
@@ -36,7 +36,7 @@
 
 - (void)removeGridViewAtRow:(NSUInteger)row column:(NSUInteger)column;
 
-- (void)addGridViewAtRow:(CalendarGridView *)gridView row:(NSUInteger)row column:(NSUInteger)column;
+- (void)addGridViewAtRow:(AZCalendarGridView *)gridView row:(NSUInteger)row column:(NSUInteger)column;
 
 - (BOOL)isGridViewSelectedEnableAtRow:(NSUInteger)row column:(NSUInteger)column;
 
@@ -62,22 +62,22 @@
 /*
  * @return:current day or first day of a month
  */
-- (CalDay *)getFirstSelectedAvailableDay;
+- (AZCalDay *)getFirstSelectedAvailableDay;
 
-- (CalendarViewHeaderView *)findHeaderView;
+- (AZCalendarViewHeaderView *)findHeaderView;
 
-- (CalendarViewFooterView *)findFooterView;
+- (AZCalendarViewFooterView *)findFooterView;
 
-- (CalendarGridView *)findGridViewAtRow:(NSUInteger)row column:(NSUInteger)column calDay:(CalDay *)calDay;
+- (AZCalendarGridView *)findGridViewAtRow:(NSUInteger)row column:(NSUInteger)column calDay:(AZCalDay *)calDay;
 
-- (CalendarGridView *)findDisableGridViewAtRow:(NSUInteger)row column:(NSUInteger)column calDay:(CalDay *)calDay;
+- (AZCalendarGridView *)findDisableGridViewAtRow:(NSUInteger)row column:(NSUInteger)column calDay:(AZCalDay *)calDay;
 
-- (CalendarGridView *)getGridViewAtRow:(NSUInteger)row column:(NSUInteger)column;
+- (AZCalendarGridView *)getGridViewAtRow:(NSUInteger)row column:(NSUInteger)column;
 
 /*
  * The selected calyday on calendar view
  */
-@property(strong, nonatomic, readwrite) CalDay *selectedDay;
+@property(strong, nonatomic, readwrite) AZCalDay *selectedDay;
 
 
 /*
@@ -86,7 +86,7 @@
 @property(nonatomic, strong, readwrite) NSArray *visibleGridViews;
 @end
 
-@implementation CalendarView
+@implementation AZCalendarView
 
 @synthesize appear;
 @synthesize gridSize = _gridSize;
@@ -113,8 +113,8 @@
     _previousSelectedIndex.column = NSNotFound;
     _gridSize = CGSizeZero;
     _date = [NSDate date];
-    _selectedDay = [[CalDay alloc] initWithDate:_date];
-    _calMonth = [[CalMonth alloc] initWithDate:_date];
+    _selectedDay = [[AZCalDay alloc] initWithDate:_date];
+    _calMonth = [[AZCalMonth alloc] initWithDate:_date];
     _gridViewsArray = [[NSMutableArray alloc] init];
     _monthGridViewsArray = [[NSMutableArray alloc] init];
     _recycledGridSetDic = [[NSMutableDictionary alloc] init];
@@ -162,11 +162,11 @@
         _date = nil;
     }
     _date = date;
-    CalMonth *calMonth = [[CalMonth alloc] initWithDate:_date];
+    AZCalMonth *calMonth = [[AZCalMonth alloc] initWithDate:_date];
     self.calMonth = calMonth;
 }
 
-- (void)setSelectedDay:(CalDay *)selectedDay {
+- (void)setSelectedDay:(AZCalDay *)selectedDay {
     _selectedDay = selectedDay;
     if (_selectedDay != nil){
         // TODO: pass gridView?
@@ -175,7 +175,7 @@
 }
 
 
-- (void)setCalMonth:(CalMonth *)calMonth {
+- (void)setCalMonth:(AZCalMonth *)calMonth {
     [self recycleAllGridViews];
     if (_calMonth){
         _calMonth = nil;
@@ -188,7 +188,7 @@
 
 - (void)setMinimumDate:(NSDate *)minimumDate {
     _minimumDate = minimumDate;
-    _minimumDay = [[CalDay alloc] initWithDate:_minimumDate];
+    _minimumDay = [[AZCalDay alloc] initWithDate:_minimumDate];
     _firstLayout = YES;
     [self recycleAllGridViews];
     [self setNeedsLayout];
@@ -202,7 +202,7 @@
     if (_maximumDay){
         _maximumDay = nil;
     }
-    _maximumDay = [[CalDay alloc] initWithDate:_maximumDate];
+    _maximumDay = [[AZCalDay alloc] initWithDate:_maximumDate];
 
     _firstLayout = YES;
     [self recycleAllGridViews];
@@ -221,9 +221,9 @@
     return day;
 }
 
-- (CalDay *)calDayAtGridIndex:(GridIndex)gridIndex {
+- (AZCalDay *)calDayAtGridIndex:(GridIndex)gridIndex {
     NSUInteger day = [self getMonthDayAtRow:(NSUInteger) gridIndex.row column:(NSUInteger) gridIndex.column];
-    CalDay *calDay = [_calMonth calDayAtDay:day];
+    AZCalDay *calDay = [_calMonth calDayAtDay:day];
     return calDay;
 }
 
@@ -248,14 +248,14 @@
     GridIndex indexZero;
     indexZero.column = 1;
     indexZero.row = 1;
-    CalendarGridView *gridView = [self findGridViewAtRow:indexZero.row column:indexZero.column calDay:[self calDayAtGridIndex:indexZero]];
+    AZCalendarGridView *gridView = [self findGridViewAtRow:indexZero.row column:indexZero.column calDay:[self calDayAtGridIndex:indexZero]];
     if (gridView != nil){
         _gridSize = gridView.frame.size;
     }
     return _gridSize;
 }
 
-- (GridIndex)getGridViewIndex:(CalendarScrollView *)calendarScrollView touches:(NSSet *)touches {
+- (GridIndex)getGridViewIndex:(AZCalendarScrollView *)calendarScrollView touches:(NSSet *)touches {
     UITouch *touch = [touches anyObject];
     CGPoint location = [touch locationInView:calendarScrollView];
     GridIndex index;
@@ -267,7 +267,7 @@
     return index;
 }
 
-- (GridIndex)gridIndexForGridView:(CalendarGridView *)gridView {
+- (GridIndex)gridIndexForGridView:(AZCalendarGridView *)gridView {
     GridIndex index = {NSNotFound, NSNotFound};
     for (NSInteger i = 0 ;i < [_gridViewsArray count] ;i++){
         NSArray *rowGridViewsArray = [_gridViewsArray objectAtIndex:i];
@@ -284,7 +284,7 @@
 - (NSArray *)visibleGridViews {
     NSMutableArray *gridViewsArray = [NSMutableArray array];// one dimensional array
     for (NSMutableArray *rowGridViewsArray in _gridViewsArray){
-        for (CalendarGridView *gridView in rowGridViewsArray){
+        for (AZCalendarGridView *gridView in rowGridViewsArray){
             [gridViewsArray addObject:gridView];
         }
     }
@@ -324,7 +324,7 @@
      */
     NSMutableSet *recycledGridSet;
     for (NSMutableArray *rowGridViewsArray in _gridViewsArray){
-        for (CalendarGridView *gridView in rowGridViewsArray){
+        for (AZCalendarGridView *gridView in rowGridViewsArray){
             recycledGridSet = [_recycledGridSetDic objectForKey:gridView.identifier];
             if (!recycledGridSet){
                 recycledGridSet = [[NSMutableSet alloc] init];
@@ -339,8 +339,8 @@
     [_monthGridViewsArray removeAllObjects];
 }
 
-- (CalendarGridView *)getGridViewAtRow:(NSUInteger)row column:(NSUInteger)column {
-    CalendarGridView *gridView = nil;
+- (AZCalendarGridView *)getGridViewAtRow:(NSUInteger)row column:(NSUInteger)column {
+    AZCalendarGridView *gridView = nil;
     NSMutableArray *rowGridViewsArray = [_gridViewsArray objectAtIndex:row];
     gridView = [rowGridViewsArray objectAtIndex:column];
     return gridView;
@@ -353,7 +353,7 @@
         selectedEnable = NO;
     }
     else {
-        CalDay *calDay = [_calMonth calDayAtDay:day];
+        AZCalDay *calDay = [_calMonth calDayAtDay:day];
         ITTDINFO(@"day is %d", day);
         if ([self isEarlierMinimumDay:calDay] || [self isAfterMaximumDay:calDay]){
             selectedEnable = NO;
@@ -381,7 +381,7 @@
  * update grid state
  */
 - (void)updateSelectedGridViewState {
-    CalendarGridView *gridView = nil;
+    AZCalendarGridView *gridView = nil;
     NSInteger rows = [self getRows];
     for (NSInteger row = 0 ;row < rows ;row++){
         for (NSInteger column = 0 ;column < NUMBER_OF_DAYS_IN_WEEK ;column++){
@@ -396,7 +396,7 @@
     }
 }
 
-- (BOOL)isEarlierMinimumDay:(CalDay *)calDay {
+- (BOOL)isEarlierMinimumDay:(AZCalDay *)calDay {
     BOOL early = NO;
     if (self.minimumDate != nil){
         if (NSOrderedAscending == [calDay compare:_minimumDay]){
@@ -406,7 +406,7 @@
     return early;
 }
 
-- (BOOL)isAfterMaximumDay:(CalDay *)calDay {
+- (BOOL)isAfterMaximumDay:(AZCalDay *)calDay {
     BOOL after = NO;
     if (_maximumDate){
         if (NSOrderedDescending == [calDay compare:_maximumDay]){
@@ -425,7 +425,7 @@
     }
 }
 
-- (void)addGridViewAtRow:(CalendarGridView *)gridView row:(NSUInteger)row
+- (void)addGridViewAtRow:(AZCalendarGridView *)gridView row:(NSUInteger)row
         column:(NSUInteger)column {
     NSMutableArray *rowGridViewsArray = [_gridViewsArray objectAtIndex:row];
     NSInteger count = [rowGridViewsArray count];
@@ -451,8 +451,8 @@
     CGFloat maxHeight = 0;
     CGFloat maxWidth = 0;
     CGRect frame;
-    CalDay *calDay;
-    CalendarGridView *gridView = nil;
+    AZCalDay *calDay;
+    AZCalendarGridView *gridView = nil;
 
     // Call DataSource delegate
 
@@ -464,7 +464,7 @@
     calDay = [_calMonth firstDay];
     if ([calDay getWeekDay] > 1){
         count = [calDay getWeekDay];
-        CalMonth *previousMonth = [_calMonth previousMonth];
+        AZCalMonth *previousMonth = [_calMonth previousMonth];
         row = 0;
         for (NSInteger day = previousMonth.days ;count > 0 && day >= 1 ;day--){
             calDay = [previousMonth calDayAtDay:day];
@@ -514,7 +514,7 @@
 
     }
     if (!hasSelectedDay && [_monthGridViewsArray count] > 0){
-        CalendarGridView *selectedGridView = [_monthGridViewsArray objectAtIndex:0];
+        AZCalendarGridView *selectedGridView = [_monthGridViewsArray objectAtIndex:0];
         _selectedIndicesMatrix[selectedGridView.row][selectedGridView.column] = YES;
         selectedGridView.selected = YES;
     }
@@ -524,7 +524,7 @@
     calDay = [_calMonth lastDay];
     if ([calDay getWeekDay] < NUMBER_OF_DAYS_IN_WEEK){
         NSUInteger days = NUMBER_OF_DAYS_IN_WEEK - [calDay getWeekDay];
-        CalMonth *nextMonth = [_calMonth nextMonth];
+        AZCalMonth *nextMonth = [_calMonth nextMonth];
         for (NSInteger day = 1 ;day <= days ;day++){
             calDay = [nextMonth calDayAtDay:day];
             column = [calDay getWeekDay] - 1;
@@ -548,7 +548,7 @@
     if (self.alwaysSameHeight && row < 5){
         NSInteger currentLow = row + 1;
         NSInteger needLoopCount = 5 - row;// 1,2...
-        CalMonth *nextMonth = [_calMonth nextMonth];
+        AZCalMonth *nextMonth = [_calMonth nextMonth];
         NSInteger offsetLastRow = [[nextMonth firstDay] getWeekDay] - 1;
         NSInteger thisRowStartDay = (offsetLastRow == 0) ? 0 : NUMBER_OF_DAYS_IN_WEEK - offsetLastRow;
         // Add last row
@@ -580,7 +580,7 @@
         }
     }
     // get last row
-    CalendarGridView *lastGridView = [[_gridViewsArray lastObject] lastObject];
+    AZCalendarGridView *lastGridView = [[_gridViewsArray lastObject] lastObject];
     if (CGRectGetMaxX(lastGridView.frame) > maxWidth){
         maxWidth = CGRectGetMaxX(lastGridView.frame);
     }
@@ -600,10 +600,10 @@
     return frame;
 }
 
-- (CalDay *)getFirstSelectedAvailableDay {
-    CalDay *selectedCalDay = nil;
+- (AZCalDay *)getFirstSelectedAvailableDay {
+    AZCalDay *selectedCalDay = nil;
     for (NSInteger day = 1 ;day <= _calMonth.days ;day++){
-        CalDay *calDay = [_calMonth calDayAtDay:day];
+        AZCalDay *calDay = [_calMonth calDayAtDay:day];
         if ([calDay isToday]){
             selectedCalDay = calDay;
             break;
@@ -628,44 +628,44 @@
     }
 }
 
-- (CalendarViewHeaderView *)findHeaderView {
-    CalendarViewHeaderView *headerView = nil;
+- (AZCalendarViewHeaderView *)findHeaderView {
+    AZCalendarViewHeaderView *headerView = nil;
     if (_dataSource && [_dataSource respondsToSelector:@selector(headerViewForCalendarView:)]){
         headerView = [_dataSource headerViewForCalendarView:self];
     }
     return headerView;
 }
 
-- (CalendarWeekHintView *)findWeekHintView {
-    CalendarWeekHintView *weekHintView = nil;
+- (AZCalendarWeekHintView *)findWeekHintView {
+    AZCalendarWeekHintView *weekHintView = nil;
     if (_dataSource && [_dataSource respondsToSelector:@selector(weekHintViewForCalendarView:)]){
         weekHintView = [_dataSource weekHintViewForCalendarView:self];
     }
     return weekHintView;
 }
 
-- (CalendarViewFooterView *)findFooterView {
-    CalendarViewFooterView *footerView = nil;
+- (AZCalendarViewFooterView *)findFooterView {
+    AZCalendarViewFooterView *footerView = nil;
     if (_dataSource && [_dataSource respondsToSelector:@selector(footerViewForCalendarView:)]){
         footerView = [_dataSource footerViewForCalendarView:self];
     }
     return footerView;
 }
 
-- (CalendarGridView *)findGridViewAtRow:(NSUInteger)row
+- (AZCalendarGridView *)findGridViewAtRow:(NSUInteger)row
                       column:(NSUInteger)column
-                      calDay:(CalDay *)calDay {
-    CalendarGridView *gridView = nil;
+                      calDay:(AZCalDay *)calDay {
+    AZCalendarGridView *gridView = nil;
     if (_dataSource && [_dataSource respondsToSelector:@selector(calendarView:calendarGridViewForRow:column:calDay:)]){
         gridView = [_dataSource calendarView:self calendarGridViewForRow:row column:column calDay:calDay];
     }
     return gridView;
 }
 
-- (CalendarGridView *)findDisableGridViewAtRow:(NSUInteger)row
+- (AZCalendarGridView *)findDisableGridViewAtRow:(NSUInteger)row
                       column:(NSUInteger)column
-                      calDay:(CalDay *)calDay {
-    CalendarGridView *gridView = nil;
+                      calDay:(AZCalDay *)calDay {
+    AZCalendarGridView *gridView = nil;
     if (_dataSource && [_dataSource respondsToSelector:@selector(calendarView:calendarDisableGridViewForRow:column:calDay:)]){
         gridView = [_dataSource calendarView:self calendarDisableGridViewForRow:row column:column calDay:calDay];
     }
@@ -681,8 +681,8 @@
     return self;
 }
 
-- (CalendarGridView *)dequeueCalendarGridViewWithIdentifier:(NSString *)identifier {
-    CalendarGridView *gridView = nil;
+- (AZCalendarGridView *)dequeueCalendarGridViewWithIdentifier:(NSString *)identifier {
+    AZCalendarGridView *gridView = nil;
     NSMutableSet *recycledGridSet = [_recycledGridSetDic objectForKey:identifier];
     if (recycledGridSet){
         gridView = [recycledGridSet anyObject];
@@ -706,7 +706,7 @@
     }
     _calendarHeaderView.nextMonthButton.userInteractionEnabled = NO;
     _calendarHeaderView.previousMonthButton.userInteractionEnabled = NO;
-    CalMonth *month = nil;
+    AZCalMonth *month = nil;
     if (next){
         month = [_calMonth nextMonth];
     } else {
@@ -756,7 +756,7 @@
         NSArray *titles = [self findWeekTitles];
         for (NSInteger i = 0 ;i < NUMBER_OF_DAYS_IN_WEEK ;i++){
             // Day's Button Label
-            CalendarWeekHintView *weekHintView = [self findWeekHintView];
+            AZCalendarWeekHintView *weekHintView = [self findWeekHintView];
             weekHintView.frame = CGRectMake(marginX, 0, width, CGRectGetHeight(self.weekHintView.bounds));
             [weekHintView setTitle:[titles objectAtIndex:i]];
             enum AZ_DayOfWeek week = (enum AZ_DayOfWeek) i;
@@ -769,7 +769,7 @@
          * layout header view
          */
         if (!_calendarHeaderView){
-            CalendarViewHeaderView *calendarHeaderView = [self findHeaderView];
+            AZCalendarViewHeaderView *calendarHeaderView = [self findHeaderView];
             if (calendarHeaderView){
                 if (_calendarHeaderView){
                     [_calendarHeaderView removeFromSuperview];
@@ -788,7 +788,7 @@
          */
         // if do not implement footer view, remove footer view.
         if (!_calendarFooterView){
-            CalendarViewFooterView *calendarFooterView = [self findFooterView];
+            AZCalendarViewFooterView *calendarFooterView = [self findFooterView];
             if (calendarFooterView){
                 if (_calendarFooterView){
                     [_calendarFooterView removeFromSuperview];
@@ -854,7 +854,7 @@
             for (NSUInteger column = 0 ;column < NUMBER_OF_DAYS_IN_WEEK ;column++){
                 if (_selectedIndicesMatrix[row][column]){
                     NSUInteger day = [self getMonthDayAtRow:row column:column];
-                    CalDay *calDay = [_calMonth calDayAtDay:day];
+                    AZCalDay *calDay = [_calMonth calDayAtDay:day];
                     [selectedDates addObject:calDay.date];
                     ITTDINFO(@"selected day %d", day);
                 }
@@ -864,11 +864,6 @@
     }
 }
 
-+ (id)viewFromNib {
-    Class selfClass = [self class];
-    return [[[NSBundle bundleForClass:selfClass] loadNibNamed:NSStringFromClass(selfClass) owner:self options:nil]
-                       objectAtIndex:0];
-}
 
 - (void)dealloc {
     [self freeMatrix];
@@ -881,26 +876,26 @@
     _maximumDay = nil;
 }
 #pragma mark - CalendarViewHeaderViewDelegate
-- (void)calendarViewHeaderViewNextMonth:(CalendarViewHeaderView *)calendarHeaderView {
+- (void)calendarViewHeaderViewNextMonth:(AZCalendarViewHeaderView *)calendarHeaderView {
     [self nextMonth];
 }
 
-- (void)calendarViewHeaderViewPreviousMonth:(CalendarViewHeaderView *)calendarHeaderView {
+- (void)calendarViewHeaderViewPreviousMonth:(AZCalendarViewHeaderView *)calendarHeaderView {
     [self previousMonth];
 }
 
-- (void)calendarViewHeaderViewDidCancel:(CalendarViewHeaderView *)calendarHeaderView {
+- (void)calendarViewHeaderViewDidCancel:(AZCalendarViewHeaderView *)calendarHeaderView {
     [self hide];
 }
 
-- (void)calendarViewHeaderViewDidSelection:(CalendarViewHeaderView *)calendarHeaderView {
+- (void)calendarViewHeaderViewDidSelection:(AZCalendarViewHeaderView *)calendarHeaderView {
     if (_delegate && [_delegate respondsToSelector:@selector(calendarView:didSelectDay:)]){
         [_delegate calendarView:self didSelectDay:self.selectedDay];
     }
     [self hide];
 }
 #pragma mark - CalendarViewFooterViewDelegate
-- (void)calendarViewFooterViewDidSelectPeriod:(CalendarViewFooterView *)footerView
+- (void)calendarViewFooterViewDidSelectPeriod:(AZCalendarViewFooterView *)footerView
         periodType:(PeriodType)type {
     self.selectedPeriod = type;
     if (_delegate && [_delegate respondsToSelector:@selector(calendarView:didSelectPeriodType:)]){
@@ -908,7 +903,7 @@
     }
 }
 #pragma mark - CalendarGridViewDelegate
-- (void)calendarGridViewDidSelectGrid:(CalendarGridView *)gridView {
+- (void)calendarGridViewDidSelectGrid:(AZCalendarGridView *)gridView {
     if (_delegate && [_delegate respondsToSelector:@selector(calendarView:didSelectDay:)]){
         [_delegate calendarView:self didSelectDay:self.selectedDay];
     }
@@ -942,7 +937,7 @@
     [self show:YES];
 }
 #pragma mark - CalendarScrollViewDelegate
-- (void)calendarScrollViewTouchesBegan:(CalendarScrollView *)calendarScrollView
+- (void)calendarScrollViewTouchesBegan:(AZCalendarScrollView *)calendarScrollView
         touches:(NSSet *)touches
         withEvent:(UIEvent *)event {
     _moved = NO;
@@ -951,7 +946,7 @@
     _beginPoint = [beginTouch locationInView:calendarScrollView];
 }
 
-- (void)calendarScrollViewTouchesMoved:(CalendarScrollView *)calendarScrollView
+- (void)calendarScrollViewTouchesMoved:(AZCalendarScrollView *)calendarScrollView
         touches:(NSSet *)touches
         withEvent:(UIEvent *)event {
     _moved = YES;
@@ -978,7 +973,7 @@
     }
 }
 
-- (void)calendarScrollViewTouchesEnded:(CalendarScrollView *)calendarScrollView
+- (void)calendarScrollViewTouchesEnded:(AZCalendarScrollView *)calendarScrollView
         touches:(NSSet *)touches
         withEvent:(UIEvent *)event {
     GridIndex index = [self getGridViewIndex:calendarScrollView touches:touches];
@@ -1046,7 +1041,14 @@
     }
     self.gridScrollView.showsHorizontalScrollIndicator = horizontalIndicator;
     self.gridScrollView.showsVerticalScrollIndicator = verticalIndicator;
+
     return scrollViewHeight;
+}
+
++ (id)viewFromNib {
+    Class selfClass = [self class];
+    return [[[NSBundle bundleForClass:selfClass] loadNibNamed:NSStringFromClass(selfClass) owner:self options:nil]
+                       objectAtIndex:0];
 }
 
 @end

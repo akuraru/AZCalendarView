@@ -1,5 +1,5 @@
 //
-//  CalendarViewFooterView.h
+//  AZCalendarViewFooterView.h
 //  AZCalendar
 //
 //  Created by huajian zhou on 12-4-12.
@@ -11,7 +11,7 @@
 
 @protocol CalendarViewFooterViewDelegate;
 
-@interface CalendarViewFooterView : UIView
+@interface AZCalendarViewFooterView : UIView
 {
     UIButton *_selectedButton;   
     id<CalendarViewFooterViewDelegate> __unsafe_unretained _delegate;
@@ -20,12 +20,12 @@
 @property (nonatomic, unsafe_unretained) id<CalendarViewFooterViewDelegate> delegate;
 @property (nonatomic, strong) IBOutlet UIButton *selectedButton;
 
-+ (CalendarViewFooterView*) viewFromNib;
++ (AZCalendarViewFooterView *) viewFromNib;
 
 @end
 
 @protocol CalendarViewFooterViewDelegate <NSObject>
 @optional
-- (void) calendarViewFooterViewDidSelectPeriod:(CalendarViewFooterView*)footerView periodType:(PeriodType)type;
+- (void) calendarViewFooterViewDidSelectPeriod:(AZCalendarViewFooterView *)footerView periodType:(PeriodType)type;
 @end
 

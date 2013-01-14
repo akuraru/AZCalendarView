@@ -6,7 +6,7 @@
 //  Copyright (c) 2012年 Sword.Zhou. All rights reserved.
 //
 
-#import "CalendarGridView.h"
+#import "AZCalendarGridView.h"
 #import "BaseCalendarDisableGridView.h"
 
 @interface BaseCalendarDisableGridView ()
@@ -31,7 +31,7 @@
     [self.gridButton setTitleColor:grayColor forState:UIControlStateNormal];
 }
 
-+ (CalendarGridView *)viewFromNib {
++ (AZCalendarGridView *)viewFromNib {
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone){
         return [super viewFromNib];
     } else {

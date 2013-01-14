@@ -6,7 +6,7 @@
 
 @implementation BaseCalendarViewFooterView
 
-+ (CalendarViewFooterView *)viewFromNib {
++ (AZCalendarViewFooterView *)viewFromNib {
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone){
         return [super viewFromNib];
     } else {

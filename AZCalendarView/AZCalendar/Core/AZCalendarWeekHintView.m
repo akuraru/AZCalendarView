@@ -3,10 +3,10 @@
 //
 
 
-#import "CalendarWeekHintView.h"
+#import "AZCalendarWeekHintView.h"
 
 
-@implementation CalendarWeekHintView {
+@implementation AZCalendarWeekHintView {
 
 }
 
@@ -14,15 +14,15 @@
 @synthesize dayOfWeek = _dayOfWeek;
 
 
-+ (CalendarWeekHintView *)viewFromNib {
++ (AZCalendarWeekHintView *)viewFromNib {
     Class selfClass = [self class];
     return [[[NSBundle bundleForClass:selfClass] loadNibNamed:NSStringFromClass(selfClass) owner:self options:nil]
                        objectAtIndex:0];
 }
 
-+ (CalendarWeekHintView *)viewFromNibWithIdentifier:(NSString *)identifier {
++ (AZCalendarWeekHintView *)viewFromNibWithIdentifier:(NSString *)identifier {
     NSArray *array = [[NSBundle mainBundle] loadNibNamed:[[self class] description] owner:self options:nil];
-    CalendarWeekHintView *weekHintView = [array objectAtIndex:0];
+    AZCalendarWeekHintView *weekHintView = [array objectAtIndex:0];
     weekHintView.identifier = identifier;
     return weekHintView;
 }

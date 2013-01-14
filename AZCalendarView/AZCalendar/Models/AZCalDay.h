@@ -1,5 +1,5 @@
 //
-//  CalDay.h
+//  AZCalDay.h
 //  AZCalendar
 //
 //  Created by huajian zhou on 12-4-12.
@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "AZCalendarEnum.h"
 
-@interface CalDay : NSObject {
+@interface AZCalDay : NSObject {
 @private
     struct {
         unsigned int month : 4;
@@ -33,11 +33,11 @@
 
 - (NSUInteger)getWeekDay;
 
-- (NSComparisonResult)compare:(CalDay *)calDay;
+- (NSComparisonResult)compare:(AZCalDay *)calDay;
 
-- (CalDay *)nextDay;
+- (AZCalDay *)nextDay;
 
-- (CalDay *)previousDay;
+- (AZCalDay *)previousDay;
 
 - (WeekDay)getMeaningfulWeekDay;
 
@@ -45,6 +45,6 @@
 
 - (BOOL)isToday;
 
-- (BOOL)isEqualToDay:(CalDay *)calDay;
+- (BOOL)isEqualToDay:(AZCalDay *)calDay;
 
 @end

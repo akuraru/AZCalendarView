@@ -65,7 +65,7 @@
     [self setNeedsLayout];
 }
 
-+ (CalendarGridView *)viewFromNib {
++ (AZCalendarGridView *)viewFromNib {
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone){
         return [super viewFromNib];
     } else {

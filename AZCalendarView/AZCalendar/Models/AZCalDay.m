@@ -1,24 +1,24 @@
 //
-//  CalDay.m
+//  AZCalDay.m
 //  AZCalendar
 //
 //  Created by huajian zhou on 12-4-12.
 //  Copyright (c) 2012年 Sword.Zhou. All rights reserved.
 //
 
-#import "CalDay.h"
-#import "DateUtil.h"
+#import "AZCalDay.h"
+#import "AZDateUtil.h"
 
 #define SECOND_OF_A_DAY 24*60*60
 
-@interface CalDay ()
+@interface AZCalDay ()
 
 @property(nonatomic, strong, readwrite) NSDate *date;
 
 - (void)defineDayOfDate;
 @end
 
-@implementation CalDay
+@implementation AZCalDay
 
 
 - (void)setDate:(NSDate *)date {
@@ -77,7 +77,7 @@
     return day.weekDay;
 }
 
-- (NSComparisonResult)compare:(CalDay *)calDay {
+- (NSComparisonResult)compare:(AZCalDay *)calDay {
     NSComparisonResult result = NSOrderedSame;
     if ([self getYear] < [calDay getYear]){
         result = NSOrderedAscending;
@@ -101,15 +101,15 @@
     return result;
 }
 
-- (CalDay *)nextDay {
+- (AZCalDay *)nextDay {
     NSDate *nextDayDate = [self.date dateByAddingTimeInterval:SECOND_OF_A_DAY];
-    CalDay *nextDay = [[CalDay alloc] initWithDate:nextDayDate];
+    AZCalDay *nextDay = [[AZCalDay alloc] initWithDate:nextDayDate];
     return nextDay;
 }
 
-- (CalDay *)previousDay {
+- (AZCalDay *)previousDay {
     NSDate *previousDayDate = [self.date dateByAddingTimeInterval:-1 * SECOND_OF_A_DAY];
-    CalDay *previousDay = [[CalDay alloc] initWithDate:previousDayDate];
+    AZCalDay *previousDay = [[AZCalDay alloc] initWithDate:previousDayDate];
     return previousDay;
 }
 
@@ -157,13 +157,13 @@
 }
 
 - (BOOL)isToday {
-    return ([DateUtil getCurrentYear] == day.year &&
-        [DateUtil getCurrentMonth] == day.month &&
-        [DateUtil getCurrentDay] == day.day);
+    return ([AZDateUtil getCurrentYear] == day.year &&
+        [AZDateUtil getCurrentMonth] == day.month &&
+        [AZDateUtil getCurrentDay] == day.day);
 }
 
-- (BOOL)isEqualToDay:(CalDay *)calDay {
-    NSAssert([calDay isKindOfClass:[CalDay class]], @"Arguments is not CalDay");
+- (BOOL)isEqualToDay:(AZCalDay *)calDay {
+    NSAssert([calDay isKindOfClass:[AZCalDay class]], @"Arguments is not AZCalDay");
     BOOL equal = ([calDay getYear] == day.year &&
         [calDay getMonth] == day.month &&
         [calDay getDay] == day.day);

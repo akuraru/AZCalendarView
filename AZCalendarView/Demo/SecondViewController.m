@@ -9,7 +9,7 @@
 #import <CoreGraphics/CoreGraphics.h>
 #import "SecondViewController.h"
 #import "BaseDataSourceImp.h"
-#import "CalendarView.h"
+#import "AZCalendarView.h"
 #import "BaseCalendarDisableGridView.h"
 #import "BaseCalendarView.h"
 
@@ -27,19 +27,19 @@
 
 - (void)loadView {
     [super loadView];
-    // load CalendarView
+    // load AZCalendarView
     [self loadCalendarView];
 }
 
 // without reloadData
 - (void)updateCalendarView {
     NSArray *visibleGridViews = [self.calendarView visibleGridViews];
-    for (CalendarGridView *gridView in visibleGridViews){
+    for (AZCalendarGridView *gridView in visibleGridViews){
         if ([gridView isKindOfClass:[BaseCalendarDisableGridView class]]){
             continue;// disable cells is not update
         }
         GridIndex gridIndex = [self.calendarView gridIndexForGridView:gridView];
-        CalDay *calDay = [self.calendarView calDayAtGridIndex:gridIndex];
+        AZCalDay *calDay = [self.calendarView calDayAtGridIndex:gridIndex];
         [self.dataSource updateGridView:gridView calendarGridViewForRow:gridIndex.row column:gridIndex.column calDay:calDay];
     }
 }
@@ -56,7 +56,7 @@
     [self.calendarView show];
 }
 
-- (void)calendarView:(CalendarView *)calendarView didSelectDay:(CalDay *)calDay {
+- (void)calendarView:(AZCalendarView *)calendarView didSelectDay:(AZCalDay *)calDay {
     NSLog(@"Selected Date = %@", calDay.date);
 }
 

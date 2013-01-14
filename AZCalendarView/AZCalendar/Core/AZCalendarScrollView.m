@@ -1,15 +1,15 @@
 //
-//  CalendarScrollView.m
+//  AZCalendarScrollView.m
 //  AZCalendar
 //
 //  Created by huajian zhou on 12-5-21.
 //  Copyright (c) 2012年 Sword.Zhou. All rights reserved.
 //
 
-#import "CalendarScrollView.h"
+#import "AZCalendarScrollView.h"
 #import "ITTDebug.h"
 
-@implementation CalendarScrollView
+@implementation AZCalendarScrollView
 
 @synthesize calendarDelegate = _calendarDelegate;
 

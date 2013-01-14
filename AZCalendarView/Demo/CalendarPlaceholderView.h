@@ -4,12 +4,12 @@
 
 
 #import <Foundation/Foundation.h>
-#import "CalendarViewDelegate.h"
+#import "AZCalendarViewDelegate.h"
 
 @class BaseCalendarView;
 
 
-@interface CalendarPlaceholderView : UIView <CalendarViewDelegate>
+@interface CalendarPlaceholderView : UIView <AZCalendarViewDelegate>
 
 @property(nonatomic, strong) BaseCalendarView *calendarView;
 @end

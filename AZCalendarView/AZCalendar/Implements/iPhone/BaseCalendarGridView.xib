@@ -32,17 +32,17 @@
 				<string key="IBProxiedObjectIdentifier">IBFirstResponder</string>
 				<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 			</object>
-			<object class="IBUIView" id="1021038492">
+			<object class="IBUIView" id="555706459">
 				<reference key="NSNextResponder"/>
 				<int key="NSvFlags">292</int>
 				<array class="NSMutableArray" key="NSSubviews">
-					<object class="IBUIButton" id="766203028">
-						<reference key="NSNextResponder" ref="1021038492"/>
+					<object class="IBUIButton" id="142795141">
+						<reference key="NSNextResponder" ref="555706459"/>
 						<int key="NSvFlags">310</int>
 						<string key="NSFrameSize">{45, 35}</string>
-						<reference key="NSSuperview" ref="1021038492"/>
+						<reference key="NSSuperview" ref="555706459"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="66851168"/>
+						<reference key="NSNextKeyView" ref="634860722"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<object class="NSColor" key="IBUIBackgroundColor" id="908078260">
 							<int key="NSColorSpace">3</int>
@@ -84,12 +84,13 @@
 							<int key="NSfFlags">16</int>
 						</object>
 					</object>
-					<object class="IBUIImageView" id="66851168">
-						<reference key="NSNextResponder" ref="1021038492"/>
+					<object class="IBUIImageView" id="634860722">
+						<reference key="NSNextResponder" ref="555706459"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{18, 25}, {10, 10}}</string>
-						<reference key="NSSuperview" ref="1021038492"/>
+						<string key="NSFrame">{{20, 26}, {5, 6}}</string>
+						<reference key="NSSuperview" ref="555706459"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -102,7 +103,7 @@
 				<string key="NSFrameSize">{45, 35}</string>
 				<reference key="NSSuperview"/>
 				<reference key="NSWindow"/>
-				<reference key="NSNextKeyView" ref="766203028"/>
+				<reference key="NSNextKeyView" ref="142795141"/>
 				<string key="NSReuseIdentifierKey">_NS:9</string>
 				<reference key="IBUIBackgroundColor" ref="908078260"/>
 				<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -113,16 +114,16 @@
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">gridButton</string>
-						<reference key="source" ref="1021038492"/>
-						<reference key="destination" ref="766203028"/>
+						<reference key="source" ref="555706459"/>
+						<reference key="destination" ref="142795141"/>
 					</object>
 					<int key="connectionID">37</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">recordImageView</string>
-						<reference key="source" ref="1021038492"/>
-						<reference key="destination" ref="66851168"/>
+						<reference key="source" ref="555706459"/>
+						<reference key="destination" ref="634860722"/>
 					</object>
 					<int key="connectionID">38</int>
 				</object>
@@ -148,23 +149,23 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">34</int>
-						<reference key="object" ref="1021038492"/>
+						<reference key="object" ref="555706459"/>
 						<array class="NSMutableArray" key="children">
-							<reference ref="66851168"/>
-							<reference ref="766203028"/>
+							<reference ref="142795141"/>
+							<reference ref="634860722"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">35</int>
-						<reference key="object" ref="66851168"/>
-						<reference key="parent" ref="1021038492"/>
+						<reference key="object" ref="634860722"/>
+						<reference key="parent" ref="555706459"/>
 						<string key="objectName">Image View - record</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">36</int>
-						<reference key="object" ref="766203028"/>
-						<reference key="parent" ref="1021038492"/>
+						<reference key="object" ref="142795141"/>
+						<reference key="parent" ref="555706459"/>
 						<string key="objectName">grid button</string>
 					</object>
 				</array>
@@ -188,8 +189,16 @@
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
 				<object class="IBPartialClassDescription">
+					<string key="className">AZCalendarGridView</string>
+					<string key="superclassName">UIView</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/AZCalendarGridView.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
 					<string key="className">BaseCalendarGridView</string>
-					<string key="superclassName">CalendarGridView</string>
+					<string key="superclassName">AZCalendarGridView</string>
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="gridButton">UIButton</string>
 						<string key="recordImageView">UIImageView</string>
@@ -207,14 +216,6 @@
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
 						<string key="minorKey">./Classes/BaseCalendarGridView.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">CalendarGridView</string>
-					<string key="superclassName">UIView</string>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/CalendarGridView.h</string>
 					</object>
 				</object>
 			</array>

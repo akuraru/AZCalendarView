@@ -6,9 +6,9 @@
 //  Copyright (c) 2012年 Sword.Zhou. All rights reserved.
 //
 
-#import "CalendarViewHeaderView.h"
+#import "AZCalendarViewHeaderView.h"
 
-@interface BaseCalendarViewHeaderView : CalendarViewHeaderView
+@interface BaseCalendarViewHeaderView : AZCalendarViewHeaderView
 
 - (IBAction)onPreviousMonthButtonTouched:(id)sender;
 

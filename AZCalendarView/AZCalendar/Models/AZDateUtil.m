@@ -1,14 +1,14 @@
 //
-//  DateUtil.m
+//  AZDateUtil.m
 //  AZCalendar
 //
 //  Created by huajian zhou on 12-4-12.
 //  Copyright (c) 2012年 Sword.Zhou. All rights reserved.
 //
 
-#import "DateUtil.h"
+#import "AZDateUtil.h"
 
-@implementation DateUtil
+@implementation AZDateUtil
 
 + (BOOL)isLeapYear:(NSInteger)year {
     NSAssert(!(year < 1), @"invalid year number");
@@ -23,7 +23,7 @@
 }
 
 + (NSInteger)numberOfDaysInMonth:(NSInteger)month {
-    return [DateUtil numberOfDaysInMonth:month year:[DateUtil getCurrentYear]];
+    return [AZDateUtil numberOfDaysInMonth:month year:[AZDateUtil getCurrentYear]];
 }
 
 + (NSInteger)getCurrentYear {
@@ -73,7 +73,7 @@
      * feb
      */
     if (month == 1){
-        if ([DateUtil isLeapYear:year]){
+        if ([AZDateUtil isLeapYear:year]){
             days = 29;
         }
         else {

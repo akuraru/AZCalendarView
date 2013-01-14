@@ -1,5 +1,5 @@
 //
-//  DateUtil.h
+//  AZDateUtil.h
 //  AZCalendar
 //
 //  Created by huajian zhou on 12-4-12.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface DateUtil : NSObject
+@interface AZDateUtil : NSObject
 
 + (BOOL)isLeapYear:(NSInteger)year;
 

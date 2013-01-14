@@ -1,14 +1,14 @@
 //
-//  AZAppDelegate.m
+//  AppDelegate.m
 //  AZCalendarView
 //
 //  Created by azu on 01/11/13.
 //  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
 //
 
-#import "AZAppDelegate.h"
+#import "AppDelegate.h"
 
-@implementation AZAppDelegate
+@implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {

@@ -1,5 +1,5 @@
 //
-//  AZAppDelegate.h
+//  AppDelegate.h
 //  AZCalendarView
 //
 //  Created by azu on 01/11/13.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AZAppDelegate : UIResponder <UIApplicationDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 

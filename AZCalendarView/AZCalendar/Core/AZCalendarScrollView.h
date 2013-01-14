@@ -1,5 +1,5 @@
 //
-//  CalendarScrollView.h
+//  AZCalendarScrollView.h
 //  AZCalendar
 //
 //  Created by huajian zhou on 12-5-21.
@@ -10,7 +10,7 @@
 
 @protocol CalendarScrollViewDelegate;
 
-@interface CalendarScrollView : UIScrollView {
+@interface AZCalendarScrollView : UIScrollView {
     id <CalendarScrollViewDelegate> __unsafe_unretained _calendarDelegate;
 }
 
@@ -21,15 +21,15 @@
 @protocol CalendarScrollViewDelegate <NSObject>
 
 @optional
-- (void)calendarScrollViewTouchesBegan:(CalendarScrollView *)calendarScrollView touches:(NSSet *)touches
+- (void)calendarScrollViewTouchesBegan:(AZCalendarScrollView *)calendarScrollView touches:(NSSet *)touches
         withEvent:(UIEvent *)event;
 
-- (void)calendarScrollViewTouchesMoved:(CalendarScrollView *)calendarScrollView touches:(NSSet *)touches
+- (void)calendarScrollViewTouchesMoved:(AZCalendarScrollView *)calendarScrollView touches:(NSSet *)touches
         withEvent:(UIEvent *)event;
 
-- (void)calendarScrollViewTouchesEnded:(CalendarScrollView *)calendarScrollView touches:(NSSet *)touches
+- (void)calendarScrollViewTouchesEnded:(AZCalendarScrollView *)calendarScrollView touches:(NSSet *)touches
         withEvent:(UIEvent *)event;
 
-- (void)calendarScrollViewTouchesCancelled:(CalendarScrollView *)calendarScrollView touches:(NSSet *)touches
+- (void)calendarScrollViewTouchesCancelled:(AZCalendarScrollView *)calendarScrollView touches:(NSSet *)touches
         withEvent:(UIEvent *)event;
 @end

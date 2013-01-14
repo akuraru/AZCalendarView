@@ -6,9 +6,9 @@
 //  Copyright (c) 2012年 Sword.Zhou. All rights reserved.
 //
 
-#import "CalendarViewFooterView.h"
+#import "AZCalendarViewFooterView.h"
 
-@interface BaseCalendarViewFooterView : CalendarViewFooterView {
+@interface BaseCalendarViewFooterView : AZCalendarViewFooterView {
 
 }
 @end

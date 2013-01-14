@@ -16,7 +16,7 @@ NS_ENUM(NSUInteger, AZ_DayOfWeek){
     Saturday,
 };
 
-@interface CalendarWeekHintView : UIView {
+@interface AZCalendarWeekHintView : UIView {
 }
 
 @property(nonatomic, strong) NSString *identifier;
@@ -24,8 +24,8 @@ NS_ENUM(NSUInteger, AZ_DayOfWeek){
 @property(nonatomic) enum AZ_DayOfWeek dayOfWeek;
 
 
-+ (CalendarWeekHintView *)viewFromNib;
++ (AZCalendarWeekHintView *)viewFromNib;
 
-+ (CalendarWeekHintView *)viewFromNibWithIdentifier:(NSString *)identifier;
++ (AZCalendarWeekHintView *)viewFromNibWithIdentifier:(NSString *)identifier;
 
 @end

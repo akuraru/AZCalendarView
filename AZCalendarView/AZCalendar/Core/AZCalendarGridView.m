@@ -1,14 +1,14 @@
 //
-//  CalendarGridView.m
+//  AZCalendarGridView.m
 //  AZCalendar
 //
 //  Created by huajian zhou on 12-4-12.
 //  Copyright (c) 2012年 Sword.Zhou. All rights reserved.
 //
 
-#import "CalendarGridView.h"
+#import "AZCalendarGridView.h"
 
-@implementation CalendarGridView
+@implementation AZCalendarGridView
 
 @synthesize row = _row;
 @synthesize column = _column;
@@ -50,14 +50,14 @@
     // Drawing code
 }
 */
-+ (CalendarGridView *)viewFromNib {
++ (AZCalendarGridView *)viewFromNib {
     Class selfClass = [self class];
     return [[[NSBundle bundleForClass:selfClass] loadNibNamed:NSStringFromClass(selfClass) owner:self options:nil]
                        objectAtIndex:0];
 }
 
-+ (CalendarGridView *)viewFromNibWithIdentifier:(NSString *)identifier {
-    CalendarGridView *gridView = [self viewFromNib];
++ (AZCalendarGridView *)viewFromNibWithIdentifier:(NSString *)identifier {
+    AZCalendarGridView *gridView = [self viewFromNib];
     gridView.identifier = identifier;
     return gridView;
 }

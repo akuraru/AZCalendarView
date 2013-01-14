@@ -32,7 +32,7 @@
     [self.weekHintCellButton setBackgroundImage:[UIImage imageNamed:@"datecell.png"] forState:UIControlStateNormal];
 }
 
-+ (CalendarWeekHintView *)viewFromNib {
++ (AZCalendarWeekHintView *)viewFromNib {
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone){
         return [super viewFromNib];
     } else {

@@ -1,5 +1,5 @@
 //
-//  CalendarView.h
+//  AZCalendarView.h
 //  AZCalendar
 //
 //  Created by huajian zhou on 12-4-12.
@@ -8,17 +8,17 @@
 
 #import <UIKit/UIKit.h>
 #import "AZCalendarEnum.h"
-#import "CalendarViewDataSource.h"
-#import "CalendarViewDelegate.h"
-#import "CalendarGridView.h"
-#import "CalendarViewHeaderView.h"
-#import "CalendarViewFooterView.h"
-#import "CalendarScrollView.h"
+#import "AZCalendarViewDataSource.h"
+#import "AZCalendarViewDelegate.h"
+#import "AZCalendarGridView.h"
+#import "AZCalendarViewHeaderView.h"
+#import "AZCalendarViewFooterView.h"
+#import "AZCalendarScrollView.h"
 
-@class CalDay;
-@class CalMonth;
+@class AZCalDay;
+@class AZCalMonth;
 
-@interface CalendarView : UIView <CalendarGridViewDelegate,
+@interface AZCalendarView : UIView <CalendarGridViewDelegate,
     CalendarViewHeaderViewDelegate, CalendarViewFooterViewDelegate, CalendarScrollViewDelegate> {
 
     bool **_selectedIndicesMatrix;
@@ -41,32 +41,31 @@
     NSDate *_minimumDate;
     NSDate *_maximumDate;
 
-    CalDay *_minimumDay;
-    CalDay *_maximumDay;
-    CalDay *_selectedDay;
+    AZCalDay *_minimumDay;
+    AZCalDay *_maximumDay;
+    AZCalDay *_selectedDay;
 
-    CalMonth *_calMonth;
+    AZCalMonth *_calMonth;
 
-    CalendarViewHeaderView *_calendarHeaderView;
-    CalendarViewFooterView *_calendarFooterView;
+    AZCalendarViewHeaderView *_calendarHeaderView;
+    AZCalendarViewFooterView *_calendarFooterView;
 
     NSMutableArray *_gridViewsArray;                   //two-dimensional array
-    // =>
     NSMutableArray *_monthGridViewsArray;
     NSMutableDictionary *_recycledGridSetDic;
 
-    id <CalendarViewDataSource> _dataSource;
-    id <CalendarViewDelegate> _delegate;
+    id <AZCalendarViewDataSource> _dataSource;
+    id <AZCalendarViewDelegate> _delegate;
 }
 
-
+// for override
 @property(strong, nonatomic) UIView *weekHintView;
 @property(strong, nonatomic) UIView *headerView;
-@property(strong, nonatomic) CalendarScrollView *gridScrollView;
+@property(strong, nonatomic) AZCalendarScrollView *gridScrollView;
 @property(strong, nonatomic) UIView *footerView;
 
-@property(nonatomic, strong) id <CalendarViewDataSource> dataSource;
-@property(nonatomic, strong) id <CalendarViewDelegate> delegate;
+@property(nonatomic, strong) id <AZCalendarViewDataSource> dataSource;
+@property(nonatomic, strong) id <AZCalendarViewDelegate> delegate;
 
 @property(nonatomic, assign) PeriodType selectedPeriod;
 /*
@@ -89,7 +88,7 @@
 /*
  * The selected calDay on calendar view
  */
-@property(strong, nonatomic, readonly) CalDay *selectedDay;
+@property(strong, nonatomic, readonly) AZCalDay *selectedDay;
 /*
  * The selected date on calendar view
  */
@@ -110,8 +109,8 @@
 @property(nonatomic) CGFloat swipeTimeInterval;
 
 /*
-    if CalendarView height(actually) < BaseCalendarView.xib height,
-        BaseCalendarView.xib height = CalendarView height(actually)
+    if AZCalendarView height(actually) < BaseCalendarView.xib height,
+        BaseCalendarView.xib height = AZCalendarView height(actually)
 
     default : YES
  */
@@ -138,20 +137,26 @@
 
 - (void)show;
 
+/*
+    - (void) show + addSubView
+ */
 - (void)showInView:(UIView *)view;
 
 - (void)hide:(BOOL)animated;
 
 - (void)hide;
 
-// reload DataSource - call <CalendarViewDataSource> methods
+/*
+    reload DataSource
+    call <AZCalendarViewDataSource> methods
+*/
 - (void)reloadData;
 
-- (CalDay *)calDayAtGridIndex:(GridIndex)gridIndex;
+- (AZCalDay *)calDayAtGridIndex:(GridIndex)gridIndex;
 
-- (GridIndex)gridIndexForGridView:(CalendarGridView *)gridView;
+- (GridIndex)gridIndexForGridView:(AZCalendarGridView *)gridView;
 
-- (CalendarGridView *)dequeueCalendarGridViewWithIdentifier:(NSString *)identifier;
+- (AZCalendarGridView *)dequeueCalendarGridViewWithIdentifier:(NSString *)identifier;
 
 + (id)viewFromNib;
 

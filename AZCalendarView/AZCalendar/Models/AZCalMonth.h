@@ -1,5 +1,5 @@
 //
-//  CalMonth.h
+//  AZCalMonth.h
 //  AZCalendar
 //
 //  Created by huajian zhou on 12-4-12.
@@ -10,9 +10,9 @@
 
 #define NUMBER_OF_DAYS_IN_WEEK  7
 
-@class CalDay;
+@class AZCalDay;
 
-@interface CalMonth : NSObject {
+@interface AZCalMonth : NSObject {
 @private
 //    NSUInteger  _month;
     struct {
@@ -20,7 +20,7 @@
         unsigned int year : 15;
         unsigned int numberOfDays : 16;
     } mon;
-    CalDay *_today;
+    AZCalDay *_today;
     NSMutableArray *daysOfMonth;
 }
 
@@ -34,17 +34,17 @@
 
 - (id)initWithMonth:(NSUInteger)month year:(NSUInteger)year day:(NSUInteger)day;
 
-- (CalDay *)calDayAtDay:(NSUInteger)day;
+- (AZCalDay *)calDayAtDay:(NSUInteger)day;
 
-- (CalDay *)firstDay;
+- (AZCalDay *)firstDay;
 
-- (CalDay *)lastDay;
+- (AZCalDay *)lastDay;
 
 - (NSUInteger)getYear;
 
 - (NSUInteger)getMonth;
 
-- (CalMonth *)nextMonth;
+- (AZCalMonth *)nextMonth;
 
-- (CalMonth *)previousMonth;
+- (AZCalMonth *)previousMonth;
 @end
