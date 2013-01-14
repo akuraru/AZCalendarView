@@ -15,8 +15,7 @@
 #import "BaseCalendarWeekHintView.h"
 #import "AZCalendarView.h"
 
-@implementation BaseDataSourceImp {
-}
+@implementation BaseDataSourceImp
 
 #pragma mark - dataSource delegate
 - (void)gridViewWillLayout:(AZCalendarView *)calendarView month:(AZCalMonth *)calMonth {
@@ -31,9 +30,6 @@
         column:(NSInteger)column calDay:(AZCalDay *)calDay {
 
     BaseCalendarGridView *baseGridView = (BaseCalendarGridView *) gridView;
-
-    NSInteger randomRow = arc4random() % 5;
-    NSInteger randomColumn = arc4random() % 7;
     baseGridView.recordImageView.hidden = (row != 0);
 }
 
@@ -48,7 +44,7 @@
 }
 
 - (AZCalendarGridView *)calendarView:(AZCalendarView *)calendarView calendarGridViewForRow:(NSInteger)row
-                      column:(NSInteger)column calDay:(AZCalDay *)calDay {
+                        column:(NSInteger)column calDay:(AZCalDay *)calDay {
     static NSString *identifier = @"BaseCalendarGridView";
     AZCalendarGridView *gridView = [calendarView dequeueCalendarGridViewWithIdentifier:identifier];
     if (!gridView){
@@ -60,7 +56,7 @@
 }
 
 - (AZCalendarGridView *)calendarView:(AZCalendarView *)calendarView calendarDisableGridViewForRow:(NSInteger)row
-                      column:(NSInteger)column calDay:(AZCalDay *)calDay {
+                        column:(NSInteger)column calDay:(AZCalDay *)calDay {
     static NSString *identifier = @"BaseCalendarDisableGridView";
     AZCalendarGridView *gridView = [calendarView dequeueCalendarGridViewWithIdentifier:identifier];
     if (!gridView){
