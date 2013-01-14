@@ -13,12 +13,10 @@
 		17B5C0A3390509E35F85E419 /* AZCalDay.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B5C57D0B4B878B4B7F7985 /* AZCalDay.m */; };
 		17B5C0C4F06B40CD574AA126 /* AZCalendarWeekHintView.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B5C7D39A27AFE80728645E /* AZCalendarWeekHintView.m */; };
 		17B5C105F123DC7CC9F7D65F /* BaseCalendarViewHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B5C98D0432C39FEC13BD30 /* BaseCalendarViewHeaderView.m */; };
-		17B5C11E7946F2EF70AA0F12 /* icon_drugcheck_calendar_on@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 17B5C12F72888CEB0CEF1D3D /* icon_drugcheck_calendar_on@2x.png */; };
 		17B5C16D5EFDE65F4E3235C2 /* datecell-diable.png in Resources */ = {isa = PBXBuildFile; fileRef = 17B5C69E8ECBC9EB8B0FF121 /* datecell-diable.png */; };
 		17B5C170EFE2F726B2AE921B /* BaseCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B5CFAF3A82851D18062AB9 /* BaseCalendarView.m */; };
 		17B5C2831CDB7DB06499945F /* BaseCalendarGridView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17B5C2E7E71CAAC6BF4399C5 /* BaseCalendarGridView.xib */; };
 		17B5C29671ACEEF8DD14EB18 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17B5CA3FDA66408C11396135 /* CoreGraphics.framework */; };
-		17B5C2E31F4372B022472C46 /* icon_drugcheck_calendar_on.png in Resources */ = {isa = PBXBuildFile; fileRef = 17B5C6FC9D39604C589E32EA /* icon_drugcheck_calendar_on.png */; };
 		17B5C2F4FBBE5E45E0123758 /* BaseCalendarWeekHintView_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17B5C581DDE081179FD5F89C /* BaseCalendarWeekHintView_iPad.xib */; };
 		17B5C337026BCC439CD13A05 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B5CDDD19B55D321DD2DBC4 /* AppDelegate.m */; };
 		17B5C398C625B70DC35884A1 /* BaseCalendarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17B5C6A6FC8D2D5B8CA2CE0A /* BaseCalendarView.xib */; };
@@ -48,12 +46,10 @@
 		17B5C91447BE9180E3E81670 /* date_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 17B5C9F90FBB5D6FE409398B /* date_selected.png */; };
 		17B5C939FE11395C3897F96D /* datecell-diable@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 17B5CA92A8F795323C4A7B2D /* datecell-diable@2x.png */; };
 		17B5CA42012CEDFB273E24E1 /* BaseCalendarDisableGridView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17B5CFF318E3E2B7792FE9D7 /* BaseCalendarDisableGridView.xib */; };
-		17B5CA4F806BCEE12055CBE2 /* icon_drugcheck_calendar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 17B5CA2978BDCAC4CDC2BBF5 /* icon_drugcheck_calendar@2x.png */; };
 		17B5CABCD32861B5F15CFC2E /* AZDateUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B5CA9B0C9DFA3BECC83AE9 /* AZDateUtil.m */; };
 		17B5CB1668481F33387B3987 /* AZCalendarViewHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B5C7B67E84AF7F5390CFE5 /* AZCalendarViewHeaderView.m */; };
 		17B5CB49BDA32DF02EFD9ECF /* arrow_left.png in Resources */ = {isa = PBXBuildFile; fileRef = 17B5C56872010B60D5001E53 /* arrow_left.png */; };
 		17B5CB57F84BBB7F6333218B /* AZCalendarGridView.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B5CBB18DE5BD8E2F4F4D8A /* AZCalendarGridView.m */; };
-		17B5CB61D420E946DA66B48E /* icon_drugcheck_calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = 17B5C81A1857C611EB7BC3C2 /* icon_drugcheck_calendar.png */; };
 		17B5CC00F71C4EBDD02CC285 /* BaseCalendarDisableGridView_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17B5C2CCABB3F47C482F7BE5 /* BaseCalendarDisableGridView_iPad.xib */; };
 		17B5CC08BC50FFCFAB94549B /* BaseCalendarGridView_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17B5CF6C048574C73B8B835B /* BaseCalendarGridView_iPad.xib */; };
 		17B5CD0557E8D3EF9F52CC7E /* BaseCalendarViewFooterView_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17B5C68C8EFA6A8B84B4FEC7 /* BaseCalendarViewFooterView_iPad.xib */; };
@@ -73,7 +69,6 @@
 		17B5C090404A17F79284E3F0 /* AZDateUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AZDateUtil.h; sourceTree = "<group>"; };
 		17B5C0BA6630D470AF61F580 /* BaseCalendarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseCalendarView.h; sourceTree = "<group>"; };
 		17B5C1298189836ED24EAE5D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		17B5C12F72888CEB0CEF1D3D /* icon_drugcheck_calendar_on@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_drugcheck_calendar_on@2x.png"; sourceTree = "<group>"; };
 		17B5C26512539C71CCBDA9EE /* datecell@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "datecell@2x.png"; sourceTree = "<group>"; };
 		17B5C26705D2EBEA9D5F335B /* AZCalendarScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AZCalendarScrollView.h; sourceTree = "<group>"; };
 		17B5C2B31EF243CCBFA05006 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -111,12 +106,10 @@
 		17B5C68C8EFA6A8B84B4FEC7 /* BaseCalendarViewFooterView_iPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BaseCalendarViewFooterView_iPad.xib; sourceTree = "<group>"; };
 		17B5C69E8ECBC9EB8B0FF121 /* datecell-diable.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "datecell-diable.png"; sourceTree = "<group>"; };
 		17B5C6A6FC8D2D5B8CA2CE0A /* BaseCalendarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BaseCalendarView.xib; sourceTree = "<group>"; };
-		17B5C6FC9D39604C589E32EA /* icon_drugcheck_calendar_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_drugcheck_calendar_on.png; sourceTree = "<group>"; };
 		17B5C722AEFB3A1291E22B83 /* AZCalMonth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AZCalMonth.h; sourceTree = "<group>"; };
 		17B5C77C4E9200EAB7C9E820 /* AZCalendarView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AZCalendarView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17B5C7B67E84AF7F5390CFE5 /* AZCalendarViewHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AZCalendarViewHeaderView.m; sourceTree = "<group>"; };
 		17B5C7D39A27AFE80728645E /* AZCalendarWeekHintView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AZCalendarWeekHintView.m; sourceTree = "<group>"; };
-		17B5C81A1857C611EB7BC3C2 /* icon_drugcheck_calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_drugcheck_calendar.png; sourceTree = "<group>"; };
 		17B5C821B425AA532B217B5A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		17B5C89542FBE9742B198A7A /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		17B5C8DF4E075A20C8695866 /* icon_record_calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_record_calendar.png; sourceTree = "<group>"; };
@@ -125,7 +118,6 @@
 		17B5C98D0432C39FEC13BD30 /* BaseCalendarViewHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseCalendarViewHeaderView.m; sourceTree = "<group>"; };
 		17B5C9D9ED4AC71780A7B0E7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		17B5C9F90FBB5D6FE409398B /* date_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = date_selected.png; sourceTree = "<group>"; };
-		17B5CA2978BDCAC4CDC2BBF5 /* icon_drugcheck_calendar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_drugcheck_calendar@2x.png"; sourceTree = "<group>"; };
 		17B5CA3FDA66408C11396135 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		17B5CA92A8F795323C4A7B2D /* datecell-diable@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "datecell-diable@2x.png"; sourceTree = "<group>"; };
 		17B5CA9B0C9DFA3BECC83AE9 /* AZDateUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AZDateUtil.m; sourceTree = "<group>"; };
@@ -199,10 +191,6 @@
 				17B5CA92A8F795323C4A7B2D /* datecell-diable@2x.png */,
 				17B5CE0C066675F398C07C6B /* datecell.png */,
 				17B5C26512539C71CCBDA9EE /* datecell@2x.png */,
-				17B5C81A1857C611EB7BC3C2 /* icon_drugcheck_calendar.png */,
-				17B5CA2978BDCAC4CDC2BBF5 /* icon_drugcheck_calendar@2x.png */,
-				17B5C6FC9D39604C589E32EA /* icon_drugcheck_calendar_on.png */,
-				17B5C12F72888CEB0CEF1D3D /* icon_drugcheck_calendar_on@2x.png */,
 				17B5C8DF4E075A20C8695866 /* icon_record_calendar.png */,
 				17B5C4743CE8A79333BDE714 /* icon_record_calendar@2x.png */,
 				17B5CF24DD353BAF17C4D56C /* todaycell.png */,
@@ -429,10 +417,6 @@
 				17B5C939FE11395C3897F96D /* datecell-diable@2x.png in Resources */,
 				17B5C4A2EED7D744FCF223DE /* datecell.png in Resources */,
 				17B5C516627ED9B6031392DE /* datecell@2x.png in Resources */,
-				17B5CB61D420E946DA66B48E /* icon_drugcheck_calendar.png in Resources */,
-				17B5CA4F806BCEE12055CBE2 /* icon_drugcheck_calendar@2x.png in Resources */,
-				17B5C2E31F4372B022472C46 /* icon_drugcheck_calendar_on.png in Resources */,
-				17B5C11E7946F2EF70AA0F12 /* icon_drugcheck_calendar_on@2x.png in Resources */,
 				17B5CD5AF09500DBEE83B99C /* icon_record_calendar.png in Resources */,
 				17B5CDFDB024C9933ABF69A7 /* icon_record_calendar@2x.png in Resources */,
 				17B5C813950AC9037416F40B /* todaycell.png in Resources */,
