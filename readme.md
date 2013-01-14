@@ -13,6 +13,16 @@ Calendar library has similar delegate methods to a `UITableView`
 * allow `allowsMultipleSelection`
 * doesn't support landscape yet...
 
+
+## Installation
+
+* D&D AZCalendar to your project
+
+    ├── AZCalendar
+    │   ├── Core
+    │   ├── Implements
+    │   └── Models
+
 # Usage
 
 
