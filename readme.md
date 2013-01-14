@@ -27,14 +27,14 @@ calendarView.delegate = self;// <AZCalendarViewDelegate>
 
 ## Calendar Parts
 
-You need to implement below:
+You need to implement below(DEMO):
 
-* BaseCalendarDisableGridView.xib disable GridView
-* BaseCalendarGridView.xib GridView
-* BaseCalendarViewFooterView.xib Calendar Footer(DEMO doesn't include...)
-* BaseCalendarViewHeaderView.xib Calendar Header(move next/prev month)
-* BaseCalendarWeekHintView.xib day of the week(Mon,Tsu...)View
-* BaseCalendar.xib each parts outlets
+* BaseCalendarDisableGridView.xib (`AZCalendarGridView` subclass) disable GridView
+* BaseCalendarGridView.xib (`AZCalendarGridView` subclass)  GridView
+* BaseCalendarViewFooterView.xib (`AZCalendarViewFooterView` subclass) Calendar Footer(DEMO doesn't include...)
+* BaseCalendarViewHeaderView.xib (`AZCalendarViewHeaderView` subclass)Calendar Header(move next/prev month)
+* BaseCalendarWeekHintView.xib (`AZCalendarWeekHintView` subclass)day of the week(Mon,Tsu...)View
+* BaseCalendar.xib (`AZCalendarView` subclass )each parts outlets)
 
 ## BaseDataSourceImp is implemented of `<AZCalendarViewDataSource>` .
 
