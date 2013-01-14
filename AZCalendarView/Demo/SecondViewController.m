@@ -6,7 +6,6 @@
 //  Copyright (c) 2012年 plusr. All rights reserved.
 //
 
-#import <CoreGraphics/CoreGraphics.h>
 #import "SecondViewController.h"
 #import "BaseDataSourceImp.h"
 #import "AZCalendarView.h"
@@ -15,7 +14,7 @@
 
 @interface SecondViewController ()
 
-@property (nonatomic,strong)BaseDataSourceImp *dataSource;
+@property(nonatomic, strong) BaseDataSourceImp *dataSource;
 @end
 
 @implementation SecondViewController
@@ -64,6 +63,7 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];

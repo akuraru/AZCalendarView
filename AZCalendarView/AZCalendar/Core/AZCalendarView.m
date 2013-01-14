@@ -260,7 +260,7 @@
 - (CGFloat)widthForGridView {
     CGFloat totalWidth = self.bounds.size.width;
     CGFloat width;
-    if (self.useGridWidthFormNib){
+    if (self.decideGridWidthAccordingToXib){
         width = self.gridSize.width;
     }else{
         width= totalWidth / NUMBER_OF_DAYS_IN_WEEK;
