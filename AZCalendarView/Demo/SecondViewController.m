@@ -8,13 +8,13 @@
 
 #import "SecondViewController.h"
 #import "BaseDataSourceImp.h"
-#import "CalendarView.h"
+#import "AZCalendarView.h"
 #import "BaseCalendarDisableGridView.h"
 #import "BaseCalendarView.h"
 
 @interface SecondViewController ()
 
-@property (nonatomic,strong)BaseDataSourceImp *dataSource;
+@property(nonatomic, strong) BaseDataSourceImp *dataSource;
 @end
 
 @implementation SecondViewController
@@ -26,19 +26,19 @@
 
 - (void)loadView {
     [super loadView];
-    // load CalendarView
+    // load AZCalendarView
     [self loadCalendarView];
 }
 
 // without reloadData
 - (void)updateCalendarView {
     NSArray *visibleGridViews = [self.calendarView visibleGridViews];
-    for (CalendarGridView *gridView in visibleGridViews){
+    for (AZCalendarGridView *gridView in visibleGridViews){
         if ([gridView isKindOfClass:[BaseCalendarDisableGridView class]]){
             continue;// disable cells is not update
         }
         GridIndex gridIndex = [self.calendarView gridIndexForGridView:gridView];
-        CalDay *calDay = [self.calendarView calDayAtGridIndex:gridIndex];
+        AZCalDay *calDay = [self.calendarView calDayAtGridIndex:gridIndex];
         [self.dataSource updateGridView:gridView calendarGridViewForRow:gridIndex.row column:gridIndex.column calDay:calDay];
     }
 }
@@ -47,8 +47,7 @@
     if (self.calendarView == nil){
         self.dataSource = [[BaseDataSourceImp alloc] init];
         self.calendarView = [BaseCalendarView viewFromNib];
-        self.calendarView.frame = CGRectMake(0, 0, 320, self.calendarView.frame.size.height);
-        self.calendarView.gridSize = CGSizeMake(45.5, 35);
+        self.calendarView.frame = CGRectMake(0, 0, self.view.bounds.size.width, self.calendarView.frame.size.height);
         self.calendarView.dataSource = self.dataSource;
         self.calendarView.delegate = self;
         [self.view addSubview:self.calendarView];
@@ -56,7 +55,7 @@
     [self.calendarView show];
 }
 
-- (void)calendarView:(CalendarView *)calendarView didSelectDay:(CalDay *)calDay {
+- (void)calendarView:(AZCalendarView *)calendarView didSelectDay:(AZCalDay *)calDay {
     NSLog(@"Selected Date = %@", calDay.date);
 }
 
@@ -64,6 +63,7 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];

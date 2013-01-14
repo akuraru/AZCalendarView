@@ -6,11 +6,9 @@
 //  Copyright (c) 2012年 Sword.Zhou. All rights reserved.
 //
 
-#import "CalendarGridView.h"
+#import "AZCalendarGridView.h"
 
-@interface BaseCalendarGridView : CalendarGridView
-@property (weak, nonatomic) IBOutlet UIImageView *morningImageView;
-@property (weak, nonatomic) IBOutlet UIImageView *noonImageView;
-@property (weak, nonatomic) IBOutlet UIImageView *nightImageView;
-@property (weak, nonatomic) IBOutlet UIImageView *recordImageView;
+@interface BaseCalendarGridView : AZCalendarGridView
+
+@property(weak, nonatomic) IBOutlet UIImageView *recordImageView;
 @end

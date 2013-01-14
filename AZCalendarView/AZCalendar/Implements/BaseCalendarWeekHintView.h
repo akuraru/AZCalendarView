@@ -4,10 +4,10 @@
 
 
 #import <Foundation/Foundation.h>
-#import "CalendarWeekHintView.h"
+#import "AZCalendarWeekHintView.h"
 
 
-@interface BaseCalendarWeekHintView : CalendarWeekHintView {
+@interface BaseCalendarWeekHintView : AZCalendarWeekHintView {
 }
 
 @property(weak, nonatomic) IBOutlet UIButton *weekHintCellButton;

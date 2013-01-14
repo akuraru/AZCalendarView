@@ -9,15 +9,15 @@
 // UIView Subclass implement of AZCalendarView
 
 #import <UIKit/UIKit.h>
-#import "CalendarViewDelegate.h"
+#import "AZCalendarViewDelegate.h"
 
-@class CalendarView;
-@class AZCalendarBaseView;
+@class AZCalendarView;
+@class CalendarPlaceholderView;
 @class BaseCalendarView;
 @class BaseDataSourceImp;
 
-@interface FirstViewController : UIViewController <CalendarViewDelegate>
+@interface FirstViewController : UIViewController <AZCalendarViewDelegate>
 
-@property(weak, nonatomic) IBOutlet AZCalendarBaseView *calendarBaseView;
+@property(weak, nonatomic) IBOutlet CalendarPlaceholderView *calendarBaseView;
 @property(nonatomic, strong) BaseCalendarView *calendarView;
 @end

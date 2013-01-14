@@ -7,11 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "CalendarViewDataSource.h"
+#import "AZCalendarViewDataSource.h"
 
-@interface BaseDataSourceImp : NSObject <CalendarViewDataSource>
+@interface BaseDataSourceImp : NSObject <AZCalendarViewDataSource>
 
-- (void)updateGridView:(CalendarGridView *)gridView calendarGridViewForRow:(NSInteger)row column:(NSInteger)column
-        calDay:(CalDay *)calDay;
+- (void)updateGridView:(AZCalendarGridView *)gridView calendarGridViewForRow:(NSInteger)row column:(NSInteger)column
+        calDay:(AZCalDay *)calDay;
 
 @end

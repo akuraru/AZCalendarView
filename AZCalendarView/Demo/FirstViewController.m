@@ -7,8 +7,8 @@
 //
 
 #import "FirstViewController.h"
-#import "CalendarView.h"
-#import "AZCalendarBaseView.h"
+#import "AZCalendarView.h"
+#import "CalendarPlaceholderView.h"
 #import "BaseCalendarDisableGridView.h"
 #import "BaseDataSourceImp.h"
 #import "BaseCalendarView.h"
@@ -27,23 +27,24 @@
     self.calendarView = self.calendarBaseView.calendarView;
     self.calendarView.dataSource = self.dataSource;
     self.calendarView.delegate = self;
+    [self.calendarView setNeedsLayout];
 }
 
 
 // without reloadData - update "only" GridView , faster than reloadData.
 - (void)updateCalendarView {
     NSArray *visibleGridViews = [self.calendarView visibleGridViews];
-    for (CalendarGridView *gridView in visibleGridViews){
+    for (AZCalendarGridView *gridView in visibleGridViews){
         if ([gridView isKindOfClass:[BaseCalendarDisableGridView class]]){
             continue;// disable cells is not update
         }
         GridIndex gridIndex = [self.calendarView gridIndexForGridView:gridView];
-        CalDay *calDay = [self.calendarView calDayAtGridIndex:gridIndex];
+        AZCalDay *calDay = [self.calendarView calDayAtGridIndex:gridIndex];
         [self.dataSource updateGridView:gridView calendarGridViewForRow:gridIndex.row column:gridIndex.column calDay:calDay];
     }
 }
 
-- (void)calendarView:(CalendarView *)calendarView didSelectDay:(CalDay *)calDay {
+- (void)calendarView:(AZCalendarView *)calendarView didSelectDay:(AZCalDay *)calDay {
     NSLog(@"Selected Date = %@", calDay);
 }
 

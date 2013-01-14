@@ -6,8 +6,8 @@
 //  Copyright (c) 2012年 Sword.Zhou. All rights reserved.
 //
 
-#import "CalendarGridView.h"
+#import "AZCalendarGridView.h"
 
-@interface BaseCalendarDisableGridView : CalendarGridView
+@interface BaseCalendarDisableGridView : AZCalendarGridView
 
 @end

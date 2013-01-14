@@ -4,14 +4,14 @@
 
 
 #import <Foundation/Foundation.h>
-#import "CalendarView.h"
+#import "AZCalendarView.h"
 
 
-@interface BaseCalendarView : CalendarView
+@interface BaseCalendarView : AZCalendarView
 // override views via IBOutlet
 @property(strong, nonatomic) IBOutlet UIView *headerView;
 @property(strong, nonatomic) IBOutlet UIView *weekHintView;
-@property(strong, nonatomic) IBOutlet CalendarScrollView *gridScrollView;
+@property(strong, nonatomic) IBOutlet AZCalendarScrollView *gridScrollView;
 @property(strong, nonatomic) IBOutlet UIView *footerView;
 
 @end
