@@ -95,7 +95,7 @@ calendarView.delegate = self;// <AZCalendarViewDelegate>
 @end
 ```
 
-See AZUCalendar/DEMO for details.
+See `AZCalendar/DEMO` and `AZCalendar.h` for details.
 
 # Acknowledgment
 
