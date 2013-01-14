@@ -57,6 +57,7 @@
     [super viewWillAppear:animated];
 
     [self updateCalendarView];// when Navigation back etc..
+    // or use [self.calendarView reloadData];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
