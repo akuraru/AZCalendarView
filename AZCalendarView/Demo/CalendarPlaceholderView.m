@@ -18,8 +18,7 @@
     self.calendarView = [BaseCalendarView viewFromNib];
     self.calendarView.frame = CGRectMake(0, 0, self.bounds.size.width, self.calendarView.frame.size.height);
     self.calendarView.adjustsScrollViewToFitHeight = NO;// doesn't resize scrollVIew
-    self.calendarView.alwaysSameHeight = NO;// doesn't resize scrollVIew
-
+    self.calendarView.autoAddNewRowOfCalendar = NO;// doesn't resize scrollVIew
     [self.calendarView showInView:self];// or [self.view addSubView:self.calendarView];
 }
 

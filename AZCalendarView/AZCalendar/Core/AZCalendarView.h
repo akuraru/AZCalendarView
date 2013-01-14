@@ -116,12 +116,16 @@
  */
 @property(nonatomic, assign) BOOL adjustsScrollViewToFitHeight;
 /*
-    if YES, Calendar Height is always same height.
-    if Calendar row is 4 , automatic adding 5th row
+    if YES, gridScrollView height is always same height - When Calendar row is 4 , automatic adding 5th row.
     default : YES
  */
-@property(nonatomic, assign) BOOL alwaysSameHeight;
-
+@property(nonatomic, assign) BOOL autoAddNewRowOfCalendar;
+/*
+    decide gridView & weekHintView Width from gridSize of Xib.
+    cf.  gridSize of Xib is gridSize property.
+    default : NO , width is self.bound.size.width / NUMBER_OF_DAYS_IN_WEEK;
+ */
+@property(nonatomic) BOOL decideGridWidthAccordingToXib;
 /*
     All Calendar GridViews
     visibleGridViews is include BaseCalendarGridView and BaseCalendarDisableGridView

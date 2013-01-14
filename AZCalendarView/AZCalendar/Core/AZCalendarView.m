@@ -5,6 +5,7 @@
 //  Created by huajian zhou on 12-4-12.
 //  Copyright (c) 2012年 Sword.Zhou. All rights reserved.
 
+#import <CoreGraphics/CoreGraphics.h>
 #import "AZCalendarView.h"
 #import "AZCalMonth.h"
 #import "ITTDebug.h"
@@ -107,7 +108,7 @@
 - (void)initParameters {
     _firstLayout = YES;
     _adjustsScrollViewToFitHeight = YES;
-    _alwaysSameHeight = YES;
+    _autoAddNewRowOfCalendar = YES;
     _selectedPeriod = PeriodTypeAllDay;
     _previousSelectedIndex.row = NSNotFound;
     _previousSelectedIndex.column = NSNotFound;
@@ -255,14 +256,24 @@
     return _gridSize;
 }
 
+
+- (CGFloat)widthForGridView {
+    CGFloat totalWidth = self.bounds.size.width;
+    CGFloat width;
+    if (self.useGridWidthFormNib){
+        width = self.gridSize.width;
+    }else{
+        width= totalWidth / NUMBER_OF_DAYS_IN_WEEK;
+    }
+    return width;
+}
+
 - (GridIndex)getGridViewIndex:(AZCalendarScrollView *)calendarScrollView touches:(NSSet *)touches {
     UITouch *touch = [touches anyObject];
     CGPoint location = [touch locationInView:calendarScrollView];
     GridIndex index;
     NSInteger row = (location.y - MARGIN_TOP + PADDING_VERTICAL) / (PADDING_VERTICAL + self.gridSize.height);
-    CGFloat totalWidth = self.bounds.size.width;
-    CGFloat width = totalWidth / NUMBER_OF_DAYS_IN_WEEK;
-//    CGFloat width = self.gridSize.width;
+    CGFloat width = [self widthForGridView];
     NSInteger column = (location.x - MARGIN_LEFT + PADDING_HORIZONTAL) / (PADDING_HORIZONTAL + width);
     ITTDINFO(@"row %d column %d", row, column);
     index.row = row;
@@ -548,7 +559,7 @@
     }
     // always five rows
     // TODO : more more smart code...
-    if (self.alwaysSameHeight && row < 5){
+    if (self.autoAddNewRowOfCalendar && row < 5){
         NSInteger currentLow = row + 1;
         NSInteger needLoopCount = 5 - row;// 1,2...
         AZCalMonth *nextMonth = [_calMonth nextMonth];
@@ -756,8 +767,7 @@
                 [subview removeFromSuperview];
             }
         }
-        CGFloat totalWidth = self.bounds.size.width;
-        CGFloat width = totalWidth / NUMBER_OF_DAYS_IN_WEEK;
+        CGFloat width = [self widthForGridView];
         CGFloat marginX = 0;
         NSArray *titles = [self findWeekTitles];
         for (NSInteger i = 0 ;i < NUMBER_OF_DAYS_IN_WEEK ;i++){
