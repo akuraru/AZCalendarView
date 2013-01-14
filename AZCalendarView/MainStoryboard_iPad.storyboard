@@ -43,7 +43,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="GBh-2X-OH8" customClass="CalendarPlaceholderView">
-                                <rect key="frame" x="0.0" y="0.0" width="768" height="746"/>
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="894"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
