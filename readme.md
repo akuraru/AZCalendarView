@@ -15,7 +15,6 @@ Calendar library has similar delegate methods to a `UITableView`
 * doesn't support landscape yet...
 
 
-
 ## Support
 
 * ARC
