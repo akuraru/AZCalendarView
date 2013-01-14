@@ -3,7 +3,8 @@
 Calendar library has similar delegate methods to a `UITableView`
 
 
-<img src="http://monosnap.com/image/AXX2qrYVUnYppCHxRshyehlre.png">
+![calendar](https://raw.github.com/azu/AZCalendarView/develop/images/Screenshot_Calendar.png)
+
 
 # Breakdown
 
