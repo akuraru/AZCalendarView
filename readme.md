@@ -23,7 +23,18 @@ calendarView.delegate = self;// <AZCalendarViewDelegate>
 [self.view addSubview:calendarView];
 ```
 
-* BaseDataSourceImp is implemented of `<AZCalendarViewDataSource>` .
+## Calendar Parts
+
+You need to implement below:
+
+* BaseCalendarDisableGridView.xib disable GridView
+* BaseCalendarGridView.xib GridView
+* BaseCalendarViewFooterView.xib Calendar Footer(DEMO doesn't include...)
+* BaseCalendarViewHeaderView.xib Calendar Header(move next/prev month)
+* BaseCalendarWeekHintView.xib day of the week(Mon,Tsu...)View
+* BaseCalendar.xib each parts outlets
+
+## BaseDataSourceImp is implemented of `<AZCalendarViewDataSource>` .
 
 ``` objc
 
