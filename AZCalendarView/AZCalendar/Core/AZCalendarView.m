@@ -5,7 +5,6 @@
 //  Created by huajian zhou on 12-4-12.
 //  Copyright (c) 2012年 Sword.Zhou. All rights reserved.
 
-#import <CoreGraphics/CoreGraphics.h>
 #import "AZCalendarView.h"
 #import "AZCalMonth.h"
 #import "AZCalendarWeekHintView.h"
@@ -261,8 +260,8 @@
     CGFloat width;
     if (self.decideGridWidthAccordingToXib){
         width = self.gridSize.width;
-    }else{
-        width= totalWidth / NUMBER_OF_DAYS_IN_WEEK;
+    } else {
+        width = totalWidth / NUMBER_OF_DAYS_IN_WEEK;
     }
     return width;
 }
@@ -274,7 +273,6 @@
     NSInteger row = (location.y - MARGIN_TOP + PADDING_VERTICAL) / (PADDING_VERTICAL + self.gridSize.height);
     CGFloat width = [self widthForGridView];
     NSInteger column = (location.x - MARGIN_LEFT + PADDING_HORIZONTAL) / (PADDING_HORIZONTAL + width);
-    AZLog(@"row %d column %d", row, column);
     index.row = row;
     index.column = column;
     return index;
@@ -364,10 +362,8 @@
     NSUInteger day = [self getMonthDayAtRow:row column:column];
     if (day < 1 || day > _calMonth.days){
         selectedEnable = NO;
-    }
-    else {
+    } else {
         AZCalDay *calDay = [_calMonth calDayAtDay:day];
-        AZLog(@"day is %d", day);
         if ([self isEarlierMinimumDay:calDay] || [self isAfterMaximumDay:calDay]){
             selectedEnable = NO;
         }
@@ -426,7 +422,6 @@
             after = YES;
         }
     }
-    AZLog(@"calday %@ is after maximuday %@ %d", calDay, _maximumDay, after);
     return after;
 
 }
@@ -861,8 +856,7 @@
 - (NSArray *)selectedDateArray {
     if (!_allowsMultipleSelection){
         return nil;
-    }
-    else {
+    } else {
         NSUInteger rows = [self getRows];
         NSMutableArray *selectedDates = [NSMutableArray array];
         for (NSUInteger row = 0 ;row < rows ;row++){
