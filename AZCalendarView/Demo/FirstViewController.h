@@ -1,6 +1,6 @@
 //
 //  FirstViewController.h
-//  ZHJCalendar-sample
+//  AZCalendar-sample
 //
 //  Created by azu on 12/12/14.
 //  Copyright (c) 2012年 plusr. All rights reserved.
@@ -9,13 +9,15 @@
 // UIView Subclass implement of AZCalendarView
 
 #import <UIKit/UIKit.h>
-#import "CalendarViewDelegate.h"
+#import "AZCalendarViewDelegate.h"
 
-@class CalendarView;
-@class AZCalendarBaseView;
+@class AZCalendarView;
+@class CalendarPlaceholderView;
+@class BaseCalendarView;
+@class BaseDataSourceImp;
 
-@interface FirstViewController : UIViewController <CalendarViewDelegate>
+@interface FirstViewController : UIViewController <AZCalendarViewDelegate>
 
-@property (weak, nonatomic) IBOutlet AZCalendarBaseView *calendarBaseView;
-@property (nonatomic,strong)CalendarView *calendarView;
+@property(weak, nonatomic) IBOutlet CalendarPlaceholderView *calendarBaseView;
+@property(nonatomic, strong) BaseCalendarView *calendarView;
 @end

@@ -10,19 +10,19 @@
 		17B5C0268877DB505F1C8B10 /* BaseCalendarWeekHintView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17B5CF6D7940B44518C2A3C7 /* BaseCalendarWeekHintView.xib */; };
 		17B5C04905A122C0C2DB7EC3 /* BaseCalendarViewHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17B5C989534BAD577B772C27 /* BaseCalendarViewHeaderView.xib */; };
 		17B5C059F9270A4B8CA5EDA9 /* todaycell@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 17B5CB31C9B07480E6F6B270 /* todaycell@2x.png */; };
-		17B5C0A3390509E35F85E419 /* CalDay.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B5C57D0B4B878B4B7F7985 /* CalDay.m */; };
-		17B5C0C4F06B40CD574AA126 /* CalendarWeekHintView.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B5C7D39A27AFE80728645E /* CalendarWeekHintView.m */; };
+		17B5C0A3390509E35F85E419 /* AZCalDay.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B5C57D0B4B878B4B7F7985 /* AZCalDay.m */; };
+		17B5C0C4F06B40CD574AA126 /* AZCalendarWeekHintView.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B5C7D39A27AFE80728645E /* AZCalendarWeekHintView.m */; };
 		17B5C105F123DC7CC9F7D65F /* BaseCalendarViewHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B5C98D0432C39FEC13BD30 /* BaseCalendarViewHeaderView.m */; };
-		17B5C11E7946F2EF70AA0F12 /* icon_drugcheck_calendar_on@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 17B5C12F72888CEB0CEF1D3D /* icon_drugcheck_calendar_on@2x.png */; };
 		17B5C16D5EFDE65F4E3235C2 /* datecell-diable.png in Resources */ = {isa = PBXBuildFile; fileRef = 17B5C69E8ECBC9EB8B0FF121 /* datecell-diable.png */; };
+		17B5C170EFE2F726B2AE921B /* BaseCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B5CFAF3A82851D18062AB9 /* BaseCalendarView.m */; };
 		17B5C2831CDB7DB06499945F /* BaseCalendarGridView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17B5C2E7E71CAAC6BF4399C5 /* BaseCalendarGridView.xib */; };
 		17B5C29671ACEEF8DD14EB18 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17B5CA3FDA66408C11396135 /* CoreGraphics.framework */; };
-		17B5C2E31F4372B022472C46 /* icon_drugcheck_calendar_on.png in Resources */ = {isa = PBXBuildFile; fileRef = 17B5C6FC9D39604C589E32EA /* icon_drugcheck_calendar_on.png */; };
-		17B5C337026BCC439CD13A05 /* AZAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B5CDDD19B55D321DD2DBC4 /* AZAppDelegate.m */; };
-		17B5C398C625B70DC35884A1 /* CalendarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17B5C6A6FC8D2D5B8CA2CE0A /* CalendarView.xib */; };
+		17B5C2F4FBBE5E45E0123758 /* BaseCalendarWeekHintView_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17B5C581DDE081179FD5F89C /* BaseCalendarWeekHintView_iPad.xib */; };
+		17B5C337026BCC439CD13A05 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B5CDDD19B55D321DD2DBC4 /* AppDelegate.m */; };
+		17B5C398C625B70DC35884A1 /* BaseCalendarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17B5C6A6FC8D2D5B8CA2CE0A /* BaseCalendarView.xib */; };
 		17B5C3E7C41A78341A8290BE /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 17B5C89542FBE9742B198A7A /* Default@2x.png */; };
 		17B5C457E7C57EEDA2658A74 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B5C4C85051F99D5343EE90 /* SecondViewController.m */; };
-		17B5C485C5792B7E133FDCD1 /* CalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B5C3ED9D010BC87343ED7B /* CalendarView.m */; };
+		17B5C485C5792B7E133FDCD1 /* AZCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B5C3ED9D010BC87343ED7B /* AZCalendarView.m */; };
 		17B5C4A2EED7D744FCF223DE /* datecell.png in Resources */ = {isa = PBXBuildFile; fileRef = 17B5CE0C066675F398C07C6B /* datecell.png */; };
 		17B5C4E94635C31802FD4A6E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17B5C821B425AA532B217B5A /* UIKit.framework */; };
 		17B5C4FEA1F8CF43D394CB4C /* arrow_right.png in Resources */ = {isa = PBXBuildFile; fileRef = 17B5C4950390C85D07C593CB /* arrow_right.png */; };
@@ -31,14 +31,14 @@
 		17B5C5D8F92A1251FC6CDAA9 /* arrow_left@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 17B5C446E3E322D56C04F7EC /* arrow_left@2x.png */; };
 		17B5C5F7C011123C980CB73C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17B5C9D9ED4AC71780A7B0E7 /* Foundation.framework */; };
 		17B5C652DE1ED2007D7A96F3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B5CCC3B0DE2764AE1D27B2 /* main.m */; };
-		17B5C66199C5C6F59C597CED /* AZCalendarBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B5C01CBA823761AD8616BC /* AZCalendarBaseView.m */; };
-		17B5C6C873B332790E96B47A /* CalMonth.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B5CE21168A5A6F94E54B83 /* CalMonth.m */; };
+		17B5C66199C5C6F59C597CED /* CalendarPlaceholderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B5C01CBA823761AD8616BC /* CalendarPlaceholderView.m */; };
+		17B5C6C873B332790E96B47A /* AZCalMonth.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B5CE21168A5A6F94E54B83 /* AZCalMonth.m */; };
 		17B5C6F9DD0D1662FD19B7AC /* BaseCalendarDisableGridView.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B5C46E81D94558F805BA28 /* BaseCalendarDisableGridView.m */; };
-		17B5C709C1F2C7439FDDFE77 /* TrainCalendarDataSourceImp.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B5C6E3164D05ADF81A66B8 /* TrainCalendarDataSourceImp.m */; };
 		17B5C7755A27CE74CD1A3911 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 17B5C51AA926E4DF4089B7C3 /* Default-568h@2x.png */; };
 		17B5C77AC5487239E4E7DFDB /* BaseCalendarGridView.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B5CB1BD9F8817F145B7D8F /* BaseCalendarGridView.m */; };
-		17B5C7E89F3946C803A0DE43 /* CalendarViewFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B5C3A906DAB191110BFDF8 /* CalendarViewFooterView.m */; };
+		17B5C7E89F3946C803A0DE43 /* AZCalendarViewFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B5C3A906DAB191110BFDF8 /* AZCalendarViewFooterView.m */; };
 		17B5C813950AC9037416F40B /* todaycell.png in Resources */ = {isa = PBXBuildFile; fileRef = 17B5CF24DD353BAF17C4D56C /* todaycell.png */; };
+		17B5C8188119C709F6E6A127 /* BaseCalendarViewHeaderView_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17B5C4EB665A5FBF22A7675A /* BaseCalendarViewHeaderView_iPad.xib */; };
 		17B5C840823E8E335E949C8B /* BaseCalendarWeekHintView.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B5C3F5F32961E778F88490 /* BaseCalendarWeekHintView.m */; };
 		17B5C8524A78386EA515349D /* BaseDataSourceImp.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B5C63E87A4BA6A206D2AC6 /* BaseDataSourceImp.m */; };
 		17B5C86720B5C7B6086C5B7E /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17B5C4422161468B449133FA /* MainStoryboard.storyboard */; };
@@ -46,39 +46,41 @@
 		17B5C91447BE9180E3E81670 /* date_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 17B5C9F90FBB5D6FE409398B /* date_selected.png */; };
 		17B5C939FE11395C3897F96D /* datecell-diable@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 17B5CA92A8F795323C4A7B2D /* datecell-diable@2x.png */; };
 		17B5CA42012CEDFB273E24E1 /* BaseCalendarDisableGridView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17B5CFF318E3E2B7792FE9D7 /* BaseCalendarDisableGridView.xib */; };
-		17B5CA4F806BCEE12055CBE2 /* icon_drugcheck_calendar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 17B5CA2978BDCAC4CDC2BBF5 /* icon_drugcheck_calendar@2x.png */; };
-		17B5CABCD32861B5F15CFC2E /* DateUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B5CA9B0C9DFA3BECC83AE9 /* DateUtil.m */; };
-		17B5CB1668481F33387B3987 /* CalendarViewHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B5C7B67E84AF7F5390CFE5 /* CalendarViewHeaderView.m */; };
+		17B5CABCD32861B5F15CFC2E /* AZDateUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B5CA9B0C9DFA3BECC83AE9 /* AZDateUtil.m */; };
+		17B5CB1668481F33387B3987 /* AZCalendarViewHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B5C7B67E84AF7F5390CFE5 /* AZCalendarViewHeaderView.m */; };
 		17B5CB49BDA32DF02EFD9ECF /* arrow_left.png in Resources */ = {isa = PBXBuildFile; fileRef = 17B5C56872010B60D5001E53 /* arrow_left.png */; };
-		17B5CB57F84BBB7F6333218B /* CalendarGridView.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B5CBB18DE5BD8E2F4F4D8A /* CalendarGridView.m */; };
-		17B5CB61D420E946DA66B48E /* icon_drugcheck_calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = 17B5C81A1857C611EB7BC3C2 /* icon_drugcheck_calendar.png */; };
-		17B5CD0557E8D3EF9F52CC7E /* BaseCalendarViewFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17B5C68C8EFA6A8B84B4FEC7 /* BaseCalendarViewFooterView.xib */; };
+		17B5CB57F84BBB7F6333218B /* AZCalendarGridView.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B5CBB18DE5BD8E2F4F4D8A /* AZCalendarGridView.m */; };
+		17B5CC00F71C4EBDD02CC285 /* BaseCalendarDisableGridView_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17B5C2CCABB3F47C482F7BE5 /* BaseCalendarDisableGridView_iPad.xib */; };
+		17B5CC08BC50FFCFAB94549B /* BaseCalendarGridView_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17B5CF6C048574C73B8B835B /* BaseCalendarGridView_iPad.xib */; };
+		17B5CD0557E8D3EF9F52CC7E /* BaseCalendarViewFooterView_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17B5C68C8EFA6A8B84B4FEC7 /* BaseCalendarViewFooterView_iPad.xib */; };
 		17B5CD5AF09500DBEE83B99C /* icon_record_calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = 17B5C8DF4E075A20C8695866 /* icon_record_calendar.png */; };
-		17B5CD7B15404BE19E874C70 /* CalendarScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B5C8FE72DA1313BF1A1999 /* CalendarScrollView.m */; };
+		17B5CD7B15404BE19E874C70 /* AZCalendarScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B5C8FE72DA1313BF1A1999 /* AZCalendarScrollView.m */; };
 		17B5CD8663E18076A7F53634 /* BaseCalendarViewFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B5CDC20DC0097E99EF6E42 /* BaseCalendarViewFooterView.m */; };
 		17B5CDFDB024C9933ABF69A7 /* icon_record_calendar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 17B5C4743CE8A79333BDE714 /* icon_record_calendar@2x.png */; };
 		17B5CF4EDBC469D6239B992C /* date_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 17B5C3778CA94D9ECC97FCF1 /* date_selected@2x.png */; };
 		17B5CF6C505A95E27557C693 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 17B5C6802AF1CD1427D07827 /* Default.png */; };
+		7310627316A30E36001F632B /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7310627216A30E36001F632B /* MainStoryboard_iPad.storyboard */; };
+		7310629A16A310C9001F632B /* BaseCalendarView_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7310629916A310C9001F632B /* BaseCalendarView_iPad.xib */; };
 		7399ED0D169FB44100C0DCF0 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7399ED0C169FB44100C0DCF0 /* FirstViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		17B5C01CBA823761AD8616BC /* AZCalendarBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AZCalendarBaseView.m; sourceTree = "<group>"; };
-		17B5C090404A17F79284E3F0 /* DateUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateUtil.h; sourceTree = "<group>"; };
-		17B5C121AF1AF399B4F1609E /* TrainCalendarDataSourceImp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrainCalendarDataSourceImp.h; sourceTree = "<group>"; };
+		17B5C01CBA823761AD8616BC /* CalendarPlaceholderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarPlaceholderView.m; sourceTree = "<group>"; };
+		17B5C090404A17F79284E3F0 /* AZDateUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AZDateUtil.h; sourceTree = "<group>"; };
+		17B5C0BA6630D470AF61F580 /* BaseCalendarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseCalendarView.h; sourceTree = "<group>"; };
 		17B5C1298189836ED24EAE5D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		17B5C12F72888CEB0CEF1D3D /* icon_drugcheck_calendar_on@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_drugcheck_calendar_on@2x.png"; sourceTree = "<group>"; };
 		17B5C26512539C71CCBDA9EE /* datecell@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "datecell@2x.png"; sourceTree = "<group>"; };
-		17B5C26705D2EBEA9D5F335B /* CalendarScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarScrollView.h; sourceTree = "<group>"; };
+		17B5C26705D2EBEA9D5F335B /* AZCalendarScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AZCalendarScrollView.h; sourceTree = "<group>"; };
 		17B5C2B31EF243CCBFA05006 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		17B5C2CCABB3F47C482F7BE5 /* BaseCalendarDisableGridView_iPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BaseCalendarDisableGridView_iPad.xib; sourceTree = "<group>"; };
 		17B5C2E7E71CAAC6BF4399C5 /* BaseCalendarGridView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BaseCalendarGridView.xib; sourceTree = "<group>"; };
 		17B5C310DC18AE41FEE42D54 /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		17B5C33E603C5A6F12E3D5C7 /* CalDay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalDay.h; sourceTree = "<group>"; };
+		17B5C33E603C5A6F12E3D5C7 /* AZCalDay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AZCalDay.h; sourceTree = "<group>"; };
 		17B5C3778CA94D9ECC97FCF1 /* date_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "date_selected@2x.png"; sourceTree = "<group>"; };
 		17B5C38219605E5F5348B57F /* arrow_right@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow_right@2x.png"; sourceTree = "<group>"; };
-		17B5C399A0DE873E64AF8D77 /* CalendarViewFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarViewFooterView.h; sourceTree = "<group>"; };
-		17B5C3A906DAB191110BFDF8 /* CalendarViewFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarViewFooterView.m; sourceTree = "<group>"; };
-		17B5C3ED9D010BC87343ED7B /* CalendarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarView.m; sourceTree = "<group>"; };
+		17B5C399A0DE873E64AF8D77 /* AZCalendarViewFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AZCalendarViewFooterView.h; sourceTree = "<group>"; };
+		17B5C3A906DAB191110BFDF8 /* AZCalendarViewFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AZCalendarViewFooterView.m; sourceTree = "<group>"; };
+		17B5C3ED9D010BC87343ED7B /* AZCalendarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AZCalendarView.m; sourceTree = "<group>"; };
 		17B5C3F5F32961E778F88490 /* BaseCalendarWeekHintView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseCalendarWeekHintView.m; sourceTree = "<group>"; };
 		17B5C446E3E322D56C04F7EC /* arrow_left@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow_left@2x.png"; sourceTree = "<group>"; };
 		17B5C44DB0089A161D62871C /* BaseCalendarDisableGridView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseCalendarDisableGridView.h; sourceTree = "<group>"; };
@@ -86,61 +88,63 @@
 		17B5C4743CE8A79333BDE714 /* icon_record_calendar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_record_calendar@2x.png"; sourceTree = "<group>"; };
 		17B5C4950390C85D07C593CB /* arrow_right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow_right.png; sourceTree = "<group>"; };
 		17B5C4C85051F99D5343EE90 /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		17B5C4EB665A5FBF22A7675A /* BaseCalendarViewHeaderView_iPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BaseCalendarViewHeaderView_iPad.xib; sourceTree = "<group>"; };
 		17B5C51AA926E4DF4089B7C3 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		17B5C54AE7B2DAB5D3D8414A /* BaseCalendarViewFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseCalendarViewFooterView.h; sourceTree = "<group>"; };
 		17B5C56872010B60D5001E53 /* arrow_left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow_left.png; sourceTree = "<group>"; };
-		17B5C57D0B4B878B4B7F7985 /* CalDay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalDay.m; sourceTree = "<group>"; };
-		17B5C5928F647174E5614CF4 /* ITTDebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITTDebug.h; sourceTree = "<group>"; };
-		17B5C59997E5193B2F293513 /* AZAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AZAppDelegate.h; sourceTree = "<group>"; };
-		17B5C5BD147241BE6A490359 /* CalendarViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarViewDelegate.h; sourceTree = "<group>"; };
-		17B5C6192D47CE5D1132BC5F /* AZCalendarBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AZCalendarBaseView.h; sourceTree = "<group>"; };
+		17B5C57D0B4B878B4B7F7985 /* AZCalDay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AZCalDay.m; sourceTree = "<group>"; };
+		17B5C581DDE081179FD5F89C /* BaseCalendarWeekHintView_iPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BaseCalendarWeekHintView_iPad.xib; sourceTree = "<group>"; };
+		17B5C59997E5193B2F293513 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		17B5C5BD147241BE6A490359 /* AZCalendarViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AZCalendarViewDelegate.h; sourceTree = "<group>"; };
+		17B5C6192D47CE5D1132BC5F /* CalendarPlaceholderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarPlaceholderView.h; sourceTree = "<group>"; };
+		17B5C625773147F72E1BBAE1 /* readme.md */ = {isa = PBXFileReference; lastKnownFileType = file.md; path = readme.md; sourceTree = "<group>"; };
 		17B5C629E3111C5CA7B2E043 /* BaseDataSourceImp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseDataSourceImp.h; sourceTree = "<group>"; };
 		17B5C63E87A4BA6A206D2AC6 /* BaseDataSourceImp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseDataSourceImp.m; sourceTree = "<group>"; };
-		17B5C66134ED7A9AA806BF9A /* CalendarViewHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarViewHeaderView.h; sourceTree = "<group>"; };
+		17B5C66134ED7A9AA806BF9A /* AZCalendarViewHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AZCalendarViewHeaderView.h; sourceTree = "<group>"; };
 		17B5C6802AF1CD1427D07827 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		17B5C68C8EFA6A8B84B4FEC7 /* BaseCalendarViewFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BaseCalendarViewFooterView.xib; sourceTree = "<group>"; };
+		17B5C68C8EFA6A8B84B4FEC7 /* BaseCalendarViewFooterView_iPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BaseCalendarViewFooterView_iPad.xib; sourceTree = "<group>"; };
 		17B5C69E8ECBC9EB8B0FF121 /* datecell-diable.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "datecell-diable.png"; sourceTree = "<group>"; };
-		17B5C6A6FC8D2D5B8CA2CE0A /* CalendarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarView.xib; sourceTree = "<group>"; };
-		17B5C6E3164D05ADF81A66B8 /* TrainCalendarDataSourceImp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrainCalendarDataSourceImp.m; sourceTree = "<group>"; };
-		17B5C6FC9D39604C589E32EA /* icon_drugcheck_calendar_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_drugcheck_calendar_on.png; sourceTree = "<group>"; };
-		17B5C722AEFB3A1291E22B83 /* CalMonth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalMonth.h; sourceTree = "<group>"; };
+		17B5C6A6FC8D2D5B8CA2CE0A /* BaseCalendarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BaseCalendarView.xib; sourceTree = "<group>"; };
+		17B5C722AEFB3A1291E22B83 /* AZCalMonth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AZCalMonth.h; sourceTree = "<group>"; };
 		17B5C77C4E9200EAB7C9E820 /* AZCalendarView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AZCalendarView.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		17B5C7B67E84AF7F5390CFE5 /* CalendarViewHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarViewHeaderView.m; sourceTree = "<group>"; };
-		17B5C7D39A27AFE80728645E /* CalendarWeekHintView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarWeekHintView.m; sourceTree = "<group>"; };
-		17B5C81A1857C611EB7BC3C2 /* icon_drugcheck_calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_drugcheck_calendar.png; sourceTree = "<group>"; };
+		17B5C7B67E84AF7F5390CFE5 /* AZCalendarViewHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AZCalendarViewHeaderView.m; sourceTree = "<group>"; };
+		17B5C7D39A27AFE80728645E /* AZCalendarWeekHintView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AZCalendarWeekHintView.m; sourceTree = "<group>"; };
 		17B5C821B425AA532B217B5A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		17B5C89542FBE9742B198A7A /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		17B5C8DF4E075A20C8695866 /* icon_record_calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_record_calendar.png; sourceTree = "<group>"; };
-		17B5C8FE72DA1313BF1A1999 /* CalendarScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarScrollView.m; sourceTree = "<group>"; };
+		17B5C8FE72DA1313BF1A1999 /* AZCalendarScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AZCalendarScrollView.m; sourceTree = "<group>"; };
 		17B5C989534BAD577B772C27 /* BaseCalendarViewHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BaseCalendarViewHeaderView.xib; sourceTree = "<group>"; };
 		17B5C98D0432C39FEC13BD30 /* BaseCalendarViewHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseCalendarViewHeaderView.m; sourceTree = "<group>"; };
 		17B5C9D9ED4AC71780A7B0E7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		17B5C9F90FBB5D6FE409398B /* date_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = date_selected.png; sourceTree = "<group>"; };
-		17B5CA2978BDCAC4CDC2BBF5 /* icon_drugcheck_calendar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_drugcheck_calendar@2x.png"; sourceTree = "<group>"; };
 		17B5CA3FDA66408C11396135 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		17B5CA92A8F795323C4A7B2D /* datecell-diable@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "datecell-diable@2x.png"; sourceTree = "<group>"; };
-		17B5CA9B0C9DFA3BECC83AE9 /* DateUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateUtil.m; sourceTree = "<group>"; };
-		17B5CAA2996ABA88A6329E44 /* CalendarWeekHintView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarWeekHintView.h; sourceTree = "<group>"; };
+		17B5CA9B0C9DFA3BECC83AE9 /* AZDateUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AZDateUtil.m; sourceTree = "<group>"; };
+		17B5CAA2996ABA88A6329E44 /* AZCalendarWeekHintView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AZCalendarWeekHintView.h; sourceTree = "<group>"; };
 		17B5CB15EB2B0E60E8FF87D8 /* AZCalendarView-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AZCalendarView-Prefix.pch"; sourceTree = "<group>"; };
 		17B5CB1BD9F8817F145B7D8F /* BaseCalendarGridView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseCalendarGridView.m; sourceTree = "<group>"; };
 		17B5CB31C9B07480E6F6B270 /* todaycell@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "todaycell@2x.png"; sourceTree = "<group>"; };
-		17B5CBB18DE5BD8E2F4F4D8A /* CalendarGridView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarGridView.m; sourceTree = "<group>"; };
+		17B5CBB18DE5BD8E2F4F4D8A /* AZCalendarGridView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AZCalendarGridView.m; sourceTree = "<group>"; };
 		17B5CC50AE2E8BDFE4DF2B2A /* AZCalendarEnum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AZCalendarEnum.h; sourceTree = "<group>"; };
 		17B5CCC3B0DE2764AE1D27B2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		17B5CD11FD42D95CE8E09BAA /* CalendarGridView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarGridView.h; sourceTree = "<group>"; };
+		17B5CD11FD42D95CE8E09BAA /* AZCalendarGridView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AZCalendarGridView.h; sourceTree = "<group>"; };
 		17B5CD3AE77A76B6D76B5795 /* BaseCalendarGridView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseCalendarGridView.h; sourceTree = "<group>"; };
 		17B5CD6A07A986B06755723E /* BaseCalendarWeekHintView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseCalendarWeekHintView.h; sourceTree = "<group>"; };
-		17B5CD9FF511439D82380F46 /* CalendarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarView.h; sourceTree = "<group>"; };
+		17B5CD9FF511439D82380F46 /* AZCalendarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AZCalendarView.h; sourceTree = "<group>"; };
 		17B5CDC20DC0097E99EF6E42 /* BaseCalendarViewFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseCalendarViewFooterView.m; sourceTree = "<group>"; };
-		17B5CDDD19B55D321DD2DBC4 /* AZAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AZAppDelegate.m; sourceTree = "<group>"; };
+		17B5CDDD19B55D321DD2DBC4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		17B5CE0C066675F398C07C6B /* datecell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = datecell.png; sourceTree = "<group>"; };
-		17B5CE21168A5A6F94E54B83 /* CalMonth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalMonth.m; sourceTree = "<group>"; };
+		17B5CE21168A5A6F94E54B83 /* AZCalMonth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AZCalMonth.m; sourceTree = "<group>"; };
 		17B5CEB94987AEAE11D8ABD2 /* BaseCalendarViewHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseCalendarViewHeaderView.h; sourceTree = "<group>"; };
-		17B5CEFF4BB4801667E19D75 /* CalendarViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarViewDataSource.h; sourceTree = "<group>"; };
+		17B5CEFF4BB4801667E19D75 /* AZCalendarViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AZCalendarViewDataSource.h; sourceTree = "<group>"; };
 		17B5CF24DD353BAF17C4D56C /* todaycell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = todaycell.png; sourceTree = "<group>"; };
+		17B5CF6C048574C73B8B835B /* BaseCalendarGridView_iPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BaseCalendarGridView_iPad.xib; sourceTree = "<group>"; };
 		17B5CF6D7940B44518C2A3C7 /* BaseCalendarWeekHintView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BaseCalendarWeekHintView.xib; sourceTree = "<group>"; };
 		17B5CF8BD87AD6E3E16F78F1 /* AZCalendarView-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = "AZCalendarView-Info.plist"; sourceTree = "<group>"; };
+		17B5CFAF3A82851D18062AB9 /* BaseCalendarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseCalendarView.m; sourceTree = "<group>"; };
 		17B5CFF318E3E2B7792FE9D7 /* BaseCalendarDisableGridView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BaseCalendarDisableGridView.xib; sourceTree = "<group>"; };
+		7310627216A30E36001F632B /* MainStoryboard_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+		7310629916A310C9001F632B /* BaseCalendarView_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BaseCalendarView_iPad.xib; sourceTree = "<group>"; };
 		7399ED0B169FB44100C0DCF0 /* FirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
 		7399ED0C169FB44100C0DCF0 /* FirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -162,12 +166,12 @@
 		17B5C0098D87CCFFD1CAD91D /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				17B5C33E603C5A6F12E3D5C7 /* CalDay.h */,
-				17B5C57D0B4B878B4B7F7985 /* CalDay.m */,
-				17B5C722AEFB3A1291E22B83 /* CalMonth.h */,
-				17B5CE21168A5A6F94E54B83 /* CalMonth.m */,
-				17B5C090404A17F79284E3F0 /* DateUtil.h */,
-				17B5CA9B0C9DFA3BECC83AE9 /* DateUtil.m */,
+				17B5C33E603C5A6F12E3D5C7 /* AZCalDay.h */,
+				17B5C57D0B4B878B4B7F7985 /* AZCalDay.m */,
+				17B5C722AEFB3A1291E22B83 /* AZCalMonth.h */,
+				17B5CE21168A5A6F94E54B83 /* AZCalMonth.m */,
+				17B5C090404A17F79284E3F0 /* AZDateUtil.h */,
+				17B5CA9B0C9DFA3BECC83AE9 /* AZDateUtil.m */,
 				17B5CC50AE2E8BDFE4DF2B2A /* AZCalendarEnum.h */,
 			);
 			path = Models;
@@ -186,10 +190,6 @@
 				17B5CA92A8F795323C4A7B2D /* datecell-diable@2x.png */,
 				17B5CE0C066675F398C07C6B /* datecell.png */,
 				17B5C26512539C71CCBDA9EE /* datecell@2x.png */,
-				17B5C81A1857C611EB7BC3C2 /* icon_drugcheck_calendar.png */,
-				17B5CA2978BDCAC4CDC2BBF5 /* icon_drugcheck_calendar@2x.png */,
-				17B5C6FC9D39604C589E32EA /* icon_drugcheck_calendar_on.png */,
-				17B5C12F72888CEB0CEF1D3D /* icon_drugcheck_calendar_on@2x.png */,
 				17B5C8DF4E075A20C8695866 /* icon_record_calendar.png */,
 				17B5C4743CE8A79333BDE714 /* icon_record_calendar@2x.png */,
 				17B5CF24DD353BAF17C4D56C /* todaycell.png */,
@@ -211,20 +211,32 @@
 			children = (
 				7399ED0C169FB44100C0DCF0 /* FirstViewController.m */,
 				7399ED0B169FB44100C0DCF0 /* FirstViewController.h */,
-				17B5C01CBA823761AD8616BC /* AZCalendarBaseView.m */,
-				17B5C6192D47CE5D1132BC5F /* AZCalendarBaseView.h */,
+				17B5C01CBA823761AD8616BC /* CalendarPlaceholderView.m */,
+				17B5C6192D47CE5D1132BC5F /* CalendarPlaceholderView.h */,
 				17B5C4C85051F99D5343EE90 /* SecondViewController.m */,
 				17B5C310DC18AE41FEE42D54 /* SecondViewController.h */,
 			);
 			path = Demo;
 			sourceTree = "<group>";
 		};
+		17B5C434150544E8F3A0CEFF /* iPad */ = {
+			isa = PBXGroup;
+			children = (
+				17B5C2CCABB3F47C482F7BE5 /* BaseCalendarDisableGridView_iPad.xib */,
+				7310629916A310C9001F632B /* BaseCalendarView_iPad.xib */,
+				17B5CF6C048574C73B8B835B /* BaseCalendarGridView_iPad.xib */,
+				17B5C68C8EFA6A8B84B4FEC7 /* BaseCalendarViewFooterView_iPad.xib */,
+				17B5C4EB665A5FBF22A7675A /* BaseCalendarViewHeaderView_iPad.xib */,
+				17B5C581DDE081179FD5F89C /* BaseCalendarWeekHintView_iPad.xib */,
+			);
+			path = iPad;
+			sourceTree = "<group>";
+		};
 		17B5C5A1281D03A6E8573BC4 /* AZCalendar */ = {
 			isa = PBXGroup;
 			children = (
 				17B5C7012A522FD21E30BD94 /* Core */,
-				17B5CF51E772E38FB7938019 /* Imp */,
-				17B5C5928F647174E5614CF4 /* ITTDebug.h */,
+				17B5CF51E772E38FB7938019 /* Implements */,
 				17B5C0098D87CCFFD1CAD91D /* Models */,
 			);
 			path = AZCalendar;
@@ -233,21 +245,20 @@
 		17B5C7012A522FD21E30BD94 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				17B5CD11FD42D95CE8E09BAA /* CalendarGridView.h */,
-				17B5CBB18DE5BD8E2F4F4D8A /* CalendarGridView.m */,
-				17B5C26705D2EBEA9D5F335B /* CalendarScrollView.h */,
-				17B5C8FE72DA1313BF1A1999 /* CalendarScrollView.m */,
-				17B5CD9FF511439D82380F46 /* CalendarView.h */,
-				17B5C3ED9D010BC87343ED7B /* CalendarView.m */,
-				17B5C6A6FC8D2D5B8CA2CE0A /* CalendarView.xib */,
-				17B5CEFF4BB4801667E19D75 /* CalendarViewDataSource.h */,
-				17B5C5BD147241BE6A490359 /* CalendarViewDelegate.h */,
-				17B5C399A0DE873E64AF8D77 /* CalendarViewFooterView.h */,
-				17B5C3A906DAB191110BFDF8 /* CalendarViewFooterView.m */,
-				17B5C66134ED7A9AA806BF9A /* CalendarViewHeaderView.h */,
-				17B5C7B67E84AF7F5390CFE5 /* CalendarViewHeaderView.m */,
-				17B5CAA2996ABA88A6329E44 /* CalendarWeekHintView.h */,
-				17B5C7D39A27AFE80728645E /* CalendarWeekHintView.m */,
+				17B5CD11FD42D95CE8E09BAA /* AZCalendarGridView.h */,
+				17B5CBB18DE5BD8E2F4F4D8A /* AZCalendarGridView.m */,
+				17B5C26705D2EBEA9D5F335B /* AZCalendarScrollView.h */,
+				17B5C8FE72DA1313BF1A1999 /* AZCalendarScrollView.m */,
+				17B5CD9FF511439D82380F46 /* AZCalendarView.h */,
+				17B5C3ED9D010BC87343ED7B /* AZCalendarView.m */,
+				17B5CEFF4BB4801667E19D75 /* AZCalendarViewDataSource.h */,
+				17B5C5BD147241BE6A490359 /* AZCalendarViewDelegate.h */,
+				17B5C399A0DE873E64AF8D77 /* AZCalendarViewFooterView.h */,
+				17B5C3A906DAB191110BFDF8 /* AZCalendarViewFooterView.m */,
+				17B5C66134ED7A9AA806BF9A /* AZCalendarViewHeaderView.h */,
+				17B5C7B67E84AF7F5390CFE5 /* AZCalendarViewHeaderView.m */,
+				17B5CAA2996ABA88A6329E44 /* AZCalendarWeekHintView.h */,
+				17B5C7D39A27AFE80728645E /* AZCalendarWeekHintView.m */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -258,6 +269,7 @@
 				17B5C2403AE4DE72CD3ADF19 /* Products */,
 				17B5CFA675B94351E8E41A04 /* Frameworks */,
 				17B5CA20047FE5A25A95B01C /* AZCalendarView */,
+				17B5C625773147F72E1BBAE1 /* readme.md */,
 			);
 			sourceTree = "<group>";
 		};
@@ -265,40 +277,50 @@
 			isa = PBXGroup;
 			children = (
 				17B5CFACD9E7E0AC323DB132 /* Supporting Files */,
-				17B5C59997E5193B2F293513 /* AZAppDelegate.h */,
-				17B5CDDD19B55D321DD2DBC4 /* AZAppDelegate.m */,
+				17B5C59997E5193B2F293513 /* AppDelegate.h */,
+				17B5CDDD19B55D321DD2DBC4 /* AppDelegate.m */,
 				17B5C4422161468B449133FA /* MainStoryboard.storyboard */,
 				17B5C5A1281D03A6E8573BC4 /* AZCalendar */,
 				17B5C25E787B9A716F0D32BF /* Demo */,
+				7310627216A30E36001F632B /* MainStoryboard_iPad.storyboard */,
 			);
 			path = AZCalendarView;
 			sourceTree = "<group>";
 		};
-		17B5CF51E772E38FB7938019 /* Imp */ = {
+		17B5CBD836BA6CFF483F130C /* iPhone */ = {
+			isa = PBXGroup;
+			children = (
+				17B5CFF318E3E2B7792FE9D7 /* BaseCalendarDisableGridView.xib */,
+				17B5C6A6FC8D2D5B8CA2CE0A /* BaseCalendarView.xib */,
+				17B5C2E7E71CAAC6BF4399C5 /* BaseCalendarGridView.xib */,
+				17B5CF6D7940B44518C2A3C7 /* BaseCalendarWeekHintView.xib */,
+				17B5C989534BAD577B772C27 /* BaseCalendarViewHeaderView.xib */,
+			);
+			path = iPhone;
+			sourceTree = "<group>";
+		};
+		17B5CF51E772E38FB7938019 /* Implements */ = {
 			isa = PBXGroup;
 			children = (
 				17B5C44DB0089A161D62871C /* BaseCalendarDisableGridView.h */,
 				17B5C46E81D94558F805BA28 /* BaseCalendarDisableGridView.m */,
-				17B5CFF318E3E2B7792FE9D7 /* BaseCalendarDisableGridView.xib */,
 				17B5CD3AE77A76B6D76B5795 /* BaseCalendarGridView.h */,
 				17B5CB1BD9F8817F145B7D8F /* BaseCalendarGridView.m */,
-				17B5C2E7E71CAAC6BF4399C5 /* BaseCalendarGridView.xib */,
 				17B5C54AE7B2DAB5D3D8414A /* BaseCalendarViewFooterView.h */,
 				17B5CDC20DC0097E99EF6E42 /* BaseCalendarViewFooterView.m */,
-				17B5C68C8EFA6A8B84B4FEC7 /* BaseCalendarViewFooterView.xib */,
 				17B5CEB94987AEAE11D8ABD2 /* BaseCalendarViewHeaderView.h */,
 				17B5C98D0432C39FEC13BD30 /* BaseCalendarViewHeaderView.m */,
-				17B5C989534BAD577B772C27 /* BaseCalendarViewHeaderView.xib */,
 				17B5CD6A07A986B06755723E /* BaseCalendarWeekHintView.h */,
 				17B5C3F5F32961E778F88490 /* BaseCalendarWeekHintView.m */,
-				17B5CF6D7940B44518C2A3C7 /* BaseCalendarWeekHintView.xib */,
 				17B5C629E3111C5CA7B2E043 /* BaseDataSourceImp.h */,
 				17B5C63E87A4BA6A206D2AC6 /* BaseDataSourceImp.m */,
 				17B5C216159E170681C7D90B /* Resource */,
-				17B5C121AF1AF399B4F1609E /* TrainCalendarDataSourceImp.h */,
-				17B5C6E3164D05ADF81A66B8 /* TrainCalendarDataSourceImp.m */,
+				17B5C0BA6630D470AF61F580 /* BaseCalendarView.h */,
+				17B5CFAF3A82851D18062AB9 /* BaseCalendarView.m */,
+				17B5CBD836BA6CFF483F130C /* iPhone */,
+				17B5C434150544E8F3A0CEFF /* iPad */,
 			);
-			path = Imp;
+			path = Implements;
 			sourceTree = "<group>";
 		};
 		17B5CFA675B94351E8E41A04 /* Frameworks */ = {
@@ -377,10 +399,10 @@
 				17B5C3E7C41A78341A8290BE /* Default@2x.png in Resources */,
 				17B5C7755A27CE74CD1A3911 /* Default-568h@2x.png in Resources */,
 				17B5C86720B5C7B6086C5B7E /* MainStoryboard.storyboard in Resources */,
-				17B5C398C625B70DC35884A1 /* CalendarView.xib in Resources */,
+				17B5C398C625B70DC35884A1 /* BaseCalendarView.xib in Resources */,
 				17B5CA42012CEDFB273E24E1 /* BaseCalendarDisableGridView.xib in Resources */,
 				17B5C2831CDB7DB06499945F /* BaseCalendarGridView.xib in Resources */,
-				17B5CD0557E8D3EF9F52CC7E /* BaseCalendarViewFooterView.xib in Resources */,
+				17B5CD0557E8D3EF9F52CC7E /* BaseCalendarViewFooterView_iPad.xib in Resources */,
 				17B5C04905A122C0C2DB7EC3 /* BaseCalendarViewHeaderView.xib in Resources */,
 				17B5C0268877DB505F1C8B10 /* BaseCalendarWeekHintView.xib in Resources */,
 				17B5CB49BDA32DF02EFD9ECF /* arrow_left.png in Resources */,
@@ -393,14 +415,16 @@
 				17B5C939FE11395C3897F96D /* datecell-diable@2x.png in Resources */,
 				17B5C4A2EED7D744FCF223DE /* datecell.png in Resources */,
 				17B5C516627ED9B6031392DE /* datecell@2x.png in Resources */,
-				17B5CB61D420E946DA66B48E /* icon_drugcheck_calendar.png in Resources */,
-				17B5CA4F806BCEE12055CBE2 /* icon_drugcheck_calendar@2x.png in Resources */,
-				17B5C2E31F4372B022472C46 /* icon_drugcheck_calendar_on.png in Resources */,
-				17B5C11E7946F2EF70AA0F12 /* icon_drugcheck_calendar_on@2x.png in Resources */,
 				17B5CD5AF09500DBEE83B99C /* icon_record_calendar.png in Resources */,
 				17B5CDFDB024C9933ABF69A7 /* icon_record_calendar@2x.png in Resources */,
 				17B5C813950AC9037416F40B /* todaycell.png in Resources */,
 				17B5C059F9270A4B8CA5EDA9 /* todaycell@2x.png in Resources */,
+				7310627316A30E36001F632B /* MainStoryboard_iPad.storyboard in Resources */,
+				17B5CC00F71C4EBDD02CC285 /* BaseCalendarDisableGridView_iPad.xib in Resources */,
+				7310629A16A310C9001F632B /* BaseCalendarView_iPad.xib in Resources */,
+				17B5CC08BC50FFCFAB94549B /* BaseCalendarGridView_iPad.xib in Resources */,
+				17B5C8188119C709F6E6A127 /* BaseCalendarViewHeaderView_iPad.xib in Resources */,
+				17B5C2F4FBBE5E45E0123758 /* BaseCalendarWeekHintView_iPad.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,26 +436,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				17B5C652DE1ED2007D7A96F3 /* main.m in Sources */,
-				17B5C337026BCC439CD13A05 /* AZAppDelegate.m in Sources */,
-				17B5CB57F84BBB7F6333218B /* CalendarGridView.m in Sources */,
-				17B5CD7B15404BE19E874C70 /* CalendarScrollView.m in Sources */,
-				17B5C485C5792B7E133FDCD1 /* CalendarView.m in Sources */,
-				17B5C7E89F3946C803A0DE43 /* CalendarViewFooterView.m in Sources */,
-				17B5CB1668481F33387B3987 /* CalendarViewHeaderView.m in Sources */,
-				17B5C0C4F06B40CD574AA126 /* CalendarWeekHintView.m in Sources */,
+				17B5C337026BCC439CD13A05 /* AppDelegate.m in Sources */,
+				17B5CB57F84BBB7F6333218B /* AZCalendarGridView.m in Sources */,
+				17B5CD7B15404BE19E874C70 /* AZCalendarScrollView.m in Sources */,
+				17B5C485C5792B7E133FDCD1 /* AZCalendarView.m in Sources */,
+				17B5C7E89F3946C803A0DE43 /* AZCalendarViewFooterView.m in Sources */,
+				17B5CB1668481F33387B3987 /* AZCalendarViewHeaderView.m in Sources */,
+				17B5C0C4F06B40CD574AA126 /* AZCalendarWeekHintView.m in Sources */,
 				17B5C6F9DD0D1662FD19B7AC /* BaseCalendarDisableGridView.m in Sources */,
 				17B5C77AC5487239E4E7DFDB /* BaseCalendarGridView.m in Sources */,
 				17B5CD8663E18076A7F53634 /* BaseCalendarViewFooterView.m in Sources */,
 				17B5C105F123DC7CC9F7D65F /* BaseCalendarViewHeaderView.m in Sources */,
 				17B5C840823E8E335E949C8B /* BaseCalendarWeekHintView.m in Sources */,
 				17B5C8524A78386EA515349D /* BaseDataSourceImp.m in Sources */,
-				17B5C709C1F2C7439FDDFE77 /* TrainCalendarDataSourceImp.m in Sources */,
-				17B5C0A3390509E35F85E419 /* CalDay.m in Sources */,
-				17B5C6C873B332790E96B47A /* CalMonth.m in Sources */,
-				17B5CABCD32861B5F15CFC2E /* DateUtil.m in Sources */,
+				17B5C0A3390509E35F85E419 /* AZCalDay.m in Sources */,
+				17B5C6C873B332790E96B47A /* AZCalMonth.m in Sources */,
+				17B5CABCD32861B5F15CFC2E /* AZDateUtil.m in Sources */,
 				7399ED0D169FB44100C0DCF0 /* FirstViewController.m in Sources */,
-				17B5C66199C5C6F59C597CED /* AZCalendarBaseView.m in Sources */,
+				17B5C66199C5C6F59C597CED /* CalendarPlaceholderView.m in Sources */,
 				17B5C457E7C57EEDA2658A74 /* SecondViewController.m in Sources */,
+				17B5C170EFE2F726B2AE921B /* BaseCalendarView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -491,7 +515,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AZCalendarView/AZCalendarView-Prefix.pch";
 				INFOPLIST_FILE = "AZCalendarView/AZCalendarView-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -502,7 +528,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AZCalendarView/AZCalendarView-Prefix.pch";
 				INFOPLIST_FILE = "AZCalendarView/AZCalendarView-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

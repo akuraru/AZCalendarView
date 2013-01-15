@@ -6,11 +6,12 @@
 
 // CodeBase of AZCalendarView
 #import <UIKit/UIKit.h>
-#import "CalendarViewDelegate.h"
+#import "AZCalendarViewDelegate.h"
 
-@class CalendarView;
+@class BaseDataSourceImp;
+@class BaseCalendarView;
 
-@interface SecondViewController : UIViewController <CalendarViewDelegate>
+@interface SecondViewController : UIViewController <AZCalendarViewDelegate>
 
-@property(nonatomic, strong) CalendarView *calendarView;
+@property(nonatomic, strong) BaseCalendarView *calendarView;
 @end

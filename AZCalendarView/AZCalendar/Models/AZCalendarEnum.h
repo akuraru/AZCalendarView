@@ -1,27 +1,25 @@
 //
 //  Enum.h
-//  ZHJCalendar
+//  AZCalendar
 //
 //  Created by huajian zhou on 12-4-13.
 //  Copyright (c) 2012年 Sword.Zhou. All rights reserved.
 //
 
-#ifndef ZHJCalendar_Enum_h
-#define ZHJCalendar_Enum_h
+#ifndef AZCalendar_Enum_h
+#define AZCalendar_Enum_h
 
-typedef enum 
-{
+typedef enum {
     PeriodTypeKnown = 11,
     PeriodTypeAllDay,
     PeriodTypeMorning,
     PeriodTypeNoon,
     PeriodTypeAfternoon,
     PeriodTypeEvening
-}PeriodType;
+} PeriodType;
 
-typedef enum 
-{
-    WeekDayKnown = 0,
+typedef enum {
+    WeekDayUNKnown = 0,
     WeekDayMonday,
     WeekDayTuesday,
     WeekDayWednesday,
@@ -29,11 +27,10 @@ typedef enum
     WeekDayFriday,
     WeekDaySaturday,
     WeekDaySunday
-}WeekDay;
+} WeekDay;
 
-typedef struct 
-{
+typedef struct {
     NSInteger row;
     NSInteger column;
-}GridIndex;
+} GridIndex;
 #endif
