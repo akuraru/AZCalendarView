@@ -7,16 +7,14 @@
 //
 
 #import "AZCalendarScrollView.h"
-#import "ITTDebug.h"
 
 @implementation AZCalendarScrollView
 
 @synthesize calendarDelegate = _calendarDelegate;
 
-- (id)initWithFrame:(CGRect)frame
-{
+- (id)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
-    if (self) {
+    if (self){
         // Initialization code
     }
     return self;
@@ -31,49 +29,40 @@
 }
 */
 
-- (void) awakeFromNib
-{
+- (void)awakeFromNib {
     [super awakeFromNib];
-    self.multipleTouchEnabled = TRUE;           
+    self.multipleTouchEnabled = TRUE;
 }
-- (void) dealloc
-{
+
+- (void)dealloc {
     _calendarDelegate = nil;
 }
-- (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
-{
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     [super touchesBegan:touches withEvent:event];
-    ITTDINFO(@"touchesBegan");    
-    if (_calendarDelegate && [_calendarDelegate respondsToSelector:@selector(calendarScrollViewTouchesBegan:touches:withEvent:)])
-    {
+    if (_calendarDelegate && [_calendarDelegate respondsToSelector:@selector(calendarScrollViewTouchesBegan:touches:withEvent:)]){
         [_calendarDelegate calendarScrollViewTouchesBegan:self touches:touches withEvent:event];
     }
 }
-- (void) touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
-{
+
+- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
     [super touchesMoved:touches withEvent:event];
-    ITTDINFO(@"touchesMoved");        
-    if (_calendarDelegate && [_calendarDelegate respondsToSelector:@selector(calendarScrollViewTouchesMoved:touches:withEvent:)])
-    {
+    if (_calendarDelegate && [_calendarDelegate respondsToSelector:@selector(calendarScrollViewTouchesMoved:touches:withEvent:)]){
         [_calendarDelegate calendarScrollViewTouchesMoved:self touches:touches withEvent:event];
-    }    
+    }
 }
-- (void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
-{
+
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
     [super touchesEnded:touches withEvent:event];
-    ITTDINFO(@"touchesEnded");      
-    if (_calendarDelegate && [_calendarDelegate respondsToSelector:@selector(calendarScrollViewTouchesEnded:touches:withEvent:)])
-    {
+    if (_calendarDelegate && [_calendarDelegate respondsToSelector:@selector(calendarScrollViewTouchesEnded:touches:withEvent:)]){
         [_calendarDelegate calendarScrollViewTouchesEnded:self touches:touches withEvent:event];
-    }    
+    }
 }
-- (void) touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event
-{
+
+- (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event {
     [super touchesCancelled:touches withEvent:event];
-    ITTDINFO(@"touchesCancelled");    
-    if (_calendarDelegate && [_calendarDelegate respondsToSelector:@selector(calendarScrollViewTouchesCancelled:touches:withEvent:)])
-    {
+    if (_calendarDelegate && [_calendarDelegate respondsToSelector:@selector(calendarScrollViewTouchesCancelled:touches:withEvent:)]){
         [_calendarDelegate calendarScrollViewTouchesCancelled:self touches:touches withEvent:event];
-    }    
+    }
 }
 @end

@@ -8,7 +8,6 @@
 #import <CoreGraphics/CoreGraphics.h>
 #import "AZCalendarView.h"
 #import "AZCalMonth.h"
-#import "ITTDebug.h"
 #import "AZCalendarWeekHintView.h"
 
 #define MARGIN_LEFT                              0
@@ -275,7 +274,7 @@
     NSInteger row = (location.y - MARGIN_TOP + PADDING_VERTICAL) / (PADDING_VERTICAL + self.gridSize.height);
     CGFloat width = [self widthForGridView];
     NSInteger column = (location.x - MARGIN_LEFT + PADDING_HORIZONTAL) / (PADDING_HORIZONTAL + width);
-    ITTDINFO(@"row %d column %d", row, column);
+    AZLog(@"row %d column %d", row, column);
     index.row = row;
     index.column = column;
     return index;
@@ -368,7 +367,7 @@
     }
     else {
         AZCalDay *calDay = [_calMonth calDayAtDay:day];
-        ITTDINFO(@"day is %d", day);
+        AZLog(@"day is %d", day);
         if ([self isEarlierMinimumDay:calDay] || [self isAfterMaximumDay:calDay]){
             selectedEnable = NO;
         }
@@ -427,7 +426,7 @@
             after = YES;
         }
     }
-    ITTDINFO(@"calday %@ is after maximuday %@ %d", calDay, _maximumDay, after);
+    AZLog(@"calday %@ is after maximuday %@ %d", calDay, _maximumDay, after);
     return after;
 
 }
@@ -872,7 +871,7 @@
                     NSUInteger day = [self getMonthDayAtRow:row column:column];
                     AZCalDay *calDay = [_calMonth calDayAtDay:day];
                     [selectedDates addObject:calDay.date];
-                    ITTDINFO(@"selected day %d", day);
+                    AZLog(@"selected day %d", day);
                 }
             }
         }

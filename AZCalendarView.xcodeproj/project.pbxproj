@@ -94,7 +94,6 @@
 		17B5C56872010B60D5001E53 /* arrow_left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow_left.png; sourceTree = "<group>"; };
 		17B5C57D0B4B878B4B7F7985 /* AZCalDay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AZCalDay.m; sourceTree = "<group>"; };
 		17B5C581DDE081179FD5F89C /* BaseCalendarWeekHintView_iPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BaseCalendarWeekHintView_iPad.xib; sourceTree = "<group>"; };
-		17B5C5928F647174E5614CF4 /* ITTDebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITTDebug.h; sourceTree = "<group>"; };
 		17B5C59997E5193B2F293513 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		17B5C5BD147241BE6A490359 /* AZCalendarViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AZCalendarViewDelegate.h; sourceTree = "<group>"; };
 		17B5C6192D47CE5D1132BC5F /* CalendarPlaceholderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarPlaceholderView.h; sourceTree = "<group>"; };
@@ -238,7 +237,6 @@
 			children = (
 				17B5C7012A522FD21E30BD94 /* Core */,
 				17B5CF51E772E38FB7938019 /* Implements */,
-				17B5C5928F647174E5614CF4 /* ITTDebug.h */,
 				17B5C0098D87CCFFD1CAD91D /* Models */,
 			);
 			path = AZCalendar;

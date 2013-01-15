@@ -15,6 +15,19 @@
 #import "AZCalendarViewFooterView.h"
 #import "AZCalendarScrollView.h"
 
+#ifndef AZ_ENABLE_RECORD_LOGGING
+    #ifdef DEBUG
+        #define AZ_ENABLE_RECORD_LOGGING 1
+    #else
+        #define AZ_ENABLE_RECORD_LOGGING 0
+    #endif
+#endif
+#if AZ_ENABLE_RECORD_LOGGING != 0
+    #define AZLog(...) NSLog(@"%s(%p) %@", __PRETTY_FUNCTION__, self, [NSString stringWithFormat:__VA_ARGS__])
+#else
+    #define AZLog(...) ((void)0)
+#endif
+
 @class AZCalDay;
 @class AZCalMonth;
 
