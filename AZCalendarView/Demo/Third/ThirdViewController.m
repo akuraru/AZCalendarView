@@ -85,7 +85,7 @@
 - (void)updateCalendarNavigationButtons {
     UIBarButtonItem *left = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRewind target:self action:@selector(prevCalendar)];
     UIBarButtonItem *right = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFastForward target:self action:@selector(nextCalendar)];
-    UIBarButtonItem *today = [[UIBarButtonItem alloc] initWithTitle:@"今日" style:UIBarButtonItemStyleBordered target:self action:@selector(todayCalendar)];
+    UIBarButtonItem *today = [[UIBarButtonItem alloc] initWithTitle:@"Today" style:UIBarButtonItemStyleBordered target:self action:@selector(todayCalendar)];
     self.navigationItem.leftBarButtonItems = @[left, right, today];
 }
 
