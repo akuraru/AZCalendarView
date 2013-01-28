@@ -146,9 +146,11 @@
 @property(nonatomic, strong, readonly) NSArray *visibleGridViews;
 
 
-- (void)nextMonth;
+- (void)nextMonth __attribute__ ((deprecated));
+- (void)showNextMonth;
 
-- (void)previousMonth;
+- (void)previousMonth __attribute__ ((deprecated));
+- (void)showPreviousMonth;
 
 - (void)show:(BOOL)animated;
 

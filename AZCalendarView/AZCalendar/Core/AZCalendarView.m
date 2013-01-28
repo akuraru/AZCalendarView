@@ -736,14 +736,23 @@
     }];
 }
 
-- (void)nextMonth {
+- (void)showNextMonth {
     [self resetSelectedIndicesMatrix];
     [self animationChangeMonth:YES];
 }
 
-- (void)previousMonth {
+- (void)nextMonth {
+    [self showNextMonth];
+}
+
+
+- (void)showPreviousMonth {
     [self resetSelectedIndicesMatrix];
     [self animationChangeMonth:NO];
+}
+
+- (void)previousMonth {
+    [self showPreviousMonth];
 }
 
 - (void)layoutSubviews {
@@ -833,10 +842,10 @@
 
 - (void)swipe:(UISwipeGestureRecognizer *)gesture {
     if (UISwipeGestureRecognizerDirectionLeft == gesture.direction){
-        [self nextMonth];
+        [self showNextMonth];
     }
     else {
-        [self previousMonth];
+        [self showPreviousMonth];
     }
 }
 
@@ -886,11 +895,11 @@
 }
 #pragma mark - CalendarViewHeaderViewDelegate
 - (void)calendarViewHeaderViewNextMonth:(AZCalendarViewHeaderView *)calendarHeaderView {
-    [self nextMonth];
+    [self showNextMonth];
 }
 
 - (void)calendarViewHeaderViewPreviousMonth:(AZCalendarViewHeaderView *)calendarHeaderView {
-    [self previousMonth];
+    [self showPreviousMonth];
 }
 
 - (void)calendarViewHeaderViewDidCancel:(AZCalendarViewHeaderView *)calendarHeaderView {
@@ -1023,10 +1032,10 @@
             if (fabs(endPoint.x - _beginPoint.x) > HORIZONTAL_SWIPE_WIDTH_CONSTRAINT){
                 //swipe right
                 if (endPoint.x > _beginPoint.x){
-                    [self previousMonth];
+                    [self showPreviousMonth];
                 }
                 else {
-                    [self nextMonth];
+                    [self showNextMonth];
                 }
             }
         }
