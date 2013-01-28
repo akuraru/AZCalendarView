@@ -4,6 +4,7 @@ Calendar library has similar delegate methods to a `UITableView`
 
 <img alt="iPhone Calendar" src="https://raw.github.com/azu/AZCalendarView/develop/images/Screenshot_Calendar.png" width="320" />
 <img alt="iPad Calendar"  src="https://raw.github.com/azu/AZCalendarView/develop/images/Screenshot_iPad.png" width="400" />
+<img alt="iPhone Calendar no header" src="https://raw.github.com/azu/AZCalendarView/develop/images/Screenshot_no_header.png" width="320" />
 
 # Breakdown
 
