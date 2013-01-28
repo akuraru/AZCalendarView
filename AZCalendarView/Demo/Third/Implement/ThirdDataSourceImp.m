@@ -27,7 +27,7 @@
 
 #pragma mark - update cell
 - (void)updateGridView:(AZCalendarGridView *)gridView calendarGridViewForRow:(NSInteger)row
-        column:(NSInteger)column calDay:(AZCalDay *)calDay {
+                column:(NSInteger)column calDay:(AZCalDay *)calDay {
 
     BaseCalendarGridView *baseGridView = (BaseCalendarGridView *) gridView;
     baseGridView.recordImageView.hidden = (row != 0);
@@ -35,9 +35,11 @@
 
 #pragma mark - build UI
 // remove Header
-//- (AZCalendarViewHeaderView *)headerViewForCalendarView:(AZCalendarView *)calendarView {
-//    return [BaseCalendarViewHeaderView viewFromNib];
-//}
+/*
+- (AZCalendarViewHeaderView *)headerViewForCalendarView:(AZCalendarView *)calendarView {
+    return [BaseCalendarViewHeaderView viewFromNib];
+}
+*/
 
 // Sun,Mon,Tsu ...
 - (AZCalendarWeekHintView *)weekHintViewForCalendarView:(AZCalendarView *)calendarView {
@@ -45,10 +47,10 @@
 }
 
 - (AZCalendarGridView *)calendarView:(AZCalendarView *)calendarView calendarGridViewForRow:(NSInteger)row
-                        column:(NSInteger)column calDay:(AZCalDay *)calDay {
+                              column:(NSInteger)column calDay:(AZCalDay *)calDay {
     static NSString *identifier = @"BaseCalendarGridView";
     AZCalendarGridView *gridView = [calendarView dequeueCalendarGridViewWithIdentifier:identifier];
-    if (!gridView){
+    if (!gridView) {
         gridView = [BaseCalendarGridView viewFromNibWithIdentifier:identifier];
     }
     [self updateGridView:gridView calendarGridViewForRow:row column:column calDay:calDay];
@@ -57,10 +59,10 @@
 }
 
 - (AZCalendarGridView *)calendarView:(AZCalendarView *)calendarView calendarDisableGridViewForRow:(NSInteger)row
-                        column:(NSInteger)column calDay:(AZCalDay *)calDay {
+                              column:(NSInteger)column calDay:(AZCalDay *)calDay {
     static NSString *identifier = @"BaseCalendarDisableGridView";
     AZCalendarGridView *gridView = [calendarView dequeueCalendarGridViewWithIdentifier:identifier];
-    if (!gridView){
+    if (!gridView) {
         gridView = [BaseCalendarDisableGridView viewFromNibWithIdentifier:identifier];
     }
     return gridView;
