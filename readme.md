@@ -10,6 +10,7 @@ Calendar library has similar delegate methods to a `UITableView`
 
 * support iPhone and iPad
 * It has similar delegate methods to a `UITableViewDataSource`
+* Customizable Calendar UI(Componenets are just simple Xib file)
 * allow `allowsMultipleSelection`
 * doesn't support landscape yet...
 
