@@ -5,6 +5,7 @@
 //  Created by huajian zhou on 12-4-12.
 //  Copyright (c) 2012年 Sword.Zhou. All rights reserved.
 
+#import <CoreGraphics/CoreGraphics.h>
 #import "AZCalendarView.h"
 #import "AZCalMonth.h"
 #import "AZCalendarWeekHintView.h"
@@ -601,12 +602,16 @@
 }
 
 - (CGRect)getFrameForRow:(NSUInteger)row column:(NSUInteger)column {
-    int padding = column - 1;
+    int calcRow = row;
+    int calcColumn = column;
+
+    int padding = calcColumn - 1;
     CGFloat totalWidth = self.gridScrollView.frame.size.width;
-    CGFloat width = totalWidth / NUMBER_OF_DAYS_IN_WEEK;
-    CGFloat x = width * column;
-    //  MARGIN_LEFT + padding * PADDING_HORIZONTAL + column * self.gridSize.width
-    CGFloat y = MARGIN_TOP + row * self.gridSize.height;
+
+    CGFloat width = [self widthForGridView];
+    CGFloat x = width * calcColumn;
+    //  MARGIN_LEFT + padding * PADDING_HORIZONTAL + calcColumn * self.gridSize.width
+    CGFloat y = MARGIN_TOP + calcRow * self.gridSize.height;
     CGRect frame = CGRectMake(x, y, self.gridSize.width, self.gridSize.height);
     return frame;
 }
