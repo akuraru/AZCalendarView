@@ -10,6 +10,7 @@
 #import "AZCalMonth.h"
 #import "AZCalendarWeekHintView.h"
 
+#define NUMBER_OF_DAYS_IN_WEEK  7
 #define MARGIN_LEFT                              0
 #define MARGIN_TOP                               0
 #define PADDING_VERTICAL                         0

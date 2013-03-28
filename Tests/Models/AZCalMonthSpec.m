@@ -101,6 +101,45 @@
                 });
             });
         });
+        describe(@"#calDayAtDay", ^{
+            context(@"When 2000/01", ^{
+                NSUInteger aYear = 2000;
+                NSUInteger aMonth = 1;
+                NSUInteger aDay = 5;
+                __block AZCalMonth *calMonth;
+                beforeEach(^{
+                    calMonth = [[AZCalMonth alloc] initWithMonth:aMonth year:aYear day:aDay];
+                });
+                it(@"should return AZCalDay", ^{
+                    [[[calMonth calDayAtDay:1] should] isKindOfClass:[AZCalDay class]];
+                });
+
+                context(@"argument is 1", ^{
+                    it(@"should return AZCalDay 2000/1/1", ^{
+                        AZCalDay *calDay = [calMonth calDayAtDay:1];
+                        NSDate *expectDate = [NSDate dateByUnit:@{
+                                azDateUnit.year : @(aYear),
+                                azDateUnit.month : @(aMonth),
+                                azDateUnit.day : @(1)
+                        }];
+                        AZCalDay *expectDay = [[AZCalDay alloc] initWithDate:expectDate];
+                        [[theValue([calDay isEqualToDay:expectDay]) should] beYes];
+                    });
+                });
+                context(@"argument is 31", ^{
+                    it(@"should return AZCalDay 2000/1/31", ^{
+                        AZCalDay *calDay = [calMonth calDayAtDay:1];
+                        NSDate *expectDate = [NSDate dateByUnit:@{
+                                azDateUnit.year : @(aYear),
+                                azDateUnit.month : @(aMonth),
+                                azDateUnit.day : @(1)
+                        }];
+                        AZCalDay *expectDay = [[AZCalDay alloc] initWithDate:expectDate];
+                        [[theValue([calDay isEqualToDay:expectDay]) should] beYes];
+                    });
+                });
+            });
+        });
         describe(@"#getYear", ^{
             NSUInteger aYear = 2012;
             NSUInteger aMonth = 2;

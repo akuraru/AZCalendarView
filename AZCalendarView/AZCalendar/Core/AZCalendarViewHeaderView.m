@@ -7,6 +7,7 @@
 //
 
 #import "AZCalendarViewHeaderView.h"
+#import "AZCalMonth.h"
 
 @implementation AZCalendarViewHeaderView
 

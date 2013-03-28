@@ -12,9 +12,9 @@
 @class AZCalendarViewFooterView;
 @class AZCalendarGridView;
 @class AZCalendarView;
-@class AZCalMonth;
 @class AZCalDay;
 @class AZCalendarWeekHintView;
+@class AZCalMonth;
 
 @protocol AZCalendarViewDataSource <NSObject>
 

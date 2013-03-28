@@ -40,7 +40,6 @@
     }
 
     NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
-    unsigned unitFlags = NSYearCalendarUnit | NSMonthCalendarUnit | NSWeekCalendarUnit | NSWeekdayCalendarUnit;
     _components = [[NSDateComponents alloc] init];
     [_components setYear:year];
     [_components setMonth:month];

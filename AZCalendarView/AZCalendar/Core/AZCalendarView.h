@@ -29,7 +29,7 @@
 #endif
 
 @class AZCalDay;
-@class AZCalMonth;
+@class _AZCalMonth;
 
 @interface AZCalendarView : UIView <CalendarGridViewDelegate,
     CalendarViewHeaderViewDelegate, CalendarViewFooterViewDelegate, CalendarScrollViewDelegate> {
