@@ -1,177 +1,99 @@
 //
-//  AZCalDay.m
-//  AZCalendar
+// Created by azu on 2013/03/28.
 //
-//  Created by huajian zhou on 12-4-12.
-//  Copyright (c) 2012年 Sword.Zhou. All rights reserved.
-//
+
 
 #import "AZCalDay.h"
-#import "AZDateUtil.h"
-
-#define SECOND_OF_A_DAY 24*60*60
 
 @interface AZCalDay ()
 
 @property(nonatomic, strong, readwrite) NSDate *date;
 
-- (void)defineDayOfDate;
-
-- (WeekDay)getMeaningfulWeekDay;
-
-- (NSString *)getWeekDayName;
 @end
 
 @implementation AZCalDay
 
-
-- (void)setDate:(NSDate *) date {
-    _date = date;
-    // Calculate struct Day
-    [self defineDayOfDate];
-}
-
-- (void)defineDayOfDate {
-    unsigned unitFlags = NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit | NSWeekdayCalendarUnit;
-    NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
-    NSAssert(self.date != nil, @"self.date is nil");
-    NSDateComponents *comps = [gregorian components:unitFlags fromDate:self.date];
-    day.month = (unsigned int)comps.month;
-    day.day = (unsigned int)comps.day;
-    day.year = (unsigned int)comps.year;
-    day.weekDay = (unsigned int)comps.weekday;
-}
-
 - (id)initWithDate:(NSDate *) date {
     self = [super init];
-    if (self) {
-        self.date = date;
+    if (self == nil) {
+        return nil;
     }
+
+    _date = date;
+
+    unsigned unitFlags = NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit | NSWeekdayCalendarUnit;
+    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    NSDateComponents *components = [calendar components:unitFlags fromDate:date];
+    _components = components;
+
     return self;
 }
 
-- (id)initWithYear:(NSInteger) year month:(NSInteger) month day:(NSInteger) d {
-    self = [super init];
-    if (self != nil) {
-        NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
-        NSDateComponents *comps = [[NSDateComponents alloc] init];
-        [comps setYear:year];
-        [comps setMonth:month];
-        [comps setDay:d];
-        [comps setHour:0];
-        [comps setMinute:0];
-        [comps setSecond:0];
-        self.date = [calendar dateFromComponents:comps];
++ (id)dayWithDate:(NSDate *) date {
+    return [[self alloc] initWithDate:date];
+}
+
+- (id)initWithYear:(NSInteger) year month:(NSInteger) month day:(NSInteger) day {
+    self = [self init];
+    if (self == nil) {
+        return nil;
     }
+
+    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    unsigned unitFlags = NSYearCalendarUnit | NSMonthCalendarUnit | NSWeekCalendarUnit | NSWeekdayCalendarUnit;
+    _components = [[NSDateComponents alloc] init];
+    [_components setYear:year];
+    [_components setMonth:month];
+    [_components setDay:day];
+    _date = [calendar dateFromComponents:self.components];
+
     return self;
 }
 
-- (NSUInteger)getYear {
-    return day.year;
+- (NSInteger)getYear {
+    return [self.components year];
 }
 
-- (NSUInteger)getMonth {
-    return day.month;
+- (NSInteger)getMonth {
+    return [self.components month];
 }
 
-- (NSUInteger)getDay {
-    return day.day;
+- (NSInteger)getDay {
+    return [self.components day];
 }
-
-- (NSUInteger)getWeekDay {
-    return day.weekDay;
+// create NSDateComponent each time
+// http://smallmakeprgnote.wordpress.com/2012/01/27/nsdatecomponents-%E3%81%A7%E4%BB%8A%E6%9C%881%E6%97%A5%E3%81%AE%E6%9B%9C%E6%97%A5%E3%82%92%E5%8F%96%E5%BE%97/
+- (NSInteger)getWeekDay {
+    unsigned unitFlags = NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit | NSWeekdayCalendarUnit;
+    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    NSDateComponents *components = [calendar components:unitFlags fromDate:self.date];
+    return [components weekday];
 }
 
 - (NSComparisonResult)compare:(AZCalDay *) calDay {
-    NSComparisonResult result = NSOrderedSame;
-    if ([self getYear] < [calDay getYear]) {
-        result = NSOrderedAscending;
-    } else if ([self getYear] == [calDay getYear]) {
-        if ([self getMonth] < [calDay getMonth]) {
-            result = NSOrderedAscending;
-        } else if ([self getMonth] == [calDay getMonth]) {
-            if ([self getDay] < [calDay getDay]) {
-                result = NSOrderedAscending;
-            } else if ([self getDay] == [calDay getDay]) {
-                result = NSOrderedSame;
-            } else {
-                result = NSOrderedDescending;
-            }
-        } else {
-            result = NSOrderedDescending;
-        }
-    } else {
-        result = NSOrderedDescending;
-    }
-    return result;
-}
-
-- (AZCalDay *)nextDay {
-    NSDate *nextDayDate = [self.date dateByAddingTimeInterval:SECOND_OF_A_DAY];
-    AZCalDay *nextDay = [[AZCalDay alloc] initWithDate:nextDayDate];
-    return nextDay;
-}
-
-- (AZCalDay *)previousDay {
-    NSDate *previousDayDate = [self.date dateByAddingTimeInterval:-1 * SECOND_OF_A_DAY];
-    AZCalDay *previousDay = [[AZCalDay alloc] initWithDate:previousDayDate];
-    return previousDay;
-}
-
-- (WeekDay)getMeaningfulWeekDay {
-    WeekDay weekDay = WeekDayUNKnown;
-    switch (day.weekDay) {
-        case 1:
-            weekDay = WeekDaySunday;
-            break;
-        case 2:
-            weekDay = WeekDayMonday;
-            break;
-        case 3:
-            weekDay = WeekDayTuesday;
-            break;
-        case 4:
-            weekDay = WeekDayWednesday;
-            break;
-        case 5:
-            weekDay = WeekDayThursday;
-            break;
-        case 6:
-            weekDay = WeekDayFriday;
-            break;
-        case 7:
-            weekDay = WeekDaySaturday;
-            break;
-        default:
-            break;
-    }
-    return weekDay;
-}
-
-- (NSString *)getWeekDayName {
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setLocale:[NSLocale currentLocale]];
-    if (day.weekDay == 0) {
-        return @"UNKNOWN_WEEK_DAY_NAME";
-    }
-    return [[dateFormatter weekdaySymbols] objectAtIndex:day.weekDay - 1];
-}
-
-- (NSString *)description {
-    return [NSString stringWithFormat:@"year:%d month:%d day:%d week:%d %@", day.year, day.month, day.day, [self getMeaningfulWeekDay], [self getWeekDayName]];
+    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    return [[calendar dateFromComponents:self.components] compare:[calendar dateFromComponents:calDay.components]];
 }
 
 - (BOOL)isToday {
-    return ([AZDateUtil getCurrentYear] == day.year &&
-            [AZDateUtil getCurrentMonth] == day.month &&
-            [AZDateUtil getCurrentDay] == day.day);
+    AZCalDay *calDayForToday = [[AZCalDay alloc] initWithDate:[NSDate date]];
+    return [self isEqualToDay:calDayForToday];
 }
 
-- (BOOL)isEqualToDay:(AZCalDay *) calDay {
-    NSAssert([calDay isKindOfClass:[AZCalDay class]], @"Arguments is not AZCalDay");
-    BOOL equal = ([calDay getYear] == day.year &&
-            [calDay getMonth] == day.month &&
-            [calDay getDay] == day.day);
-    return equal;
+- (BOOL)isEqualToDay:(AZCalDay *) other {
+    NSDateComponents *components1 = self.components;
+    NSDateComponents *components2 = other.components;
+    return ((components1.year == components2.year) &&
+            (components1.month == components2.month) &&
+            (components1.day == components2.day));
 }
+
+- (NSString *)description {
+    NSMutableString *description = [NSMutableString stringWithFormat:@"<%@: ", NSStringFromClass([self class])];
+    [description appendFormat:@"self.date=%@", self.date];
+    [description appendString:@">"];
+    return description;
+}
+
+
 @end

@@ -6,6 +6,7 @@
 #import "Kiwi.h"
 #import "AZCalDay.h"
 #import "NSDate+AZBuilder.h"
+#import "_AZCalDay.h"
 
 @interface AZCalDaySpec : KWSpec
 
@@ -57,11 +58,15 @@
                         azDateUnit.month : @(aMonth),
                         azDateUnit.day : @(aDay),
                 }];
-                unsigned unitFlags = NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit | NSWeekdayCalendarUnit;
-                NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
-                NSDateComponents *components = [gregorian components:unitFlags fromDate:aDate];
-                NSInteger expectWeekDay = [components weekday];
-                [[theValue([calDay getWeekDay]) should] equal:theValue(expectWeekDay)];
+                it(@"weekday", ^{
+                    AZCalDay *sCalDay = [[AZCalDay alloc] initWithYear:aYear month:aMonth day:aDay];
+                    unsigned unitFlags = NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit | NSWeekdayCalendarUnit;
+                    NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+                    NSDateComponents *components = [gregorian components:unitFlags fromDate:aDate];
+                    NSInteger expectWeekDay = [components weekday];
+                    [[theValue([calDay getWeekDay]) should] equal:theValue(expectWeekDay)];
+                    [[theValue([sCalDay getWeekDay]) should] equal:theValue(expectWeekDay)];
+                });
             });
         });
         describe(@"#isToday", ^{
