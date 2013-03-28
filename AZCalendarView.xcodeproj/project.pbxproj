@@ -20,6 +20,7 @@
 		17B5C2CD677046491E275051 /* AZCalDay.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B5C3EF81727EB42095C847 /* AZCalDay.m */; };
 		17B5C2E76861887775EBE497 /* AZCalDay.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B5C3EF81727EB42095C847 /* AZCalDay.m */; };
 		17B5C2F4FBBE5E45E0123758 /* BaseCalendarWeekHintView_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17B5C581DDE081179FD5F89C /* BaseCalendarWeekHintView_iPad.xib */; };
+		17B5C3325E443737F56994C4 /* AZCalMonthSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B5C63BBED2DEABEFA76C26 /* AZCalMonthSpec.m */; };
 		17B5C337026BCC439CD13A05 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B5CDDD19B55D321DD2DBC4 /* AppDelegate.m */; };
 		17B5C398C625B70DC35884A1 /* BaseCalendarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17B5C6A6FC8D2D5B8CA2CE0A /* BaseCalendarView.xib */; };
 		17B5C3A0F89B95D7214B5F1B /* AZDateUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B5CA9B0C9DFA3BECC83AE9 /* AZDateUtil.m */; };
@@ -48,6 +49,7 @@
 		17B5C8FDDD163B2062C7FC1C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 17B5C150713E216FFB0CBEB8 /* InfoPlist.strings */; };
 		17B5C91447BE9180E3E81670 /* date_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 17B5C9F90FBB5D6FE409398B /* date_selected.png */; };
 		17B5C939FE11395C3897F96D /* datecell-diable@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 17B5CA92A8F795323C4A7B2D /* datecell-diable@2x.png */; };
+		17B5CA021B598E012EE96117 /* AZCalMonth.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B5CE21168A5A6F94E54B83 /* AZCalMonth.m */; };
 		17B5CA42012CEDFB273E24E1 /* BaseCalendarDisableGridView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17B5CFF318E3E2B7792FE9D7 /* BaseCalendarDisableGridView.xib */; };
 		17B5CABCD32861B5F15CFC2E /* AZDateUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B5CA9B0C9DFA3BECC83AE9 /* AZDateUtil.m */; };
 		17B5CB1668481F33387B3987 /* AZCalendarViewHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B5C7B67E84AF7F5390CFE5 /* AZCalendarViewHeaderView.m */; };
@@ -115,6 +117,7 @@
 		17B5C6192D47CE5D1132BC5F /* CalendarPlaceholderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarPlaceholderView.h; sourceTree = "<group>"; };
 		17B5C625773147F72E1BBAE1 /* readme.md */ = {isa = PBXFileReference; lastKnownFileType = file.md; path = readme.md; sourceTree = "<group>"; };
 		17B5C629E3111C5CA7B2E043 /* BaseDataSourceImp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseDataSourceImp.h; sourceTree = "<group>"; };
+		17B5C63BBED2DEABEFA76C26 /* AZCalMonthSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AZCalMonthSpec.m; sourceTree = "<group>"; };
 		17B5C63E87A4BA6A206D2AC6 /* BaseDataSourceImp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseDataSourceImp.m; sourceTree = "<group>"; };
 		17B5C66134ED7A9AA806BF9A /* AZCalendarViewHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AZCalendarViewHeaderView.h; sourceTree = "<group>"; };
 		17B5C66175B5D2ABB5A09E7A /* ThirdCalendarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdCalendarView.h; sourceTree = "<group>"; };
@@ -322,6 +325,7 @@
 			children = (
 				17B5C811609F5C39FE3DCD57 /* AZDateUtilSpec.m */,
 				17B5C8D2899F9F1EC3E08227 /* AZCalDaySpec.m */,
+				17B5C63BBED2DEABEFA76C26 /* AZCalMonthSpec.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -647,6 +651,8 @@
 				17B5CEE721A86195D0ED0C7E /* NSDate+AZBuilder.m in Sources */,
 				17B5CD9F594E5C5B54708E1D /* AZCalDaySpec.m in Sources */,
 				17B5C2CD677046491E275051 /* AZCalDay.m in Sources */,
+				17B5C3325E443737F56994C4 /* AZCalMonthSpec.m in Sources */,
+				17B5CA021B598E012EE96117 /* AZCalMonth.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

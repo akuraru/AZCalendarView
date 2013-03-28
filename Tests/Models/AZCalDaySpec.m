@@ -6,7 +6,6 @@
 #import "Kiwi.h"
 #import "AZCalDay.h"
 #import "NSDate+AZBuilder.h"
-#import "_AZCalDay.h"
 
 @interface AZCalDaySpec : KWSpec
 
