@@ -21,7 +21,7 @@
 @implementation AZCalMonth
 
 - (void)calculateMonth {
-    mon.numberOfDays = (unsigned int) [AZDateUtil numberOfDaysInMonth:[_today getMonth] year:[_today getYear]];
+    mon.numberOfDays = (unsigned int) [AZDateUtil numberOfDaysInMonthDate:_today.date];
     mon.year = [_today getYear];
     mon.month = [_today getMonth];
     daysOfMonth = [[NSMutableArray alloc] init];

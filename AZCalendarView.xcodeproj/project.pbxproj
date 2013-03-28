@@ -21,6 +21,7 @@
 		17B5C2F4FBBE5E45E0123758 /* BaseCalendarWeekHintView_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17B5C581DDE081179FD5F89C /* BaseCalendarWeekHintView_iPad.xib */; };
 		17B5C337026BCC439CD13A05 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B5CDDD19B55D321DD2DBC4 /* AppDelegate.m */; };
 		17B5C398C625B70DC35884A1 /* BaseCalendarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17B5C6A6FC8D2D5B8CA2CE0A /* BaseCalendarView.xib */; };
+		17B5C3A0F89B95D7214B5F1B /* AZDateUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B5CA9B0C9DFA3BECC83AE9 /* AZDateUtil.m */; };
 		17B5C3E7C41A78341A8290BE /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 17B5C89542FBE9742B198A7A /* Default@2x.png */; };
 		17B5C457E7C57EEDA2658A74 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B5C4C85051F99D5343EE90 /* SecondViewController.m */; };
 		17B5C485C5792B7E133FDCD1 /* AZCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B5C3ED9D010BC87343ED7B /* AZCalendarView.m */; };
@@ -53,6 +54,7 @@
 		17B5CB57F84BBB7F6333218B /* AZCalendarGridView.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B5CBB18DE5BD8E2F4F4D8A /* AZCalendarGridView.m */; };
 		17B5CC00F71C4EBDD02CC285 /* BaseCalendarDisableGridView_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17B5C2CCABB3F47C482F7BE5 /* BaseCalendarDisableGridView_iPad.xib */; };
 		17B5CC08BC50FFCFAB94549B /* BaseCalendarGridView_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17B5CF6C048574C73B8B835B /* BaseCalendarGridView_iPad.xib */; };
+		17B5CC18370F619535D2A691 /* AZDateUtilSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B5C811609F5C39FE3DCD57 /* AZDateUtilSpec.m */; };
 		17B5CC286B57C7F44196AD70 /* ThirdCalendarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17B5C7F7A536DAA8F42575E7 /* ThirdCalendarView.xib */; };
 		17B5CD0557E8D3EF9F52CC7E /* BaseCalendarViewFooterView_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17B5C68C8EFA6A8B84B4FEC7 /* BaseCalendarViewFooterView_iPad.xib */; };
 		17B5CD5AF09500DBEE83B99C /* icon_record_calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = 17B5C8DF4E075A20C8695866 /* icon_record_calendar.png */; };
@@ -60,12 +62,18 @@
 		17B5CD8663E18076A7F53634 /* BaseCalendarViewFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B5CDC20DC0097E99EF6E42 /* BaseCalendarViewFooterView.m */; };
 		17B5CDFDB024C9933ABF69A7 /* icon_record_calendar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 17B5C4743CE8A79333BDE714 /* icon_record_calendar@2x.png */; };
 		17B5CE7728F50400C89E50E9 /* ThirdCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B5CB44E66368EA0246F7F8 /* ThirdCalendarView.m */; };
+		17B5CEE721A86195D0ED0C7E /* NSDate+AZBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B5C3EB8F4C3524EBD72744 /* NSDate+AZBuilder.m */; };
 		17B5CF3F3AAD6D144D00D801 /* ThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B5CF909F0A3B073B030280 /* ThirdViewController.m */; };
 		17B5CF4EDBC469D6239B992C /* date_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 17B5C3778CA94D9ECC97FCF1 /* date_selected@2x.png */; };
 		17B5CF6C505A95E27557C693 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 17B5C6802AF1CD1427D07827 /* Default.png */; };
+		6E5F5BE420C1411487466DC4 /* libPods-Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E38EB4D99A69448EA5933883 /* libPods-Tests.a */; settings = {}; };
 		7310627316A30E36001F632B /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7310627216A30E36001F632B /* MainStoryboard_iPad.storyboard */; };
 		7310629A16A310C9001F632B /* BaseCalendarView_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7310629916A310C9001F632B /* BaseCalendarView_iPad.xib */; };
 		7399ED0D169FB44100C0DCF0 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7399ED0C169FB44100C0DCF0 /* FirstViewController.m */; };
+		73E5C5DF1703CDC2005F61C2 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73E5C5DE1703CDC2005F61C2 /* SenTestingKit.framework */; };
+		73E5C5E01703CDC2005F61C2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17B5C821B425AA532B217B5A /* UIKit.framework */; };
+		73E5C5E11703CDC2005F61C2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17B5C9D9ED4AC71780A7B0E7 /* Foundation.framework */; };
+		73E5C5E71703CDC2005F61C2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 73E5C5E51703CDC2005F61C2 /* InfoPlist.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -84,6 +92,7 @@
 		17B5C38219605E5F5348B57F /* arrow_right@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow_right@2x.png"; sourceTree = "<group>"; };
 		17B5C399A0DE873E64AF8D77 /* AZCalendarViewFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AZCalendarViewFooterView.h; sourceTree = "<group>"; };
 		17B5C3A906DAB191110BFDF8 /* AZCalendarViewFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AZCalendarViewFooterView.m; sourceTree = "<group>"; };
+		17B5C3EB8F4C3524EBD72744 /* NSDate+AZBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+AZBuilder.m"; sourceTree = "<group>"; };
 		17B5C3ED9D010BC87343ED7B /* AZCalendarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AZCalendarView.m; sourceTree = "<group>"; };
 		17B5C3F5F32961E778F88490 /* BaseCalendarWeekHintView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseCalendarWeekHintView.m; sourceTree = "<group>"; };
 		17B5C446E3E322D56C04F7EC /* arrow_left@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow_left@2x.png"; sourceTree = "<group>"; };
@@ -93,6 +102,7 @@
 		17B5C4950390C85D07C593CB /* arrow_right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow_right.png; sourceTree = "<group>"; };
 		17B5C4C85051F99D5343EE90 /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		17B5C4EB665A5FBF22A7675A /* BaseCalendarViewHeaderView_iPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BaseCalendarViewHeaderView_iPad.xib; sourceTree = "<group>"; };
+		17B5C5004B1793EA4CAD9712 /* NSDate+AZBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+AZBuilder.h"; sourceTree = "<group>"; };
 		17B5C51AA926E4DF4089B7C3 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		17B5C54AE7B2DAB5D3D8414A /* BaseCalendarViewFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseCalendarViewFooterView.h; sourceTree = "<group>"; };
 		17B5C56872010B60D5001E53 /* arrow_left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow_left.png; sourceTree = "<group>"; };
@@ -117,6 +127,7 @@
 		17B5C7D39A27AFE80728645E /* AZCalendarWeekHintView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AZCalendarWeekHintView.m; sourceTree = "<group>"; };
 		17B5C7D3F4AC942AC5B7BAEC /* ThirdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdViewController.h; sourceTree = "<group>"; };
 		17B5C7F7A536DAA8F42575E7 /* ThirdCalendarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ThirdCalendarView.xib; sourceTree = "<group>"; };
+		17B5C811609F5C39FE3DCD57 /* AZDateUtilSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AZDateUtilSpec.m; sourceTree = "<group>"; };
 		17B5C821B425AA532B217B5A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		17B5C89542FBE9742B198A7A /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		17B5C8DF4E075A20C8695866 /* icon_record_calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_record_calendar.png; sourceTree = "<group>"; };
@@ -154,10 +165,17 @@
 		17B5CF909F0A3B073B030280 /* ThirdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdViewController.m; sourceTree = "<group>"; };
 		17B5CFAF3A82851D18062AB9 /* BaseCalendarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseCalendarView.m; sourceTree = "<group>"; };
 		17B5CFF318E3E2B7792FE9D7 /* BaseCalendarDisableGridView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BaseCalendarDisableGridView.xib; sourceTree = "<group>"; };
+		4A85D1AA22D642F2BCD1E0A2 /* Pods-Tests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tests.xcconfig"; path = "Pods/Pods-Tests.xcconfig"; sourceTree = SOURCE_ROOT; };
 		7310627216A30E36001F632B /* MainStoryboard_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		7310629916A310C9001F632B /* BaseCalendarView_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BaseCalendarView_iPad.xib; sourceTree = "<group>"; };
 		7399ED0B169FB44100C0DCF0 /* FirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
 		7399ED0C169FB44100C0DCF0 /* FirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		73E5C5DD1703CDC2005F61C2 /* Tests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		73E5C5DE1703CDC2005F61C2 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		73E5C5E41703CDC2005F61C2 /* Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Tests-Info.plist"; sourceTree = "<group>"; };
+		73E5C5E61703CDC2005F61C2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		73E5C5EB1703CDC2005F61C2 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
+		E38EB4D99A69448EA5933883 /* libPods-Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-Tests.a"; path = "libPods-Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +186,17 @@
 				17B5C4E94635C31802FD4A6E /* UIKit.framework in Frameworks */,
 				17B5C5F7C011123C980CB73C /* Foundation.framework in Frameworks */,
 				17B5C29671ACEEF8DD14EB18 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		73E5C5D91703CDC2005F61C2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				73E5C5DF1703CDC2005F61C2 /* SenTestingKit.framework in Frameworks */,
+				73E5C5E01703CDC2005F61C2 /* UIKit.framework in Frameworks */,
+				73E5C5E11703CDC2005F61C2 /* Foundation.framework in Frameworks */,
+				6E5F5BE420C1411487466DC4 /* libPods-Tests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -186,6 +215,15 @@
 				17B5CC50AE2E8BDFE4DF2B2A /* AZCalendarEnum.h */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		17B5C06C7855BB2DBC887C06 /* NSDateBuilder */ = {
+			isa = PBXGroup;
+			children = (
+				17B5C5004B1793EA4CAD9712 /* NSDate+AZBuilder.h */,
+				17B5C3EB8F4C3524EBD72744 /* NSDate+AZBuilder.m */,
+			);
+			path = NSDateBuilder;
 			sourceTree = "<group>";
 		};
 		17B5C216159E170681C7D90B /* Resource */ = {
@@ -213,6 +251,7 @@
 			isa = PBXGroup;
 			children = (
 				17B5C77C4E9200EAB7C9E820 /* AZCalendarView.app */,
+				73E5C5DD1703CDC2005F61C2 /* Tests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -275,13 +314,31 @@
 			path = Core;
 			sourceTree = "<group>";
 		};
+		17B5C89E52A1BE48D98C21CE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				17B5C811609F5C39FE3DCD57 /* AZDateUtilSpec.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		17B5C96E2EA00BB600A4D79D /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				17B5C06C7855BB2DBC887C06 /* NSDateBuilder */,
+			);
+			path = Lib;
+			sourceTree = "<group>";
+		};
 		17B5C9A91E9FC5ACFD198175 = {
 			isa = PBXGroup;
 			children = (
+				73E5C5E21703CDC2005F61C2 /* Tests */,
 				17B5C2403AE4DE72CD3ADF19 /* Products */,
 				17B5CFA675B94351E8E41A04 /* Frameworks */,
 				17B5CA20047FE5A25A95B01C /* AZCalendarView */,
 				17B5C625773147F72E1BBAE1 /* readme.md */,
+				4A85D1AA22D642F2BCD1E0A2 /* Pods-Tests.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -363,6 +420,8 @@
 				17B5C821B425AA532B217B5A /* UIKit.framework */,
 				17B5C9D9ED4AC71780A7B0E7 /* Foundation.framework */,
 				17B5CA3FDA66408C11396135 /* CoreGraphics.framework */,
+				73E5C5DE1703CDC2005F61C2 /* SenTestingKit.framework */,
+				E38EB4D99A69448EA5933883 /* libPods-Tests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -377,6 +436,26 @@
 				17B5C6802AF1CD1427D07827 /* Default.png */,
 				17B5C89542FBE9742B198A7A /* Default@2x.png */,
 				17B5C51AA926E4DF4089B7C3 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		73E5C5E21703CDC2005F61C2 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				73E5C5E31703CDC2005F61C2 /* Supporting Files */,
+				17B5C89E52A1BE48D98C21CE /* Models */,
+				17B5C96E2EA00BB600A4D79D /* Lib */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		73E5C5E31703CDC2005F61C2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				73E5C5E41703CDC2005F61C2 /* Tests-Info.plist */,
+				73E5C5E51703CDC2005F61C2 /* InfoPlist.strings */,
+				73E5C5EB1703CDC2005F61C2 /* Tests-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -401,6 +480,25 @@
 			productReference = 17B5C77C4E9200EAB7C9E820 /* AZCalendarView.app */;
 			productType = "com.apple.product-type.application";
 		};
+		73E5C5DC1703CDC2005F61C2 /* Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 73E5C5EE1703CDC2005F61C2 /* Build configuration list for PBXNativeTarget "Tests" */;
+			buildPhases = (
+				73E5C5D81703CDC2005F61C2 /* Sources */,
+				73E5C5D91703CDC2005F61C2 /* Frameworks */,
+				73E5C5DA1703CDC2005F61C2 /* Resources */,
+				73E5C5DB1703CDC2005F61C2 /* ShellScript */,
+				7E60EFD1DD4A4F54BBB93BAE /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Tests;
+			productName = Tests;
+			productReference = 73E5C5DD1703CDC2005F61C2 /* Tests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -416,9 +514,12 @@
 			mainGroup = 17B5C9A91E9FC5ACFD198175;
 			productRefGroup = 17B5C2403AE4DE72CD3ADF19 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+			);
 			projectRoot = "";
 			targets = (
 				17B5C7E50EF3781BFC14EF78 /* AZCalendarView */,
+				73E5C5DC1703CDC2005F61C2 /* Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -463,7 +564,46 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		73E5C5DA1703CDC2005F61C2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				73E5C5E71703CDC2005F61C2 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		73E5C5DB1703CDC2005F61C2 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+		7E60EFD1DD4A4F54BBB93BAE /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-Tests-resources.sh\"\n";
+			showEnvVarsInLog = 1;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		17B5C82ECCAE5A888D843882 /* Sources */ = {
@@ -497,6 +637,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		73E5C5D81703CDC2005F61C2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				17B5C3A0F89B95D7214B5F1B /* AZDateUtil.m in Sources */,
+				17B5CC18370F619535D2A691 /* AZDateUtilSpec.m in Sources */,
+				17B5CEE721A86195D0ED0C7E /* NSDate+AZBuilder.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
@@ -514,6 +664,14 @@
 				17B5C1298189836ED24EAE5D /* en */,
 			);
 			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+		73E5C5E51703CDC2005F61C2 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				73E5C5E61703CDC2005F61C2 /* en */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -595,6 +753,46 @@
 			};
 			name = Release;
 		};
+		73E5C5EC1703CDC2005F61C2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4A85D1AA22D642F2BCD1E0A2 /* Pods-Tests.xcconfig */;
+			buildSettings = {
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Tests/Tests-Prefix.pch";
+				INFOPLIST_FILE = "Tests/Tests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+		73E5C5ED1703CDC2005F61C2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4A85D1AA22D642F2BCD1E0A2 /* Pods-Tests.xcconfig */;
+			buildSettings = {
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Tests/Tests-Prefix.pch";
+				INFOPLIST_FILE = "Tests/Tests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -615,6 +813,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		73E5C5EE1703CDC2005F61C2 /* Build configuration list for PBXNativeTarget "Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				73E5C5EC1703CDC2005F61C2 /* Release */,
+				73E5C5ED1703CDC2005F61C2 /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
