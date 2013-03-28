@@ -2,9 +2,6 @@
 //  AZCalDay.h
 //  AZCalendar
 //
-//  Created by huajian zhou on 12-4-12.
-//  Copyright (c) 2012年 Sword.Zhou. All rights reserved.
-//
 
 #import <UIKit/UIKit.h>
 #import "AZCalendarEnum.h"
@@ -15,7 +12,8 @@
         unsigned int month : 4;
         unsigned int day : 5;
         unsigned int year : 15;
-        unsigned int weekDay : 4;        //sunday-saturday 1-7
+        unsigned int weekDay : 4;
+        //sunday-saturday 1-7
     } day;
 }
 
@@ -34,14 +32,6 @@
 - (NSUInteger)getWeekDay;
 
 - (NSComparisonResult)compare:(AZCalDay *)calDay;
-
-- (AZCalDay *)nextDay;
-
-- (AZCalDay *)previousDay;
-
-- (WeekDay)getMeaningfulWeekDay;
-
-- (NSString *)getWeekDayName;
 
 - (BOOL)isToday;
 

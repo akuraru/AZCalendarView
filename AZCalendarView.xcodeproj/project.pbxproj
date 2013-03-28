@@ -16,6 +16,7 @@
 		17B5C134AB3F4742B813C666 /* ThirdDataSourceImp.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B5C5B916FAE126A6F0BE90 /* ThirdDataSourceImp.m */; };
 		17B5C16D5EFDE65F4E3235C2 /* datecell-diable.png in Resources */ = {isa = PBXBuildFile; fileRef = 17B5C69E8ECBC9EB8B0FF121 /* datecell-diable.png */; };
 		17B5C170EFE2F726B2AE921B /* BaseCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B5CFAF3A82851D18062AB9 /* BaseCalendarView.m */; };
+		17B5C17F4AA96AD853E1E23C /* AZCalDay.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B5C57D0B4B878B4B7F7985 /* AZCalDay.m */; };
 		17B5C2831CDB7DB06499945F /* BaseCalendarGridView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17B5C2E7E71CAAC6BF4399C5 /* BaseCalendarGridView.xib */; };
 		17B5C29671ACEEF8DD14EB18 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17B5CA3FDA66408C11396135 /* CoreGraphics.framework */; };
 		17B5C2F4FBBE5E45E0123758 /* BaseCalendarWeekHintView_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17B5C581DDE081179FD5F89C /* BaseCalendarWeekHintView_iPad.xib */; };
@@ -60,6 +61,7 @@
 		17B5CD5AF09500DBEE83B99C /* icon_record_calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = 17B5C8DF4E075A20C8695866 /* icon_record_calendar.png */; };
 		17B5CD7B15404BE19E874C70 /* AZCalendarScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B5C8FE72DA1313BF1A1999 /* AZCalendarScrollView.m */; };
 		17B5CD8663E18076A7F53634 /* BaseCalendarViewFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B5CDC20DC0097E99EF6E42 /* BaseCalendarViewFooterView.m */; };
+		17B5CD9F594E5C5B54708E1D /* AZCalDaySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B5C8D2899F9F1EC3E08227 /* AZCalDaySpec.m */; };
 		17B5CDFDB024C9933ABF69A7 /* icon_record_calendar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 17B5C4743CE8A79333BDE714 /* icon_record_calendar@2x.png */; };
 		17B5CE7728F50400C89E50E9 /* ThirdCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B5CB44E66368EA0246F7F8 /* ThirdCalendarView.m */; };
 		17B5CEE721A86195D0ED0C7E /* NSDate+AZBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B5C3EB8F4C3524EBD72744 /* NSDate+AZBuilder.m */; };
@@ -130,6 +132,7 @@
 		17B5C811609F5C39FE3DCD57 /* AZDateUtilSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AZDateUtilSpec.m; sourceTree = "<group>"; };
 		17B5C821B425AA532B217B5A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		17B5C89542FBE9742B198A7A /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		17B5C8D2899F9F1EC3E08227 /* AZCalDaySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AZCalDaySpec.m; sourceTree = "<group>"; };
 		17B5C8DF4E075A20C8695866 /* icon_record_calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_record_calendar.png; sourceTree = "<group>"; };
 		17B5C8FE72DA1313BF1A1999 /* AZCalendarScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AZCalendarScrollView.m; sourceTree = "<group>"; };
 		17B5C989534BAD577B772C27 /* BaseCalendarViewHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BaseCalendarViewHeaderView.xib; sourceTree = "<group>"; };
@@ -318,6 +321,7 @@
 			isa = PBXGroup;
 			children = (
 				17B5C811609F5C39FE3DCD57 /* AZDateUtilSpec.m */,
+				17B5C8D2899F9F1EC3E08227 /* AZCalDaySpec.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -644,6 +648,8 @@
 				17B5C3A0F89B95D7214B5F1B /* AZDateUtil.m in Sources */,
 				17B5CC18370F619535D2A691 /* AZDateUtilSpec.m in Sources */,
 				17B5CEE721A86195D0ED0C7E /* NSDate+AZBuilder.m in Sources */,
+				17B5CD9F594E5C5B54708E1D /* AZCalDaySpec.m in Sources */,
+				17B5C17F4AA96AD853E1E23C /* AZCalDay.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

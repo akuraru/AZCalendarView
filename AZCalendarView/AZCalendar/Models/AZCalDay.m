@@ -16,12 +16,16 @@
 @property(nonatomic, strong, readwrite) NSDate *date;
 
 - (void)defineDayOfDate;
+
+- (WeekDay)getMeaningfulWeekDay;
+
+- (NSString *)getWeekDayName;
 @end
 
 @implementation AZCalDay
 
 
-- (void)setDate:(NSDate *)date {
+- (void)setDate:(NSDate *) date {
     _date = date;
     // Calculate struct Day
     [self defineDayOfDate];
@@ -32,23 +36,24 @@
     NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
     NSAssert(self.date != nil, @"self.date is nil");
     NSDateComponents *comps = [gregorian components:unitFlags fromDate:self.date];
-    day.month = (unsigned int) comps.month;
-    day.day = (unsigned int) comps.day;
-    day.year = (unsigned int) comps.year;
-    day.weekDay = (unsigned int) comps.weekday;
+    day.month = (unsigned int)comps.month;
+    day.day = (unsigned int)comps.day;
+    day.year = (unsigned int)comps.year;
+    day.weekDay = (unsigned int)comps.weekday;
 }
 
-- (id)initWithDate:(NSDate *)date {
+- (id)initWithDate:(NSDate *) date {
     self = [super init];
-    if (self){
+    if (self) {
         self.date = date;
     }
     return self;
 }
 
-- (id)initWithYear:(NSInteger)year month:(NSInteger)month day:(NSInteger)d {
+- (id)initWithYear:(NSInteger) year month:(NSInteger) month day:(NSInteger) d {
     self = [super init];
-    if (self){
+    if (self != nil) {
+        NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
         NSDateComponents *comps = [[NSDateComponents alloc] init];
         [comps setYear:year];
         [comps setMonth:month];
@@ -56,7 +61,7 @@
         [comps setHour:0];
         [comps setMinute:0];
         [comps setSecond:0];
-        self.date = [[[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar] dateFromComponents:comps];
+        self.date = [calendar dateFromComponents:comps];
     }
     return self;
 }
@@ -77,17 +82,17 @@
     return day.weekDay;
 }
 
-- (NSComparisonResult)compare:(AZCalDay *)calDay {
+- (NSComparisonResult)compare:(AZCalDay *) calDay {
     NSComparisonResult result = NSOrderedSame;
-    if ([self getYear] < [calDay getYear]){
+    if ([self getYear] < [calDay getYear]) {
         result = NSOrderedAscending;
-    } else if ([self getYear] == [calDay getYear]){
-        if ([self getMonth] < [calDay getMonth]){
+    } else if ([self getYear] == [calDay getYear]) {
+        if ([self getMonth] < [calDay getMonth]) {
             result = NSOrderedAscending;
-        } else if ([self getMonth] == [calDay getMonth]){
-            if ([self getDay] < [calDay getDay]){
+        } else if ([self getMonth] == [calDay getMonth]) {
+            if ([self getDay] < [calDay getDay]) {
                 result = NSOrderedAscending;
-            } else if ([self getDay] == [calDay getDay]){
+            } else if ([self getDay] == [calDay getDay]) {
                 result = NSOrderedSame;
             } else {
                 result = NSOrderedDescending;
@@ -118,25 +123,25 @@
     switch (day.weekDay) {
         case 1:
             weekDay = WeekDaySunday;
-        break;
+            break;
         case 2:
             weekDay = WeekDayMonday;
-        break;
+            break;
         case 3:
             weekDay = WeekDayTuesday;
-        break;
+            break;
         case 4:
             weekDay = WeekDayWednesday;
-        break;
+            break;
         case 5:
             weekDay = WeekDayThursday;
-        break;
+            break;
         case 6:
             weekDay = WeekDayFriday;
-        break;
+            break;
         case 7:
             weekDay = WeekDaySaturday;
-        break;
+            break;
         default:
             break;
     }
@@ -146,7 +151,7 @@
 - (NSString *)getWeekDayName {
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setLocale:[NSLocale currentLocale]];
-    if (day.weekDay == 0){
+    if (day.weekDay == 0) {
         return @"UNKNOWN_WEEK_DAY_NAME";
     }
     return [[dateFormatter weekdaySymbols] objectAtIndex:day.weekDay - 1];
@@ -158,15 +163,15 @@
 
 - (BOOL)isToday {
     return ([AZDateUtil getCurrentYear] == day.year &&
-        [AZDateUtil getCurrentMonth] == day.month &&
-        [AZDateUtil getCurrentDay] == day.day);
+            [AZDateUtil getCurrentMonth] == day.month &&
+            [AZDateUtil getCurrentDay] == day.day);
 }
 
-- (BOOL)isEqualToDay:(AZCalDay *)calDay {
+- (BOOL)isEqualToDay:(AZCalDay *) calDay {
     NSAssert([calDay isKindOfClass:[AZCalDay class]], @"Arguments is not AZCalDay");
     BOOL equal = ([calDay getYear] == day.year &&
-        [calDay getMonth] == day.month &&
-        [calDay getDay] == day.day);
+            [calDay getMonth] == day.month &&
+            [calDay getDay] == day.day);
     return equal;
 }
 @end
