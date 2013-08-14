@@ -860,7 +860,7 @@
     [super awakeFromNib];
     self.alpha = 0.0; // default is hidden Calendar
     self.multipleTouchEnabled = YES;
-    self.gridScrollView.calendarDelegate = self;
+    self.gridScrollView.calendarScrollViewDelegate = self;
     [self initParameters];
 }
 
