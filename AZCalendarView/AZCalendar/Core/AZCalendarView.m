@@ -472,7 +472,7 @@
      */
     calDay = [_calMonth firstDay];
     if ([calDay getWeekDay] > 1){
-        count = [calDay getWeekDay];
+        count = [calDay getWeekDay] - 1;
         AZCalMonth *previousMonth = [_calMonth previousMonth];
         row = 0;
         for (NSInteger day = previousMonth.days ;count > 0 && day >= 1 ;day--){
