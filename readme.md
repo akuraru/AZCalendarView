@@ -31,6 +31,10 @@ Directory
     │   ├── Implements
     │   └── Models
 
+### Cocoapods
+
+    pod 'AZCalendarView', :git => 'https://github.com/azu/AZCalendarView.git'
+
 # Usage
 
 
