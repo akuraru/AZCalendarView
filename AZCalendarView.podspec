@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "AZCalendarView"
-  s.version      = "0.0.3"
+  s.version      = "0.0.4"
   s.summary      = "iOS CalendarView library - has similar delegate methods to a UITableViewDataSource."
   s.homepage     = "http://efcl.info/"
   s.license      = 'MIT'
