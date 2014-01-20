@@ -605,9 +605,6 @@
     int calcRow = row;
     int calcColumn = column;
 
-    int padding = calcColumn - 1;
-    CGFloat totalWidth = self.gridScrollView.frame.size.width;
-
     CGFloat width = [self widthForGridView];
     CGFloat x = width * calcColumn;
     //  MARGIN_LEFT + padding * PADDING_HORIZONTAL + calcColumn * self.gridSize.width
