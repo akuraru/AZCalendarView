@@ -47,7 +47,7 @@
     if (self.calendarView == nil) {
         self.dataSource = [[BaseDataSourceImp alloc] init];
         self.calendarView = [BaseCalendarView viewFromNib];
-        self.calendarView.frame = CGRectMake(0, 0, self.view.bounds.size.width,
+        self.calendarView.frame = CGRectMake(0, 80, self.view.bounds.size.width,
             self.calendarView.frame.size.height);
         self.calendarView.dataSource = self.dataSource;
         self.calendarView.delegate = self;
