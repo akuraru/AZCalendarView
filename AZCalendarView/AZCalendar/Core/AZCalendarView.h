@@ -84,7 +84,7 @@
 /*
  * default is FALSE
  */
-@property(nonatomic, assign) BOOL allowsMultipleSelection;
+@property(nonatomic, assign) BOOL allowsMultipleSelection __attribute__((deprecated("drop support")));
 @property(nonatomic, assign, getter=isAppear) BOOL appear;
 /*
  * default date is current date
@@ -110,7 +110,7 @@
  * nil will be returned is allowsMultipleSelection is FALSE. 
  * Otherwise, an autorelease array of NSDate will be returned.
  */
-@property(strong, nonatomic, readonly) NSArray *selectedDateArray;
+@property(strong, nonatomic, readonly) NSArray *selectedDateArray __attribute__((deprecated("drop support")));
 /*
     The Grid Size
     Default(When doesn't assign): use BaseCalendarGridView.xib size
