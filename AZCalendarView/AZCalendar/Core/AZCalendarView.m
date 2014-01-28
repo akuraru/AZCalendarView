@@ -5,6 +5,7 @@
 //  Created by huajian zhou on 12-4-12.
 //  Copyright (c) 2012年 Sword.Zhou. All rights reserved.
 
+#import <CoreGraphics/CoreGraphics.h>
 #import "AZCalendarView.h"
 #import "AZCalMonth.h"
 #import "AZCalendarWeekHintView.h"
@@ -168,8 +169,7 @@
 - (void)setSelectedDay:(AZCalDay *)selectedDay {
     _selectedDay = selectedDay;
     if (_selectedDay != nil){
-        // TODO: pass gridView?
-        [self calendarGridViewDidSelectGrid:nil];
+        [self calendarGridViewDidChangeDay];
     }
 }
 
@@ -471,7 +471,7 @@
      */
     calDay = [_calMonth firstDay];
     if ([calDay getWeekDay] > 1){
-        count = [calDay getWeekDay];
+        count = [calDay getWeekDay] - 1;
         AZCalMonth *previousMonth = [_calMonth previousMonth];
         row = 0;
         for (NSInteger day = previousMonth.days ;count > 0 && day >= 1 ;day--){
@@ -601,12 +601,13 @@
 }
 
 - (CGRect)getFrameForRow:(NSUInteger)row column:(NSUInteger)column {
-    int padding = column - 1;
-    CGFloat totalWidth = self.gridScrollView.frame.size.width;
-    CGFloat width = totalWidth / NUMBER_OF_DAYS_IN_WEEK;
-    CGFloat x = width * column;
-    //  MARGIN_LEFT + padding * PADDING_HORIZONTAL + column * self.gridSize.width
-    CGFloat y = MARGIN_TOP + row * self.gridSize.height;
+    int calcRow = row;
+    int calcColumn = column;
+
+    CGFloat width = [self widthForGridView];
+    CGFloat x = width * calcColumn;
+    //  MARGIN_LEFT + padding * PADDING_HORIZONTAL + calcColumn * self.gridSize.width
+    CGFloat y = MARGIN_TOP + calcRow * self.gridSize.height;
     CGRect frame = CGRectMake(x, y, self.gridSize.width, self.gridSize.height);
     return frame;
 }
@@ -736,14 +737,23 @@
     }];
 }
 
-- (void)nextMonth {
+- (void)showNextMonth {
     [self resetSelectedIndicesMatrix];
     [self animationChangeMonth:YES];
 }
 
-- (void)previousMonth {
+- (void)nextMonth {
+    [self showNextMonth];
+}
+
+
+- (void)showPreviousMonth {
     [self resetSelectedIndicesMatrix];
     [self animationChangeMonth:NO];
+}
+
+- (void)previousMonth {
+    [self showPreviousMonth];
 }
 
 - (void)layoutSubviews {
@@ -806,7 +816,6 @@
                 CGRect frame = calendarFooterView.bounds;
                 frame.origin.x = (CGRectGetWidth(self.footerView.bounds) - CGRectGetWidth(frame)) / 2;
                 frame.origin.y = (CGRectGetHeight(self.footerView.bounds) - CGRectGetHeight(frame)) / 2;
-                calendarFooterView.delegate = self;
                 calendarFooterView.frame = frame;
                 _calendarFooterView = calendarFooterView;
                 [self.footerView addSubview:_calendarFooterView];
@@ -833,10 +842,10 @@
 
 - (void)swipe:(UISwipeGestureRecognizer *)gesture {
     if (UISwipeGestureRecognizerDirectionLeft == gesture.direction){
-        [self nextMonth];
+        [self showNextMonth];
     }
     else {
-        [self previousMonth];
+        [self showPreviousMonth];
     }
 }
 
@@ -886,11 +895,11 @@
 }
 #pragma mark - CalendarViewHeaderViewDelegate
 - (void)calendarViewHeaderViewNextMonth:(AZCalendarViewHeaderView *)calendarHeaderView {
-    [self nextMonth];
+    [self showNextMonth];
 }
 
 - (void)calendarViewHeaderViewPreviousMonth:(AZCalendarViewHeaderView *)calendarHeaderView {
-    [self previousMonth];
+    [self showPreviousMonth];
 }
 
 - (void)calendarViewHeaderViewDidCancel:(AZCalendarViewHeaderView *)calendarHeaderView {
@@ -898,23 +907,25 @@
 }
 
 - (void)calendarViewHeaderViewDidSelection:(AZCalendarViewHeaderView *)calendarHeaderView {
-    if (_delegate && [_delegate respondsToSelector:@selector(calendarView:didSelectDay:)]){
-        [_delegate calendarView:self didSelectDay:self.selectedDay];
-    }
     [self hide];
 }
-#pragma mark - CalendarViewFooterViewDelegate
-- (void)calendarViewFooterViewDidSelectPeriod:(AZCalendarViewFooterView *)footerView
-        periodType:(PeriodType)type {
-    self.selectedPeriod = type;
-    if (_delegate && [_delegate respondsToSelector:@selector(calendarView:didSelectPeriodType:)]){
-        [_delegate calendarView:self didSelectPeriodType:type];
-    }
-}
 #pragma mark - CalendarGridViewDelegate
-- (void)calendarGridViewDidSelectGrid:(AZCalendarGridView *)gridView {
-    if (_delegate && [_delegate respondsToSelector:@selector(calendarView:didSelectDay:)]){
+- (void)calendarGridViewDidChangeDay{
+    if (_delegate && [_delegate respondsToSelector:@selector(calendarView:didChangeDate:)]){
+        [_delegate calendarView:self didChangeDate:self.selectedDay.date];
+    }
+    // deprecated delegate
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+    if (_delegate && [_delegate respondsToSelector:@selector(calendarView:didSelectDay:)]) {
         [_delegate calendarView:self didSelectDay:self.selectedDay];
+    }
+#pragma clang diagnostic pop
+}
+
+- (void)calendarGridViewDidSelectDay:(AZCalDay *) calDay {
+    if (_delegate && [_delegate respondsToSelector:@selector(calendarView:didSelectDate:)]) {
+        [_delegate calendarView:self didSelectDate:calDay.date];
     }
 }
 
@@ -1008,7 +1019,9 @@
             if (!_moved){
                 NSInteger day = [self getMonthDayAtRow:row column:column];
                 if (day >= 1 && day <= _calMonth.days){
-                    self.selectedDay = [_calMonth calDayAtDay:day];
+                    AZCalDay *calDay = [_calMonth calDayAtDay:day];
+                    self.selectedDay = calDay;
+                    [self calendarGridViewDidSelectDay:calDay];
                 }
             }
         }
@@ -1023,10 +1036,10 @@
             if (fabs(endPoint.x - _beginPoint.x) > HORIZONTAL_SWIPE_WIDTH_CONSTRAINT){
                 //swipe right
                 if (endPoint.x > _beginPoint.x){
-                    [self previousMonth];
+                    [self showPreviousMonth];
                 }
                 else {
-                    [self nextMonth];
+                    [self showNextMonth];
                 }
             }
         }

@@ -49,5 +49,5 @@
 @protocol CalendarGridViewDelegate <NSObject>
 
 @optional
-- (void)calendarGridViewDidSelectGrid:(AZCalendarGridView *)gridView;
+- (void)calendarGridViewDidSelectDay:(AZCalDay *) calDay;
 @end
