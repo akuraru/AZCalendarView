@@ -10,13 +10,6 @@
 
 @implementation AZCalendarViewFooterView
 
-@synthesize selectedButton = _selectedButton;
-@synthesize delegate = _delegate;
-
-- (void)dealloc {
-    _delegate = nil;
-}
-
 + (AZCalendarViewFooterView *)viewFromNib {
     Class selfClass = [self class];
     return [[[NSBundle bundleForClass:selfClass] loadNibNamed:NSStringFromClass(selfClass) owner:self options:nil]

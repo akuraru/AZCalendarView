@@ -169,8 +169,7 @@
 - (void)setSelectedDay:(AZCalDay *)selectedDay {
     _selectedDay = selectedDay;
     if (_selectedDay != nil){
-        // TODO: pass gridView?
-        [self calendarGridViewDidSelectGrid:nil];
+        [self calendarGridViewDidChangeDay];
     }
 }
 
@@ -817,7 +816,6 @@
                 CGRect frame = calendarFooterView.bounds;
                 frame.origin.x = (CGRectGetWidth(self.footerView.bounds) - CGRectGetWidth(frame)) / 2;
                 frame.origin.y = (CGRectGetHeight(self.footerView.bounds) - CGRectGetHeight(frame)) / 2;
-                calendarFooterView.delegate = self;
                 calendarFooterView.frame = frame;
                 _calendarFooterView = calendarFooterView;
                 [self.footerView addSubview:_calendarFooterView];
@@ -909,23 +907,25 @@
 }
 
 - (void)calendarViewHeaderViewDidSelection:(AZCalendarViewHeaderView *)calendarHeaderView {
-    if (_delegate && [_delegate respondsToSelector:@selector(calendarView:didSelectDay:)]){
-        [_delegate calendarView:self didSelectDay:self.selectedDay];
-    }
     [self hide];
 }
-#pragma mark - CalendarViewFooterViewDelegate
-- (void)calendarViewFooterViewDidSelectPeriod:(AZCalendarViewFooterView *)footerView
-        periodType:(PeriodType)type {
-    self.selectedPeriod = type;
-    if (_delegate && [_delegate respondsToSelector:@selector(calendarView:didSelectPeriodType:)]){
-        [_delegate calendarView:self didSelectPeriodType:type];
-    }
-}
 #pragma mark - CalendarGridViewDelegate
-- (void)calendarGridViewDidSelectGrid:(AZCalendarGridView *)gridView {
-    if (_delegate && [_delegate respondsToSelector:@selector(calendarView:didSelectDay:)]){
+- (void)calendarGridViewDidChangeDay{
+    if (_delegate && [_delegate respondsToSelector:@selector(calendarView:didChangeDate:)]){
+        [_delegate calendarView:self didChangeDate:self.selectedDay.date];
+    }
+    // deprecated delegate
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+    if (_delegate && [_delegate respondsToSelector:@selector(calendarView:didSelectDay:)]) {
         [_delegate calendarView:self didSelectDay:self.selectedDay];
+    }
+#pragma clang diagnostic pop
+}
+
+- (void)calendarGridViewDidSelectDay:(AZCalDay *) calDay {
+    if (_delegate && [_delegate respondsToSelector:@selector(calendarView:didSelectDate:)]) {
+        [_delegate calendarView:self didSelectDate:calDay.date];
     }
 }
 
@@ -1019,7 +1019,9 @@
             if (!_moved){
                 NSInteger day = [self getMonthDayAtRow:row column:column];
                 if (day >= 1 && day <= _calMonth.days){
-                    self.selectedDay = [_calMonth calDayAtDay:day];
+                    AZCalDay *calDay = [_calMonth calDayAtDay:day];
+                    self.selectedDay = calDay;
+                    [self calendarGridViewDidSelectDay:calDay];
                 }
             }
         }

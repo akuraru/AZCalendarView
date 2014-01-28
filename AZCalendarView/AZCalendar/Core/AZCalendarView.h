@@ -16,14 +16,14 @@
 #import "AZCalendarScrollView.h"
 
 #ifndef AZ_ENABLE_RECORD_LOGGING
-    #ifdef DEBUG
-        #define AZ_ENABLE_RECORD_LOGGING 1
-    #else
+#ifdef DEBUG
+#define AZ_ENABLE_RECORD_LOGGING 1
+#else
         #define AZ_ENABLE_RECORD_LOGGING 0
     #endif
 #endif
 #if AZ_ENABLE_RECORD_LOGGING != 0
-    #define AZLog(...) NSLog(@"%s(%p) %@", __PRETTY_FUNCTION__, self, [NSString stringWithFormat:__VA_ARGS__])
+#define AZLog(...) NSLog(@"%s(%p) %@", __PRETTY_FUNCTION__, self, [NSString stringWithFormat:__VA_ARGS__])
 #else
     #define AZLog(...) ((void)0)
 #endif
@@ -32,7 +32,7 @@
 @class AZCalMonth;
 
 @interface AZCalendarView : UIView <CalendarGridViewDelegate,
-    CalendarViewHeaderViewDelegate, CalendarViewFooterViewDelegate, CalendarScrollViewDelegate> {
+    CalendarViewHeaderViewDelegate, CalendarScrollViewDelegate> {
 
     bool **_selectedIndicesMatrix;
     bool **_focusMatrix;
@@ -147,21 +147,23 @@
 
 
 - (void)nextMonth __attribute__ ((deprecated));
+
 - (void)showNextMonth;
 
 - (void)previousMonth __attribute__ ((deprecated));
+
 - (void)showPreviousMonth;
 
-- (void)show:(BOOL)animated;
+- (void)show:(BOOL) animated;
 
 - (void)show;
 
 /*
     - (void) show + addSubView
  */
-- (void)showInView:(UIView *)view;
+- (void)showInView:(UIView *) view;
 
-- (void)hide:(BOOL)animated;
+- (void)hide:(BOOL) animated;
 
 - (void)hide;
 
@@ -171,11 +173,11 @@
 */
 - (void)reloadData;
 
-- (AZCalDay *)calDayAtGridIndex:(GridIndex)gridIndex;
+- (AZCalDay *)calDayAtGridIndex:(GridIndex) gridIndex;
 
-- (GridIndex)gridIndexForGridView:(AZCalendarGridView *)gridView;
+- (GridIndex)gridIndexForGridView:(AZCalendarGridView *) gridView;
 
-- (AZCalendarGridView *)dequeueCalendarGridViewWithIdentifier:(NSString *)identifier;
+- (AZCalendarGridView *)dequeueCalendarGridViewWithIdentifier:(NSString *) identifier;
 
 + (id)viewFromNib;
 
