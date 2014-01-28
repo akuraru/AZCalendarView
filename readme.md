@@ -4,12 +4,13 @@ Calendar library has similar delegate methods to a `UITableView`
 
 <img alt="iPhone Calendar" src="https://raw.github.com/azu/AZCalendarView/develop/images/Screenshot_Calendar.png" width="320" />
 <img alt="iPad Calendar"  src="https://raw.github.com/azu/AZCalendarView/develop/images/Screenshot_iPad.png" width="400" />
+<img alt="iPhone Calendar no header" src="https://raw.github.com/azu/AZCalendarView/develop/images/Screenshot_no_header.png" width="320" />
 
 # Breakdown
 
 * support iPhone and iPad
 * It has similar delegate methods to a `UITableViewDataSource`
-* allow `allowsMultipleSelection`
+* Customizable Calendar UI(Componenets are just simple Xib file)
 * doesn't support landscape yet...
 
 
@@ -29,17 +30,31 @@ Directory
     │   ├── Implements
     │   └── Models
 
+### Cocoapods
+
+    pod 'AZCalendarView', :git => 'https://github.com/azu/AZCalendarView.git'
+
 # Usage
 
 
 ``` objc
 BaseDataSourceImp *dataSource = [[BaseDataSourceImp alloc] init];
 BaseCalendarView *calendarView = [BaseCalendarView viewFromNib];// don't use alloc init...
-calendarView.frame = CGRectMake(0, 0, selfb.view.bounds.size.width, self.calendarView.frame.size.height);
+calendarView.frame = CGRectMake(0, 0, self.view.bounds.size.width, self.calendarView.frame.size.height);
 calendarView.dataSource = dataSource;
 calendarView.delegate = self;// <AZCalendarViewDelegate>
 [self.view addSubview:calendarView];
+
+#pragma mark - AZCalendarViewDelegate
+- (void)calendarView:(AZCalendarView *) calendarView didChangeDate:(NSDate *) date {
+    NSLog(@"change date = %@", date);
+}
+
+- (void)calendarView:(AZCalendarView *) calendarView didSelectDate:(NSDate *) date {
+    NSLog(@"select date = %@", date);
+}
 ```
+
 
 ## Calendar Parts
 

@@ -8,11 +8,14 @@
 
 #import <Foundation/Foundation.h>
 #import "AZCalendarEnum.h"
+
 @class AZCalendarView;
 @class AZCalDay;
 
 @protocol AZCalendarViewDelegate <NSObject>
 @optional
-- (void)calendarView:(AZCalendarView *)calendarView didSelectDay:(AZCalDay *)calDay;
-- (void)calendarView:(AZCalendarView *)calendarView didSelectPeriodType:(PeriodType)periodType;
+- (void)calendarView:(AZCalendarView *) calendarView didChangeDate:(NSDate *) date;
+- (void)calendarView:(AZCalendarView *) calendarView didSelectDate:(NSDate *) date;
+
+- (void)calendarView:(AZCalendarView *) calendarView didSelectDay:(AZCalDay *) calDay __attribute__((deprecated("Use - (void)calendarView:didChangeDate: instead")));
 @end

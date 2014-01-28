@@ -33,8 +33,8 @@
 // without reloadData
 - (void)updateCalendarView {
     NSArray *visibleGridViews = [self.calendarView visibleGridViews];
-    for (AZCalendarGridView *gridView in visibleGridViews){
-        if ([gridView isKindOfClass:[BaseCalendarDisableGridView class]]){
+    for (AZCalendarGridView *gridView in visibleGridViews) {
+        if ([gridView isKindOfClass:[BaseCalendarDisableGridView class]]) {
             continue;// disable cells is not update
         }
         GridIndex gridIndex = [self.calendarView gridIndexForGridView:gridView];
@@ -44,10 +44,11 @@
 }
 
 - (void)loadCalendarView {
-    if (self.calendarView == nil){
+    if (self.calendarView == nil) {
         self.dataSource = [[BaseDataSourceImp alloc] init];
         self.calendarView = [BaseCalendarView viewFromNib];
-        self.calendarView.frame = CGRectMake(0, 0, self.view.bounds.size.width, self.calendarView.frame.size.height);
+        self.calendarView.frame = CGRectMake(0, 80, self.view.bounds.size.width,
+            self.calendarView.frame.size.height);
         self.calendarView.dataSource = self.dataSource;
         self.calendarView.delegate = self;
         [self.view addSubview:self.calendarView];
@@ -55,8 +56,13 @@
     [self.calendarView show];
 }
 
-- (void)calendarView:(AZCalendarView *)calendarView didSelectDay:(AZCalDay *)calDay {
-    NSLog(@"Selected Date = %@", calDay.date);
+#pragma mark - calendar delegate
+- (void)calendarView:(AZCalendarView *) calendarView didChangeDate:(NSDate *) date {
+    NSLog(@"change date = %@", date);
+}
+
+- (void)calendarView:(AZCalendarView *) calendarView didSelectDate:(NSDate *) date {
+    NSLog(@"select date = %@", date);
 }
 
 - (void)didReceiveMemoryWarning {
@@ -65,7 +71,7 @@
 }
 
 
-- (void)viewWillAppear:(BOOL)animated {
+- (void)viewWillAppear:(BOOL) animated {
     [super viewWillAppear:animated];
     // Update Calendar
     [self updateCalendarView];

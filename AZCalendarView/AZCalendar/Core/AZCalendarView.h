@@ -16,14 +16,14 @@
 #import "AZCalendarScrollView.h"
 
 #ifndef AZ_ENABLE_RECORD_LOGGING
-    #ifdef DEBUG
-        #define AZ_ENABLE_RECORD_LOGGING 1
-    #else
+#ifdef DEBUG
+#define AZ_ENABLE_RECORD_LOGGING 1
+#else
         #define AZ_ENABLE_RECORD_LOGGING 0
     #endif
 #endif
 #if AZ_ENABLE_RECORD_LOGGING != 0
-    #define AZLog(...) NSLog(@"%s(%p) %@", __PRETTY_FUNCTION__, self, [NSString stringWithFormat:__VA_ARGS__])
+#define AZLog(...) NSLog(@"%s(%p) %@", __PRETTY_FUNCTION__, self, [NSString stringWithFormat:__VA_ARGS__])
 #else
     #define AZLog(...) ((void)0)
 #endif
@@ -32,7 +32,7 @@
 @class AZCalMonth;
 
 @interface AZCalendarView : UIView <CalendarGridViewDelegate,
-    CalendarViewHeaderViewDelegate, CalendarViewFooterViewDelegate, CalendarScrollViewDelegate> {
+    CalendarViewHeaderViewDelegate, CalendarScrollViewDelegate> {
 
     bool **_selectedIndicesMatrix;
     bool **_focusMatrix;
@@ -84,7 +84,7 @@
 /*
  * default is FALSE
  */
-@property(nonatomic, assign) BOOL allowsMultipleSelection;
+@property(nonatomic, assign) BOOL allowsMultipleSelection __attribute__((deprecated("drop support")));
 @property(nonatomic, assign, getter=isAppear) BOOL appear;
 /*
  * default date is current date
@@ -110,7 +110,7 @@
  * nil will be returned is allowsMultipleSelection is FALSE. 
  * Otherwise, an autorelease array of NSDate will be returned.
  */
-@property(strong, nonatomic, readonly) NSArray *selectedDateArray;
+@property(strong, nonatomic, readonly) NSArray *selectedDateArray __attribute__((deprecated("drop support")));
 /*
     The Grid Size
     Default(When doesn't assign): use BaseCalendarGridView.xib size
@@ -146,20 +146,24 @@
 @property(nonatomic, strong, readonly) NSArray *visibleGridViews;
 
 
-- (void)nextMonth;
+- (void)nextMonth __attribute__ ((deprecated));
 
-- (void)previousMonth;
+- (void)showNextMonth;
 
-- (void)show:(BOOL)animated;
+- (void)previousMonth __attribute__ ((deprecated));
+
+- (void)showPreviousMonth;
+
+- (void)show:(BOOL) animated;
 
 - (void)show;
 
 /*
     - (void) show + addSubView
  */
-- (void)showInView:(UIView *)view;
+- (void)showInView:(UIView *) view;
 
-- (void)hide:(BOOL)animated;
+- (void)hide:(BOOL) animated;
 
 - (void)hide;
 
@@ -169,11 +173,11 @@
 */
 - (void)reloadData;
 
-- (AZCalDay *)calDayAtGridIndex:(GridIndex)gridIndex;
+- (AZCalDay *)calDayAtGridIndex:(GridIndex) gridIndex;
 
-- (GridIndex)gridIndexForGridView:(AZCalendarGridView *)gridView;
+- (GridIndex)gridIndexForGridView:(AZCalendarGridView *) gridView;
 
-- (AZCalendarGridView *)dequeueCalendarGridViewWithIdentifier:(NSString *)identifier;
+- (AZCalendarGridView *)dequeueCalendarGridViewWithIdentifier:(NSString *) identifier;
 
 + (id)viewFromNib;
 
