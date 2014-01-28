@@ -19,7 +19,7 @@
 
 @implementation ThirdViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+- (id)initWithNibName:(NSString *) nibNameOrNil bundle:(NSBundle *) nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
@@ -50,7 +50,8 @@
     if (self.calendarView == nil) {
         self.dataSource = [[ThirdDataSourceImp alloc] init];
         self.calendarView = [ThirdCalendarView viewFromNib];
-        self.calendarView.frame = CGRectMake(0, 0, self.view.bounds.size.width, self.calendarView.frame.size.height);
+        self.calendarView.frame = CGRectMake(0, 80, self.view.bounds.size.width,
+            self.calendarView.frame.size.height);
         self.calendarView.dataSource = self.dataSource;
         self.calendarView.delegate = self;
         [self.view addSubview:self.calendarView];
@@ -60,11 +61,13 @@
     [self.calendarView show];
 }
 
-- (void)calendarView:(AZCalendarView *)calendarView didSelectDay:(AZCalDay *)calDay {
-    NSLog(@"Selected Date = %@", calDay.date);
-
-    [self updateNavigationTitleDate:calDay.date];
+- (void)calendarView:(AZCalendarView *) calendarView didChangeDate:(NSDate *) date {
 }
+
+- (void)calendarView:(AZCalendarView *) calendarView didSelectDate:(NSDate *) date {
+    [self updateNavigationTitleDate:date];
+}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -72,9 +75,9 @@
     [self updateCalendarNavigationButtons];
 }
 
-- (void)updateNavigationTitleDate:(NSDate *)date {
+- (void)updateNavigationTitleDate:(NSDate *) date {
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateFormat:[NSDateFormatter dateFormatFromTemplate:@"YM" options:0 locale:[NSLocale currentLocale]]];
+    [formatter setDateFormat:[NSDateFormatter dateFormatFromTemplate:@"YMdd" options:0 locale:[NSLocale currentLocale]]];
     self.navigationItem.title = [formatter stringFromDate:date];
 }
 
