@@ -10,6 +10,7 @@
 #import "AZCalMonth.h"
 #import "AZCalendarWeekHintView.h"
 
+#define NUMBER_OF_DAYS_IN_WEEK  7
 #define MARGIN_LEFT                              0
 #define MARGIN_TOP                               0
 #define PADDING_VERTICAL                         0
@@ -854,7 +855,7 @@
     [super awakeFromNib];
     self.alpha = 0.0; // default is hidden Calendar
     self.multipleTouchEnabled = YES;
-    self.gridScrollView.calendarDelegate = self;
+    self.gridScrollView.calendarScrollViewDelegate = self;
     [self initParameters];
 }
 

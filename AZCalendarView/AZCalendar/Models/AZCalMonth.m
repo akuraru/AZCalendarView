@@ -1,128 +1,108 @@
 //
-//  AZCalMonth.m
-//  AZCalendar
+// Created by azu on 2013/03/28.
 //
-//  Created by huajian zhou on 12-4-12.
-//  Copyright (c) 2012年 Sword.Zhou. All rights reserved.
-//
+
 
 #import "AZCalMonth.h"
-#import "AZDateUtil.h"
 #import "AZCalDay.h"
+#import "AZDateUtil.h"
 
-#define FIRST_MONTH_OF_YEAR  1
-#define LAST_MONTH_OF_YEAR  12
 
 @interface AZCalMonth ()
-
-- (void)calculateMonth;
+@property(nonatomic, strong) NSDate *date;
+@property(nonatomic, strong) NSDateComponents *components;
+@property(nonatomic) NSInteger numberOfDays;
+@property(nonatomic) NSInteger year;
+@property(nonatomic) NSInteger month;
+@property(nonatomic, strong) NSMutableArray *daysOfMonth;
 @end
 
 @implementation AZCalMonth
-
-- (void)calculateMonth {
-    mon.numberOfDays = (unsigned int) [AZDateUtil numberOfDaysInMonth:[_today getMonth] year:[_today getYear]];
-    mon.year = [_today getYear];
-    mon.month = [_today getMonth];
-    daysOfMonth = [[NSMutableArray alloc] init];
-    for (NSInteger day = 1 ;day <= mon.numberOfDays ;day++){
-        AZCalDay *calDay = [[AZCalDay alloc] initWithYear:mon.year month:mon.month day:day];
-        [daysOfMonth addObject:calDay];
+// lump make AZCalDay
+- (void)lumpAZDayOfMonth {
+    self.numberOfDays = [AZDateUtil numberOfDaysInMonthDate:self.date];
+    self.year = [self.components year];
+    self.month = [self.components month];
+    self.daysOfMonth = [NSMutableArray array];
+    // 1...day of month
+    for (NSInteger day = 1; day <= self.numberOfDays; day++) {
+        AZCalDay *calDay = [[AZCalDay alloc] initWithYear:self.year month:self.month day:day];
+        [self.daysOfMonth addObject:calDay];
     }
 }
 
-- (AZCalMonth *)nextMonth {
-    NSUInteger year = mon.year;
-    NSUInteger month = mon.month + 1;
-    NSUInteger day = 1;
-    if (month > LAST_MONTH_OF_YEAR){
-        year++;
-        month = 1;
+- (id)initWithDate:(NSDate *) date {
+    self = [self init];
+    if (self == nil) {
+        return nil;
     }
-    AZCalMonth *calMonth = [[AZCalMonth alloc] initWithMonth:month year:year day:day];
-    return calMonth;
-}
+    _date = date;
 
-- (AZCalMonth *)previousMonth {
-    NSUInteger year = mon.year;
-    NSUInteger month = mon.month - 1;
-    NSUInteger day = 1;
-    if (month < FIRST_MONTH_OF_YEAR){
-        year--;
-        month = 12;
-    }
-    AZCalMonth *calMonth = [[AZCalMonth alloc] initWithMonth:month year:year day:day];
-    return calMonth;
-}
+    unsigned unitFlags = NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit | NSWeekdayCalendarUnit;
+    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    NSDateComponents *components = [calendar components:unitFlags fromDate:date];
+    self.components = components;
 
-- (id)initWithMonth:(NSUInteger)month {
-    self = [super init];
-    if (self){
-        _today = [[AZCalDay alloc] initWithYear:[AZDateUtil getCurrentYear] month:month day:1];
-        [self calculateMonth];
-    }
+    [self lumpAZDayOfMonth];
     return self;
 }
 
-- (id)initWithMonth:(NSUInteger)month year:(NSUInteger)year {
-    self = [super init];
-    if (self){
-        _today = [[AZCalDay alloc] initWithYear:year month:month day:1];
-        [self calculateMonth];
+- (id)initWithMonth:(NSUInteger) month year:(NSUInteger) year day:(NSUInteger) day {
+    self = [self init];
+    if (self == nil) {
+        return nil;
     }
+    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    _components = [[NSDateComponents alloc] init];
+    [_components setYear:year];
+    [_components setMonth:month];
+    [_components setDay:day];
+    _date = [calendar dateFromComponents:self.components];
+
+    [self lumpAZDayOfMonth];
     return self;
 }
 
-- (id)initWithDate:(NSDate *)date {
-    self = [super init];
-    if (self){
-        _today = [[AZCalDay alloc] initWithDate:date];
-        [self calculateMonth];
-    }
-    return self;
-}
-
-- (id)initWithMonth:(NSUInteger)month year:(NSUInteger)year day:(NSUInteger)day {
-    self = [super init];
-    if (self){
-        _today = [[AZCalDay alloc] initWithYear:year month:month day:day];
-        [self calculateMonth];
-    }
-    return self;
-}
-
-- (NSString *)description {
-    return [NSString stringWithFormat:@"year:%d month:%d number of days:%d",
-                                      mon.year, mon.month, mon.numberOfDays];
-}
-
-- (NSUInteger)days {
-    return mon.numberOfDays;
-}
-
-- (NSUInteger)getYear {
-    return mon.year;
-}
-
-- (NSUInteger)getMonth {
-    return mon.month;
-}
-
-- (AZCalDay *)calDayAtDay:(NSUInteger)day {
-    NSInteger index = day - 1;
-    NSAssert(!(index < 0 || index > 31), @"invalid day index %d", index);
-    return [daysOfMonth objectAtIndex:(NSUInteger) index];
+- (AZCalDay *)calDayAtDay:(NSUInteger) day {
+    NSUInteger indexOfDay = day - 1;
+    return self.daysOfMonth[indexOfDay];
 }
 
 - (AZCalDay *)firstDay {
-    return [daysOfMonth objectAtIndex:0];
+    return self.daysOfMonth[0];
 }
 
 - (AZCalDay *)lastDay {
-    return [daysOfMonth objectAtIndex:mon.numberOfDays - 1];
+    NSUInteger lastIndex = (NSUInteger)(self.numberOfDays - 1);
+    return self.daysOfMonth[lastIndex];
 }
 
-- (void)dealloc {
-    daysOfMonth = nil;
+- (NSUInteger)getYear {
+    return (NSUInteger)self.year;
 }
+
+- (NSUInteger)getMonth {
+    return (NSUInteger)self.month;
+}
+
+- (AZCalMonth *)nextMonth {
+    NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
+    [dateComponents setMonth:1];
+    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    NSDate *nextMonthDate = [calendar dateByAddingComponents:dateComponents toDate:self.date options:0];
+    return [[AZCalMonth alloc] initWithDate:nextMonthDate];
+}
+
+- (AZCalMonth *)previousMonth {
+    NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
+    [dateComponents setMonth:-1];
+    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    NSDate *nextMonthDate = [calendar dateByAddingComponents:dateComponents toDate:self.date options:0];
+    return [[AZCalMonth alloc] initWithDate:nextMonthDate];
+}
+
+- (NSUInteger)days {
+    return (NSUInteger)self.numberOfDays;
+}
+
 @end
