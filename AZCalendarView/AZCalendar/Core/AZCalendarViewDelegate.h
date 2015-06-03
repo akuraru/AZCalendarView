@@ -6,7 +6,7 @@
 //  Copyright (c) 2012年 Sword.Zhou. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 #import "AZCalendarEnum.h"
 
 @class AZCalendarView;

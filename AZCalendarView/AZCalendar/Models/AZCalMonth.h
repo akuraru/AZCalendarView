@@ -16,9 +16,9 @@
 @private
 //    NSUInteger  _month;
     struct {
-        unsigned int month : 4;
-        unsigned int year : 15;
-        unsigned int numberOfDays : 16;
+        NSUInteger month : 4;
+        NSUInteger year : 15;
+        NSUInteger numberOfDays : 16;
     } mon;
     AZCalDay *_today;
     NSMutableArray *daysOfMonth;

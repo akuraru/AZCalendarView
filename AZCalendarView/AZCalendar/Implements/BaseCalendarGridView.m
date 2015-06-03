@@ -32,7 +32,7 @@
 }
 
 - (void)layoutSubviews {
-    NSString *buttonDayTitle = [NSString stringWithFormat:@"%d", [_calDay getDay]];
+    NSString *buttonDayTitle = [NSString stringWithFormat:@"%tu", [_calDay getDay]];
     //  date min / max limit
     if (_canSelect){
         self.gridButton.selected = self.selected;

@@ -308,7 +308,7 @@
         title = [_dataSource calendarView:self titleForMonth:_calMonth];
     }
     if (!title || ![title length]){
-        title = [NSString stringWithFormat:@"%d年%d月", [_calMonth getYear], [_calMonth getMonth]];
+        title = [NSString stringWithFormat:@"%tu年%tu月", [_calMonth getYear], [_calMonth getMonth]];
     }
     return title;
 }
@@ -601,8 +601,8 @@
 }
 
 - (CGRect)getFrameForRow:(NSUInteger)row column:(NSUInteger)column {
-    int calcRow = row;
-    int calcColumn = column;
+    NSUInteger calcRow = row;
+    NSUInteger calcColumn = column;
 
     CGFloat width = [self widthForGridView];
     CGFloat x = width * calcColumn;
@@ -874,7 +874,7 @@
                     NSUInteger day = [self getMonthDayAtRow:row column:column];
                     AZCalDay *calDay = [_calMonth calDayAtDay:day];
                     [selectedDates addObject:calDay.date];
-                    AZLog(@"selected day %d", day);
+                    AZLog(@"selected day %tu", day);
                 }
             }
         }

@@ -76,7 +76,7 @@
 */
 
 - (NSString *)calendarView:(AZCalendarView *)calendarView titleForMonth:(AZCalMonth *)calMonth {
-    NSString *title = [NSString stringWithFormat:@"%d/%d", [calMonth getYear], [calMonth getMonth]];
+    NSString *title = [NSString stringWithFormat:@"%tu/%tu", [calMonth getYear], [calMonth getMonth]];
     return title;
 }
 @end
