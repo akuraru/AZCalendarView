@@ -25,7 +25,7 @@
 }
 
 - (void)layoutSubviews {
-    NSString *buttonDayTitle = [NSString stringWithFormat:@"%d", [_calDay getDay]];
+    NSString *buttonDayTitle = [NSString stringWithFormat:@"%tu", [_calDay getDay]];
     [self.gridButton setTitle:buttonDayTitle forState:UIControlStateNormal];
     UIColor *grayColor = [UIColor colorWithRed:122 / 255.0 green:119 / 255.0 blue:122 / 255.0 alpha:1.0];
     [self.gridButton setTitleColor:grayColor forState:UIControlStateNormal];

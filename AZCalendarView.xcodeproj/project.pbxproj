@@ -130,7 +130,6 @@
 		17B5CA92A8F795323C4A7B2D /* datecell-diable@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "datecell-diable@2x.png"; sourceTree = "<group>"; };
 		17B5CA9B0C9DFA3BECC83AE9 /* AZDateUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AZDateUtil.m; sourceTree = "<group>"; };
 		17B5CAA2996ABA88A6329E44 /* AZCalendarWeekHintView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AZCalendarWeekHintView.h; sourceTree = "<group>"; };
-		17B5CB15EB2B0E60E8FF87D8 /* AZCalendarView-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AZCalendarView-Prefix.pch"; sourceTree = "<group>"; };
 		17B5CB1BD9F8817F145B7D8F /* BaseCalendarGridView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseCalendarGridView.m; sourceTree = "<group>"; };
 		17B5CB31C9B07480E6F6B270 /* todaycell@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "todaycell@2x.png"; sourceTree = "<group>"; };
 		17B5CB44E66368EA0246F7F8 /* ThirdCalendarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdCalendarView.m; sourceTree = "<group>"; };
@@ -373,7 +372,6 @@
 				17B5CF8BD87AD6E3E16F78F1 /* AZCalendarView-Info.plist */,
 				17B5C150713E216FFB0CBEB8 /* InfoPlist.strings */,
 				17B5CCC3B0DE2764AE1D27B2 /* main.m */,
-				17B5CB15EB2B0E60E8FF87D8 /* AZCalendarView-Prefix.pch */,
 				17B5C6802AF1CD1427D07827 /* Default.png */,
 				17B5C89542FBE9742B198A7A /* Default@2x.png */,
 				17B5C51AA926E4DF4089B7C3 /* Default-568h@2x.png */,
@@ -406,6 +404,8 @@
 /* Begin PBXProject section */
 		17B5CA12BF277BDD56B2ACE9 /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+			};
 			buildConfigurationList = 17B5CD052C76F84D3BCA45B1 /* Build configuration list for PBXProject "AZCalendarView" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
@@ -550,10 +550,10 @@
 		17B5CAC39B6F05D00EF48A2E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "AZCalendarView/AZCalendarView-Prefix.pch";
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = "AZCalendarView/AZCalendarView-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/**";
@@ -564,10 +564,10 @@
 		17B5CD20EEBCCBD29037061A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "AZCalendarView/AZCalendarView-Prefix.pch";
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = "AZCalendarView/AZCalendarView-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/**";

@@ -92,7 +92,7 @@
 }
 
 - (NSString *)description {
-    return [NSString stringWithFormat:@"year:%d month:%d number of days:%d",
+    return [NSString stringWithFormat:@"year:%tu month:%tu number of days:%tu",
                                       mon.year, mon.month, mon.numberOfDays];
 }
 
@@ -110,7 +110,7 @@
 
 - (AZCalDay *)calDayAtDay:(NSUInteger)day {
     NSInteger index = day - 1;
-    NSAssert(!(index < 0 || index > 31), @"invalid day index %d", index);
+    NSAssert(!(index < 0 || index > 31), @"invalid day index %tu", index);
     return [daysOfMonth objectAtIndex:(NSUInteger) index];
 }
 
