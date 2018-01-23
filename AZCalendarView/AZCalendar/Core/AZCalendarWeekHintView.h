@@ -5,8 +5,7 @@
 
 #import <UIKit/UIKit.h>
 
-
-NS_ENUM(NSUInteger, AZ_DayOfWeek){
+typedef NS_ENUM(NSUInteger, AZ_DayOfWeek){
     Sunday,
     Monday,
     Tuesday,
